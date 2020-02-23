@@ -1,0 +1,22 @@
+.root {
+  flex-grow: 1;
+  margin: 20vh 4rem;
+  max-width: 20rem;
+}
+
+@media all and (max-width: 1024px) {
+  .root {
+    margin: 20vh 1.5rem;
+  }
+}
+
+@media all and (max-width: 768px) {
+  .root {
+    margin: 1.5rem;
+  }
+}
+
+.linkList {
+  display: flex;
+  justify-content: space-between;
+}
