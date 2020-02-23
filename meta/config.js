@@ -22,7 +22,7 @@ exports.manifestOptions = {
   background_color: `#FFFFFF`,
   theme_color: `#FFFFFF`,
   display: `minimal-ui`,
-  icon: `data/img/favicon.png`, // This path is relative to the root of the site.
+  // icon: `data/img/favicon.png`, // This path is relative to the root of the site.
 };
 
 exports.robotsTxtOptions = {
