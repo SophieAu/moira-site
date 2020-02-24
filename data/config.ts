@@ -15,3 +15,5 @@ export const paths = {
 };
 
 export const BASE_URL = 'https://moira-barrett.com';
+
+export const EMAIL = 'moira@moira-barrett.com';

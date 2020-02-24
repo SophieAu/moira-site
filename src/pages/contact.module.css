@@ -1,0 +1,11 @@
+.root {
+  flex-grow: 1;
+  margin-top: 28vh;
+  margin-left: 3rem;
+}
+
+@media all and (max-width: 768px) {
+  .root {
+    margin-top: 1.5rem;
+  }
+}
