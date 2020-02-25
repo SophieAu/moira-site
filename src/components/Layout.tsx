@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { cn } from '../util';
 import styles from './Layout.module.css';
 import SEO from './SEO';
 import Sidebar from './Sidebar';
@@ -13,19 +14,24 @@ interface Props {
   slug: string;
   children?: React.ReactNode;
   additionalHead?: React.ReactNode;
+  className?: string;
 }
 
-const Layout: React.FC<Props> = ({ title, description, slug, additionalHead, children }) => (
-  <>
-    <SEO title={title} description={description} slug={slug}>
-      <script>{webpSupportDetection}</script>
-      {additionalHead}
-    </SEO>
-    <div id={styles.body}>
-      <Sidebar />
-      {children}
-    </div>
-  </>
-);
+const Layout: React.FC<Props> = props => {
+  const { title, description, slug, additionalHead, children, className } = props;
+
+  return (
+    <>
+      <SEO title={title} description={description} slug={slug}>
+        <script>{webpSupportDetection}</script>
+        {additionalHead}
+      </SEO>
+      <div id={styles.body}>
+        <Sidebar />
+        <main className={`${styles.root}${cn(className)}`}>{children}</main>
+      </div>
+    </>
+  );
+};
 
 export default Layout;

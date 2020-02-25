@@ -1,0 +1,13 @@
+:root {
+  font-size: 16px;
+
+  --font: serif;
+
+  --meta-font: italic 500 1rem var(--font);
+  --nav-font: 500 1rem var(--font);
+  --normal-font: 500 1.5rem var(--font);
+  --title-font: 700 2rem var(--font);
+
+  --black: #1b1c25;
+  --grey: #3d3e4a;
+}

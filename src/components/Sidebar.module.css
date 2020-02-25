@@ -13,10 +13,22 @@
 @media all and (max-width: 768px) {
   .root {
     margin: 1.5rem;
+    flex-grow: 0;
   }
 }
 
 .linkList {
   display: flex;
   justify-content: space-between;
+}
+
+.title {
+  font: var(--title-font);
+  color: var(--black);
+  margin-bottom: 1rem;
+}
+
+.navItem {
+  font: var(--nav-font);
+  color: var(--black);
 }

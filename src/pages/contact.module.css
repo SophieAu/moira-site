@@ -1,11 +1,8 @@
-.root {
-  flex-grow: 1;
-  margin-top: 28vh;
-  margin-left: 3rem;
+.email {
+  font: var(--normal-font);
+  color: var(--black);
 }
 
-@media all and (max-width: 768px) {
-  .root {
-    margin-top: 1.5rem;
-  }
+.root {
+  margin-top: 25rem;
 }

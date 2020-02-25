@@ -26,6 +26,7 @@ export const Translation = {
   description: '',
   slug: slugs.translation,
   path: paths.translation,
+  infoText: 'Infotext on Moira here',
 };
 
 export const Writing = {

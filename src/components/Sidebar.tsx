@@ -6,7 +6,7 @@ import styles from './Sidebar.module.css';
 
 export default () => (
   <header className={styles.root}>
-    <h1>
+    <h1 className={styles.title}>
       <Link to={Home.path}>Moira Barrett</Link>
     </h1>
     <Nav />
