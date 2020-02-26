@@ -4,5 +4,5 @@ import { Home } from '../../data/strings';
 import Layout from '../components/Layout';
 
 export default () => (
-  <Layout title={Home.title} description={Home.description} slug={Home.slug}></Layout>
+  <Layout title={Home.pageTitle} description={Home.description} slug={Home.slug}></Layout>
 );

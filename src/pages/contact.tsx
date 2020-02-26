@@ -6,12 +6,7 @@ import Layout from '../components/Layout';
 import styles from './contact.module.css';
 
 export default () => (
-  <Layout
-    title={Contact.title}
-    description={Contact.description}
-    slug={Contact.slug}
-    className={styles.root}
-  >
+  <Layout title={Contact.pageTitle} description={Contact.description} slug={Contact.slug}>
     <a className={styles.email} href={`mailto:${EMAIL}`}>
       {EMAIL}
     </a>

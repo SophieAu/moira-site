@@ -5,5 +5,5 @@ import Layout from '../components/Layout';
 import styles from './collage.module.css';
 
 export default () => (
-  <Layout title={Collage.title} description={Collage.description} slug={Collage.slug}></Layout>
+  <Layout title={Collage.pageTitle} description={Collage.description} slug={Collage.slug}></Layout>
 );

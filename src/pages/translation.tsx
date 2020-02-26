@@ -6,7 +6,11 @@ import Layout from '../components/Layout';
 import styles from './translation.module.css';
 
 export default () => (
-  <Layout title={Translation.title} description={Translation.description} slug={Translation.slug}>
+  <Layout
+    title={Translation.pageTitle}
+    description={Translation.description}
+    slug={Translation.slug}
+  >
     <p className={styles.infoText}>{Translation.infoText}</p>
     <article>
       <Link to="" className={styles.link}>
