@@ -11,10 +11,18 @@
 /* a, ul, li */
 
 :global a {
-  color: black;
   text-decoration: none;
 }
 
 :global a:hover {
   text-decoration: underline;
+}
+
+:global a:active {
+  color: var(--black);
+  text-decoration: underline;
+}
+
+:global a:visited {
+  color: inherit;
 }

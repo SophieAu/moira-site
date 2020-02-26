@@ -1,19 +1,23 @@
 .root {
-  flex-grow: 1;
-  margin: 20vh 4rem;
-  max-width: 20rem;
+  width: 20rem;
+  max-width: calc(100vw - 2 * var(--small-margin));
 }
 
-@media all and (max-width: 1024px) {
+@media all and (min-width: 1024px) {
   .root {
-    margin: 20vh 1.5rem;
+    margin: 20vh var(--large-margin);
   }
 }
 
-@media all and (max-width: 768px) {
+@media all and (max-width: 1023px) {
   .root {
-    margin: 1.5rem;
-    flex-grow: 0;
+    margin: 20vh var(--small-margin);
+  }
+}
+
+@media all and (max-width: 767px) {
+  .root {
+    margin: var(--small-margin);
   }
 }
 
@@ -25,10 +29,14 @@
 .title {
   font: var(--title-font);
   color: var(--black);
-  margin-bottom: 1rem;
+  margin-bottom: var(--small-margin);
 }
 
 .navItem {
   font: var(--nav-font);
   color: var(--black);
+}
+
+.inactive {
+  color: var(--grey);
 }

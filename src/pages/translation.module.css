@@ -1,7 +1,7 @@
 .infoText {
   font: var(--normal-font);
   color: var(--black);
-  margin-bottom: 5rem;
+  margin-bottom: var(--large-margin);
 }
 
 .link {

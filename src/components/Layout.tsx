@@ -27,7 +27,7 @@ const Layout: React.FC<Props> = props => {
         {additionalHead}
       </SEO>
       <div id={styles.body}>
-        <Sidebar />
+        <Sidebar currentPage={slug} />
         <main className={`${styles.root}${cn(className)}`}>{children}</main>
       </div>
     </>
