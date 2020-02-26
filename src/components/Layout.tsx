@@ -23,7 +23,7 @@ const Layout: React.FC<Props> = props => {
   return (
     <>
       <SEO title={title} description={description} slug={slug}>
-        <script>{webpSupportDetection}</script>
+        <script type="text/javascript">{webpSupportDetection}</script>
         {additionalHead}
       </SEO>
       <div id={styles.body}>
