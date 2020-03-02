@@ -15,7 +15,7 @@ const Collage = () => {
       title={strings.pageTitle}
       description={strings.description}
       slug={strings.slug}
-      className={styles.merp}
+      className={styles.collage}
     >
       <img src={imgOne} alt="rubbish" onClick={() => selectImage(imgOne)} />
       <img src={imgTwo} alt="rubbish" onClick={() => selectImage(imgTwo)} />

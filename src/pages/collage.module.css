@@ -1,10 +1,10 @@
-.merp {
+.collage {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 5px;
 }
 
-.merp > img {
+.collage > img {
   width: 100%;
   object-fit: contain;
   height: auto;
