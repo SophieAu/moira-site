@@ -11,7 +11,7 @@ interface Props {
 }
 
 const Sidebar: React.FC<Props> = ({ currentPage }) => {
-  const notOnHomePage = SubPages.findIndex(page => page.slug === currentPage) !== -1;
+  const onHomePage = SubPages.findIndex(page => page.slug === currentPage) === -1;
 
   return (
     <header className={styles.root}>
@@ -24,7 +24,7 @@ const Sidebar: React.FC<Props> = ({ currentPage }) => {
             <Page
               key={page.slug}
               page={page}
-              isActivePage={notOnHomePage && currentPage !== page.slug}
+              isActivePage={onHomePage || currentPage === page.slug}
             />
           ))}
         </ul>
@@ -39,7 +39,7 @@ interface PageProps {
 }
 
 const Page: React.FC<PageProps> = ({ isActivePage, page }) => (
-  <li className={`${styles.navItem} ${cn(!isActivePage && styles.inactive)}`}>
+  <li className={`${styles.navItem}${cn(!isActivePage && styles.inactive)}`}>
     <Link to={page.path}>{page.title}</Link>
   </li>
 );
