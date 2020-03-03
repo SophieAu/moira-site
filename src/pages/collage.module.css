@@ -1,7 +1,7 @@
 .collage {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 5px;
+  grid-gap: 1rem;
+  align-self: center;
 }
 
 .collage > img {
@@ -26,4 +26,18 @@
   max-width: 80vw;
   max-height: 80vh;
   object-fit: contain;
+}
+
+@media all and (min-width: 768px) {
+  .collage {
+    --column-width: minmax(auto, calc(50vw / 3 - 2 * 5px));
+    grid-template-columns: repeat(3, var(--column-width));
+    padding-right: var(--small-margin);
+  }
+}
+
+@media all and (max-width: 767px) {
+  .collage {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }

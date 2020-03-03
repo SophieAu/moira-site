@@ -1,24 +1,6 @@
 .root {
-  width: 20rem;
-  max-width: calc(100vw - 2 * var(--small-margin));
-}
-
-@media all and (min-width: 1024px) {
-  .root {
-    margin: 20vh var(--large-margin);
-  }
-}
-
-@media all and (max-width: 1023px) {
-  .root {
-    margin: 20vh var(--small-margin);
-  }
-}
-
-@media all and (max-width: 767px) {
-  .root {
-    margin: var(--small-margin);
-  }
+  width: 320px;
+  margin-top: var(--margin-top);
 }
 
 .linkList {
@@ -39,4 +21,16 @@
 
 .inactive {
   color: var(--grey);
+}
+
+@media all and (min-width: 768px) {
+  .root {
+    --margin-top: 20vh;
+  }
+}
+
+@media all and (max-width: 767px) {
+  .root {
+    --margin-top: var(--small-margin);
+  }
 }

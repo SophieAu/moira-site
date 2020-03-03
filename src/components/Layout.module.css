@@ -2,29 +2,32 @@
 @import url('../_reset.css');
 
 #body {
-  display: flex;
-  height: 100vh;
-  width: 100vw;
-}
-.root {
-  flex-grow: 1;
+  display: grid;
+  width: calc(100vw - 2 * var(--padding));
+  padding-left: var(--padding);
+  grid-gap: var(--padding);
 }
 
 @media all and (min-width: 768px) {
   #body {
-    flex-direction: row;
+    --padding: var(--large-margin);
+    --right-column: calc(100vw - 2 * var(--padding) - 320px);
+    height: 100vh;
+    grid-template-columns: 320px var(--right-column);
   }
+
   .root {
-    margin: var(--large-margin);
-    max-width: 50vw;
+    padding: var(--padding) 0;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
   }
 }
 
 @media all and (max-width: 767px) {
   #body {
-    flex-direction: column;
-  }
-  .root {
-    margin: var(--small-margin);
+    --padding: var(--small-margin);
+    grid-template-columns: 1fr;
+    padding-bottom: var(--padding);
   }
 }
