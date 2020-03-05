@@ -13,10 +13,11 @@ const {
 module.exports = {
   siteMetadata,
   plugins: [
+    `gatsby-plugin-typescript`,
+    `gatsby-plugin-linaria`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-sharp`,
-    `gatsby-plugin-typescript`,
     `gatsby-transformer-sharp`,
     { resolve: `gatsby-plugin-csp`, options: cspOptions },
     { resolve: `gatsby-plugin-manifest`, options: manifestOptions },

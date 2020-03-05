@@ -5,12 +5,10 @@ _non-code/
 
 # gatsby files
 .cache/
-public
+public/
 node_modules/
-yarn.lock
+.linaria-cache/
 
 # Mac files
 .DS_Store
 
-# IntelliJ files
-.idea
