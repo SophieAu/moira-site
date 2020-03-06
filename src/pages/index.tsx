@@ -1,8 +1,10 @@
 import React from 'react';
 
-import { Home } from '../../data/strings';
+import { Home as strings } from '../../data/strings';
 import Layout from '../components/Layout';
 
-export default () => (
-  <Layout title={Home.pageTitle} description={Home.description} slug={Home.slug}></Layout>
+const Home = () => (
+  <Layout title={strings.pageTitle} description={strings.description} slug={strings.slug}></Layout>
 );
+
+export default Home;
