@@ -12,7 +12,10 @@ exports.siteMetadata = {
 exports.cspOptions = {
   disableOnDev: true,
   mergeStyleHashes: false,
-  directives: { 'style-src': "'self' 'unsafe-inline' blob:" },
+  directives: {
+    'style-src': "'self' 'unsafe-inline' https://fonts.googleapis.com/",
+    'font-src': "'self' https://fonts.gstatic.com/s/",
+  },
 };
 
 exports.manifestOptions = {
