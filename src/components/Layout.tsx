@@ -53,6 +53,10 @@ const Layout: React.FC<Props> = props => {
   return (
     <>
       <SEO title={title} description={description} slug={slug}>
+        <link
+          href="https://fonts.googleapis.com/css?family=Italiana&display=swap"
+          rel="stylesheet"
+        />
         <script type="text/javascript">{webpSupportDetection}</script>
         {additionalHead}
       </SEO>

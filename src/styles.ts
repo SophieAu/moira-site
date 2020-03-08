@@ -9,7 +9,7 @@ export const globals = css`
   :global :root {
     font-size: 16px;
 
-    --font: serif;
+    --font: 'Italiana', serif;
 
     --meta-font: italic 500 1rem var(--font);
     --nav-font: 500 1rem var(--font);
