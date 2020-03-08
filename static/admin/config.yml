@@ -1,0 +1,46 @@
+backend:
+  name: git-gateway
+  branch: master
+
+media_folder: data/content/img/collage
+public_folder: static
+
+
+collections:
+  - name: "collage"
+    label: "Collage"
+    file: "data/content/collage.md"
+    fields:
+      - label: Images
+        name: images
+        widget: list
+        collapsed: false
+        field: { label: Image, name: image, widget: image }
+  - name: "contact"
+    label: "Contact"
+    folder: "data/content/contact.md"
+    fields:
+      - label: "Email"
+        name: "email"
+        widget: "string"
+  - name: "translation"
+    label: "Translation"
+    file: "data/content/translation.md"
+    fields:
+      - label: "Info Text"
+        name: "infotext"
+        widget: "string"
+      - label: Translations
+        name: translations
+        widget: list
+        collapsed: false
+        fields: [{ label: "Title", name: "title", widget: "string" }, { label: "Link", name: "link", widget: "string" }, { label: "Info", name: "info", widget: "string" }]
+  - name: "writing"
+    label: "Writing"
+    folder: "data/content/writing.md"
+    fields:
+      - label: Translations
+        name: translations
+        widget: list
+        collapsed: false
+        fields: [{ label: "Title", name: "title", widget: "string" }, { label: "Link", name: "link", widget: "string" }, { label: "Info", name: "info", widget: "string" }]
