@@ -36,6 +36,7 @@ export const reset = css`
   }
 
   :global a {
+    color: var(--black);
     text-decoration: none;
 
     &:hover {
