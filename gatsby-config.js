@@ -13,6 +13,7 @@ const {
 module.exports = {
   siteMetadata,
   plugins: [
+    `gatsby-plugin-netlify-cms`,
     `gatsby-plugin-typescript`,
     `gatsby-plugin-linaria`,
     `gatsby-plugin-react-helmet`,
