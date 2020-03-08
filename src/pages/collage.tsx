@@ -54,14 +54,14 @@ const Collage = () => {
   return (
     <Layout title={strings.pageTitle} description={strings.description} slug={strings.slug}>
       <div className={collage}>
-        <img src={imgOne} alt="rubbish" onClick={() => selectImage(imgOne)} />
+        {/* <img src={imgOne} alt="rubbish" onClick={() => selectImage(imgOne)} />
         <img src={imgTwo} alt="rubbish" onClick={() => selectImage(imgTwo)} />
         <img src={imgThree} alt="rubbish" onClick={() => selectImage(imgThree)} />
         <img src={imgFour} alt="rubbish" onClick={() => selectImage(imgFour)} />
         <img src={imgFive} alt="rubbish" onClick={() => selectImage(imgFive)} />
         <img src={imgSix} alt="rubbish" onClick={() => selectImage(imgSix)} />
         <img src={imgSeven} alt="rubbish" onClick={() => selectImage(imgSeven)} />
-        <img src={imgEight} alt="rubbish" onClick={() => selectImage(imgEight)} />
+        <img src={imgEight} alt="rubbish" onClick={() => selectImage(imgEight)} /> */}
         {selectedImage && (
           <div className={fullSize} onClick={() => selectImage('')}>
             <img src={selectedImage} alt="rubbish" />
