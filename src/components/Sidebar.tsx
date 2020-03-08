@@ -11,7 +11,7 @@ const root = css`
   margin-top: var(--margin-top);
 
   ${MEDIA_DESKTOP} {
-    --margin-top: 20vh;
+    --margin-top: 10vh;
   }
 
   ${MEDIA_MOBILE} {
