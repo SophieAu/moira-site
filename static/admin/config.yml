@@ -42,8 +42,8 @@ collections:
       label: "Writing"
       file: "data/content/writing.md"
       fields:
-        - label: Translations
-          name: translations
+        - label: Writing
+          name: writing
           widget: list
           collapsed: false
           fields: [{ label: "Title", name: "title", widget: "string" }, { label: "Link", name: "link", widget: "string" }, { label: "Info", name: "info", widget: "string" }]
