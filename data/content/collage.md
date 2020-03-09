@@ -1,0 +1,15 @@
+---
+images: 
+  - image: ./_img/2.jpg
+  - image: ./_img/IMG_6637.jpg
+  - image: ./_img/Parrish.jpg
+  - image: ./_img/Scan1.jpg
+  - image: ./_img/child.png
+  - image: ./_img/dancers.jpg
+  - image: ./_img/for_alice.jpg
+  - image: ./_img/nobody_does.jpg
+  - image: ./_img/ocean window.jpg
+  - image: ./_img/pp2.png
+  - image: ./_img/western.jpg
+  - image: ./_img/woods.jpg
+---
