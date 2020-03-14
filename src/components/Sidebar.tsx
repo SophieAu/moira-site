@@ -22,6 +22,7 @@ const root = css`
 const linkList = css`
   display: flex;
   justify-content: space-between;
+  margin-bottom: var(--small-margin);
 `;
 
 const title = css`

@@ -9,7 +9,7 @@ import React, { useState } from 'react';
 import { Collage as strings } from '../../data/strings';
 import Layout from '../components/Layout';
 import { MEDIA_DESKTOP, MEDIA_MOBILE } from '../styles';
-import { CollageInnerData as ImgData, CollageQuery } from '../types';
+import { CollageQuery, ImgData } from '../types';
 
 export const query = graphql`
   query($id: String!) {

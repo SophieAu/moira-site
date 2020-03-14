@@ -8,11 +8,7 @@ type BaseQuery<T> = {
   };
 };
 
-type CollageData = {
-  images: CollageInnerData[];
-};
-
-export type CollageInnerData = {
+export type ImgData = {
   image: {
     preview: {
       fluid: FluidObject;
@@ -23,28 +19,18 @@ export type CollageInnerData = {
   };
 };
 
-type ContactData = {
-  email: string;
-};
-
 type TranslationData = {
   infotext: string;
-  translations: {
-    title: string;
-    link: string;
-    info: string;
-  }[];
+  translations: List[];
 };
 
-type WritingData = {
-  writing: {
-    title: string;
-    link: string;
-    info: string;
-  }[];
+export type List = {
+  title: string;
+  link: string;
+  info: string;
 };
 
-export type CollageQuery = BaseQuery<CollageData>;
-export type ContactQuery = BaseQuery<ContactData>;
+export type CollageQuery = BaseQuery<{ images: ImgData[] }>;
+export type ContactQuery = BaseQuery<{ email: string }>;
 export type TranslationQuery = BaseQuery<TranslationData>;
-export type WritingQuery = BaseQuery<WritingData>;
+export type WritingQuery = BaseQuery<{ writing: List[] }>;
