@@ -1,11 +1,6 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-const {
-  PAGES_QUERY,
-  buildContactPage,
-  buildCollagePage,
-  buildTranslationPage,
-  buildWritingPage,
-} = require('./meta/node');
+const { resolve } = require(`path`);
+const { PAGES_QUERY } = require('./meta/node');
 
 exports.createPages = async ({ graphql, actions }) => {
   const result = await graphql(PAGES_QUERY);
@@ -14,15 +9,23 @@ exports.createPages = async ({ graphql, actions }) => {
     return;
   }
 
+  const buildPage = path => {
+    const component = resolve(`./src/templates/${path}.tsx`);
+
+    result.data[path].edges.forEach(({ node: { id } }) =>
+      actions.createPage({ path, component, context: { id } })
+    );
+  };
+
   console.log('\nBuilding Collage Page...');
-  buildCollagePage(result.data.collage.edges, actions.createPage);
+  buildPage('collage');
 
   console.log('Building Contact Page...');
-  buildContactPage(result.data.contact.edges, actions.createPage);
+  buildPage('contact');
 
   console.log('Building Translation Page...');
-  buildTranslationPage(result.data.translation.edges, actions.createPage);
+  buildPage('translation');
 
   console.log('Building Writing page...\n');
-  buildWritingPage(result.data.writing.edges, actions.createPage);
+  buildPage('writing');
 };

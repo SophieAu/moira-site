@@ -1,48 +1,28 @@
 import { paths, slugs } from './config';
 
+type Titles = 'collage' | 'contact' | 'translation' | 'writing' | 'home';
+
 export const BASE_TITLE = 'Moira Barrett';
 
-const buildTitle = (title: string) => `${title} | ${BASE_TITLE}`;
+const toTitleCase = (str: string) =>
+  str.length ? `${str.charAt(0).toUpperCase()}${str.slice(1)}` : str;
 
-export const Collage = {
-  title: 'Collage',
-  pageTitle: buildTitle('Collage'),
+const buildMetaData = (title: Titles) => ({
+  title: toTitleCase(title),
+  pageTitle: `${toTitleCase(title)} | ${BASE_TITLE}`,
   description: '',
-  slug: slugs.collage,
-  path: paths.collage,
-};
+  slug: slugs[title],
+  path: paths[title],
+});
 
-export const Contact = {
-  title: 'Contact',
-  pageTitle: buildTitle('Contact'),
-  description: '',
-  slug: slugs.contact,
-  path: paths.contact,
-};
+export const Home = buildMetaData('home');
 
-export const Home = {
-  title: BASE_TITLE,
-  pageTitle: BASE_TITLE,
-  description: '',
-  slug: slugs.home,
-  path: paths.home,
-};
+export const Collage = buildMetaData('collage');
 
-export const Translation = {
-  title: 'Translation',
-  pageTitle: buildTitle('Translation'),
-  description: '',
-  slug: slugs.translation,
-  path: paths.translation,
-  infoText: 'Infotext on Moira here',
-};
+export const Contact = buildMetaData('contact');
 
-export const Writing = {
-  title: 'Writing',
-  pageTitle: buildTitle('Writing'),
-  description: '',
-  slug: slugs.writing,
-  path: paths.writing,
-};
+export const Translation = buildMetaData('translation');
+
+export const Writing = buildMetaData('writing');
 
 export const SubPages = [Collage, Translation, Writing, Contact];
