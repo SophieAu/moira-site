@@ -12,4 +12,7 @@ images:
   - image: ./_img/pp2.png
   - image: ./_img/western.jpg
   - image: ./_img/woods.jpg
+  - image: ./_img/pipes.png
+  - image: ./_img/Ricardo card.png
+  - image: ./_img/work for nt_0000.png
 ---
