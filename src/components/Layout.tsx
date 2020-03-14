@@ -12,6 +12,8 @@ const webpSupportDetection =
 const body = css`
   display: grid;
   width: calc(100vw - 2 * var(--padding));
+  max-width: 1600px;
+  margin: 0 max(0px, calc((100vw - 1600px) / 2));
   padding-left: var(--padding);
   grid-gap: var(--padding);
 
