@@ -37,6 +37,7 @@ const root = css`
     overflow-y: scroll;
     display: flex;
     flex-direction: column;
+    max-width: inherit;
   }
 `;
 

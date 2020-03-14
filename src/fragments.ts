@@ -5,8 +5,13 @@ export const collage = graphql`
     frontmatter {
       images {
         image {
-          childImageSharp {
-            fixed(height: 66, quality: 90) {
+          preview: childImageSharp {
+            fluid(maxWidth: 525, quality: 90) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+          fullScreen: childImageSharp {
+            fixed(height: 2000, quality: 90) {
               ...GatsbyImageSharpFixed_withWebp
             }
           }

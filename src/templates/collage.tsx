@@ -9,7 +9,7 @@ import React, { useState } from 'react';
 import { Collage as strings } from '../../data/strings';
 import Layout from '../components/Layout';
 import { MEDIA_DESKTOP, MEDIA_MOBILE } from '../styles';
-import { CollageQuery } from '../types';
+import { CollageInnerData as ImgData, CollageQuery } from '../types';
 
 export const query = graphql`
   query($id: String!) {
@@ -31,7 +31,8 @@ const collage = css`
   }
 
   ${MEDIA_DESKTOP} {
-    --column-width: minmax(auto, calc(50vw / 3 - 2 * 5px));
+    --max: min(50vw, 1600px);
+    --column-width: minmax(auto, calc(var(--max) / 3 - 2 * 5px));
     grid-template-columns: repeat(3, var(--column-width));
     padding-right: var(--small-margin);
   }
@@ -41,23 +42,34 @@ const collage = css`
   }
 `;
 
-const fullSize = css`
+const fullSizeContainer = css`
   position: absolute;
   background-color: #000000aa;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  & > img {
-    max-width: 80vw;
-    max-height: 80vh;
-    object-fit: contain;
-  }
 `;
+
+const fullSize = {
+  maxWidth: '80vw',
+  maxHeight: 'min(80vh, 2000px)',
+  objectFit: 'contain',
+  margin: '10vh 10vw',
+};
+
+const gatsbyImageWrapper = {
+  width: '80vw',
+  height: '80vh',
+  padding: '10vh 10vw',
+};
+
+const listImage = (modulo: number, onSelect: (i: number) => void) => (root: ImgData, i: number) =>
+  i % 3 === modulo && (
+    <li key={i} onClick={() => onSelect(i)}>
+      <Img fluid={root.image.preview.fluid} fadeIn={false} />
+    </li>
+  );
 
 const Collage: React.FC<CollageQuery> = ({ data }) => {
   const { images } = data.markdownRemark.frontmatter;
@@ -66,16 +78,17 @@ const Collage: React.FC<CollageQuery> = ({ data }) => {
   return (
     <Layout title={strings.pageTitle} description={strings.description} slug={strings.slug}>
       <div className={collage}>
-        <ul>
-          {images.map(({ image }, i) => (
-            <li key={i} onClick={() => selectImage(i)}>
-              <Img fixed={image.childImageSharp.fixed} />
-            </li>
-          ))}
-        </ul>
+        <ul>{images.map(listImage(0, selectImage))}</ul>
+        <ul>{images.map(listImage(1, selectImage))}</ul>
+        <ul>{images.map(listImage(2, selectImage))}</ul>
         {selectedImage !== undefined && (
-          <div className={fullSize} onClick={() => selectImage(undefined)}>
-            <Img fixed={images[selectedImage].image.childImageSharp.fixed} />
+          <div className={fullSizeContainer} onClick={() => selectImage(undefined)}>
+            <Img
+              imgStyle={fullSize}
+              fixed={images[selectedImage].image.fullScreen.fixed}
+              style={gatsbyImageWrapper}
+              fadeIn={false}
+            />
           </div>
         )}
       </div>

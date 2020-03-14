@@ -1,4 +1,4 @@
-import { FixedObject } from 'gatsby-image';
+import { FixedObject, FluidObject } from 'gatsby-image';
 
 type BaseQuery<T> = {
   data: {
@@ -9,13 +9,18 @@ type BaseQuery<T> = {
 };
 
 type CollageData = {
-  images: {
-    image: {
-      childImageSharp: {
-        fixed: FixedObject;
-      };
+  images: CollageInnerData[];
+};
+
+export type CollageInnerData = {
+  image: {
+    preview: {
+      fluid: FluidObject;
     };
-  }[];
+    fullScreen: {
+      fixed: FixedObject;
+    };
+  };
 };
 
 type ContactData = {
