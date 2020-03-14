@@ -42,6 +42,10 @@ const collage = css`
   }
 `;
 
+const listImg = css`
+  margin: 1rem 0;
+`;
+
 const fullSizeContainer = css`
   position: absolute;
   background-color: #000000aa;
@@ -66,7 +70,7 @@ const gatsbyImageWrapper = {
 
 const listImage = (modulo: number, onSelect: (i: number) => void) => (root: ImgData, i: number) =>
   i % 3 === modulo && (
-    <li key={i} onClick={() => onSelect(i)}>
+    <li key={i} onClick={() => onSelect(i)} className={listImg}>
       <Img fluid={root.image.preview.fluid} fadeIn={false} />
     </li>
   );
