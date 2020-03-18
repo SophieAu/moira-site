@@ -7,8 +7,6 @@ export const MEDIA_DESKTOP = `@media all and (min-width: ${MOBILE_BREAKPOINT}px)
 
 export const globals = css`
   :global :root {
-    font-size: 16px;
-
     --font: 'Italiana', serif;
 
     --meta-font: italic 500 1rem var(--font);
@@ -21,6 +19,8 @@ export const globals = css`
 
     --small-margin: 1.5rem;
     --large-margin: 4rem;
+
+    font-size: 16px;
   }
 `;
 
@@ -30,9 +30,9 @@ export const reset = css`
   :global p,
   :global h1 {
     border: 0;
-    padding: 0;
-    margin: 0;
     list-style: none;
+    margin: 0;
+    padding: 0;
   }
 
   :global a {
