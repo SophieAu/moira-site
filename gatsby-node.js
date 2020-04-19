@@ -17,9 +17,6 @@ exports.createPages = async ({ graphql, actions }) => {
     );
   };
 
-  console.log('\nBuilding Collage Page...');
-  buildPage('collage');
-
   console.log('Building Contact Page...');
   buildPage('contact');
 

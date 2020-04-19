@@ -1,5 +1,4 @@
 export const slugs = {
-  collage: 'collage',
   contact: 'contact',
   home: '',
   translation: 'translation',
@@ -7,7 +6,6 @@ export const slugs = {
 };
 
 export const paths = {
-  collage: `/${slugs.collage}`,
   contact: `/${slugs.contact}`,
   home: `/`,
   translation: `/${slugs.translation}`,

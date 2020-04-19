@@ -2,13 +2,6 @@
 
 exports.PAGES_QUERY = `
   {
-  collage: allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/data\/content\/collage/"}}) {
-    edges {
-      node {
-        id
-      }
-    }
-  }
   contact: allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/data\/content\/contact/"}}) {
     edges {
       node {
