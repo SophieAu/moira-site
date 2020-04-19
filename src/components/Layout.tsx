@@ -1,6 +1,7 @@
 import { css, cx } from 'linaria';
 import React from 'react';
 
+import bgPattern from '../../data/img/bg_pattern.png';
 import { globals, MEDIA_DESKTOP, MEDIA_MOBILE, reset } from '../styles';
 import SEO from './SEO';
 import Sidebar from './Sidebar';
@@ -40,6 +41,10 @@ const root = css`
   }
 `;
 
+const wrapper = css`
+  background: url(${bgPattern});
+`;
+
 interface Props {
   title: string;
   description: string;
@@ -62,9 +67,11 @@ const Layout: React.FC<Props> = props => {
         <script type="text/javascript">{webpSupportDetection}</script>
         {additionalHead}
       </SEO>
-      <div className={cx(body, globals, reset)}>
-        <Sidebar currentPage={slug} />
-        <main className={cx(root, className)}>{children}</main>
+      <div className={wrapper}>
+        <div className={cx(body, globals, reset)}>
+          <Sidebar currentPage={slug} />
+          <main className={cx(root, className)}>{children}</main>
+        </div>
       </div>
     </>
   );
