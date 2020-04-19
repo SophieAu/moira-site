@@ -8,19 +8,6 @@ export const contact = graphql`
   }
 `;
 
-export const translation = graphql`
-  fragment translation on MarkdownRemark {
-    frontmatter {
-      infotext
-      translations {
-        title
-        link
-        info
-      }
-    }
-  }
-`;
-
 export const writing = graphql`
   fragment writing on MarkdownRemark {
     frontmatter {

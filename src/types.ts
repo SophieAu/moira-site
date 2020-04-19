@@ -6,11 +6,6 @@ type BaseQuery<T> = {
   };
 };
 
-type TranslationData = {
-  infotext: string;
-  translations: List[];
-};
-
 export type List = {
   title: string;
   link: string;
@@ -18,5 +13,4 @@ export type List = {
 };
 
 export type ContactQuery = BaseQuery<{ email: string }>;
-export type TranslationQuery = BaseQuery<TranslationData>;
 export type WritingQuery = BaseQuery<{ writing: List[] }>;

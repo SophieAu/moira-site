@@ -9,13 +9,6 @@ exports.PAGES_QUERY = `
       }
     }
   }
-  translation: allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/data\/content\/translation/"}}) {
-    edges {
-      node {
-        id
-      }
-    }
-  }
   writing: allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/data\/content\/writing/"}}) {
     edges {
       node {

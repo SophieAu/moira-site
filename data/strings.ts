@@ -1,6 +1,6 @@
 import { paths, slugs } from './config';
 
-type Titles = 'contact' | 'translation' | 'writing' | 'home';
+type Titles = 'contact' | 'writing' | 'home';
 
 export const BASE_TITLE = 'Moira Barrett';
 
@@ -19,8 +19,6 @@ export const Home = buildMetaData('home');
 
 export const Contact = buildMetaData('contact');
 
-export const Translation = buildMetaData('translation');
-
 export const Writing = buildMetaData('writing');
 
-export const SubPages = [Translation, Writing, Contact];
+export const SubPages = [Writing, Contact];

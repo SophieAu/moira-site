@@ -16,18 +16,6 @@ collections:
         - label: "Email"
           name: "email"
           widget: "string"
-    - name: "translation"
-      label: "Translation"
-      file: "data/content/translation.md"
-      fields:
-        - label: "Info Text"
-          name: "infotext"
-          widget: "string"
-        - label: Translations
-          name: translations
-          widget: list
-          collapsed: false
-          fields: [{ label: "Title", name: "title", widget: "string" }, { label: "Link", name: "link", widget: "string" }, { label: "Info", name: "info", widget: "string" }]
     - name: "writing"
       label: "Writing"
       file: "data/content/writing.md"
