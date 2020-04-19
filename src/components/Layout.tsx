@@ -1,8 +1,7 @@
-import { css } from 'linaria';
+import { css, cx } from 'linaria';
 import React from 'react';
 
 import { globals, MEDIA_DESKTOP, MEDIA_MOBILE, reset } from '../styles';
-import { cn } from '../util';
 import SEO from './SEO';
 import Sidebar from './Sidebar';
 
@@ -63,9 +62,9 @@ const Layout: React.FC<Props> = props => {
         <script type="text/javascript">{webpSupportDetection}</script>
         {additionalHead}
       </SEO>
-      <div className={`${body} ${globals} ${reset}`}>
+      <div className={cx(body, globals, reset)}>
         <Sidebar currentPage={slug} />
-        <main className={`${root}${cn(className)}`}>{children}</main>
+        <main className={cx(root, className)}>{children}</main>
       </div>
     </>
   );

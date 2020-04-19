@@ -1,10 +1,9 @@
-import { css } from 'linaria';
+import { css, cx } from 'linaria';
 import React from 'react';
 
 import { BASE_TITLE, Home, SubPages } from '../../data/strings';
 import Link from '../components/Link';
 import { MEDIA_DESKTOP, MEDIA_MOBILE } from '../styles';
-import { cn } from '../util';
 
 const root = css`
   width: 320px;
@@ -56,7 +55,7 @@ const Sidebar: React.FC<Props> = ({ currentPage }) => {
       <nav>
         <ul className={linkList}>
           {SubPages.map(page => (
-            <li key={page.slug} className={`${navItem}${cn(!isActivePage(page.slug) && inactive)}`}>
+            <li key={page.slug} className={`${navItem}${cx(!isActivePage(page.slug) && inactive)}`}>
               <Link to={page.path}>{page.title}</Link>
             </li>
           ))}
