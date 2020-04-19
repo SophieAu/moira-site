@@ -19,13 +19,3 @@ export const writing = graphql`
     }
   }
 `;
-
-export const heroImage = graphql`
-  fragment heroImage on File {
-    childImageSharp {
-      fluid(maxWidth: 1360) {
-        ...GatsbyImageSharpFluid_withWebp_tracedSVG
-      }
-    }
-  }
-`;
