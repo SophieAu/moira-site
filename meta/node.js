@@ -16,5 +16,12 @@ exports.PAGES_QUERY = `
       }
     }
   }
+  cv: allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/data\/content\/cv/"}}) {
+    edges {
+      node {
+        id
+      }
+    }
+  }
 }
 `;
