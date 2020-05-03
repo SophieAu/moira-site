@@ -55,7 +55,7 @@ const Sidebar: React.FC<Props> = ({ currentPage }) => {
       <nav>
         <ul className={linkList}>
           {SubPages.map(page => (
-            <li key={page.slug} className={`${navItem}${cx(!isActivePage(page.slug) && inactive)}`}>
+            <li key={page.slug} className={cx(navItem, !isActivePage(page.slug) && inactive)}>
               <Link to={page.path}>{page.title}</Link>
             </li>
           ))}
