@@ -8,16 +8,11 @@ sections:
   path: data/content/writing.md
   label: Writing
 - type: document
-  path: data/content/contact.md
-  label: Contact
-- type: document
   path: data/content/cv.md
   label: CV
-- type: directory
-  path: data/content
-  label: Content
-  create: all
-  match: "**/*"
+- type: document
+  path: data/content/contact.md
+  label: Contact
 upload_dir: uploads
 public_path: "/uploads"
 front_matter_path: ''
