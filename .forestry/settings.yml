@@ -7,15 +7,12 @@ sections:
 - type: document
   path: data/content/writing.md
   label: Writing
-  match: "**/*"
 - type: document
   path: data/content/contact.md
   label: Contact
-  match: "**/*"
 - type: document
   path: data/content/cv.md
   label: CV
-  match: "**/*"
 - type: directory
   path: data/content
   label: Content

@@ -1,0 +1,17 @@
+---
+label: Writing
+hide_body: true
+fields:
+- type: field_group_list
+  name: writing
+  label: writing
+  fields:
+  - type: text
+    name: title
+    label: title
+  - type: text
+    name: link
+    label: link
+  - type: text
+    name: info
+    label: info
