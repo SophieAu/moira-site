@@ -1,3 +1,3 @@
 ---
-cv: CV
+cv: Coming soon
 ---
