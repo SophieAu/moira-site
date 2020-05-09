@@ -1,4 +1,5 @@
 import { graphql } from 'gatsby';
+import { css } from 'linaria';
 import React from 'react';
 
 import { buildPageTitle } from '../../data/strings';
@@ -13,14 +14,33 @@ export const query = graphql`
   }
 `;
 
+const titleStyle = css`
+  font: var(--title-font);
+  color: var(--black);
+`;
+
+const dateStyle = css`
+  margin: 0;
+  font: var(--meta-font);
+  color: var(--grey);
+`;
+
+const contentStyle = css`
+  margin: calc(2 * var(--small-margin)) 0;
+  font: var(--normal-font);
+  color: var(--black);
+`;
+
 const Writing: React.FC<WorkQuery> = ({ data, pageContext }) => {
   const { html, frontmatter } = data.markdownRemark;
 
   return (
     <Layout title={buildPageTitle(frontmatter.title)} description={''} slug={pageContext.slug}>
-      <h1>{frontmatter.title}</h1>
-      <p>{frontmatter.date}</p>
-      <div dangerouslySetInnerHTML={{ __html: html }} />
+      <article>
+        <h2 className={titleStyle}>{frontmatter.title}</h2>
+        <p className={dateStyle}>{frontmatter.date}</p>
+        <div className={contentStyle} dangerouslySetInnerHTML={{ __html: html }} />
+      </article>
     </Layout>
   );
 };
