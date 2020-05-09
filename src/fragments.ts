@@ -27,3 +27,14 @@ export const cv = graphql`
     }
   }
 `;
+
+export const work = graphql`
+  fragment work on MarkdownRemark {
+    id
+    html
+    frontmatter {
+      title
+      date: date(formatString: "MMMM DD, YYYY")
+    }
+  }
+`;

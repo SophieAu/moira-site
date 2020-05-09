@@ -7,9 +7,11 @@ export const BASE_TITLE = 'Moira Barrett';
 const toTitleCase = (str: string) =>
   str.length ? `${str.charAt(0).toUpperCase()}${str.slice(1)}` : str;
 
+export const buildPageTitle = (str: string) => `${toTitleCase(str)} | ${BASE_TITLE}`;
+
 const buildMetaData = (title: Titles) => ({
   title: toTitleCase(title),
-  pageTitle: `${toTitleCase(title)} | ${BASE_TITLE}`,
+  pageTitle: buildPageTitle(title),
   description: '',
   slug: slugs[title],
   path: paths[title],
