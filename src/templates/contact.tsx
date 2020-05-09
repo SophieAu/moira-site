@@ -15,6 +15,7 @@ export const query = graphql`
 `;
 
 const emailStyle = css`
+  margin: calc(2 * var(--small-margin)) 0;
   font: var(--normal-font);
   color: var(--black);
 `;

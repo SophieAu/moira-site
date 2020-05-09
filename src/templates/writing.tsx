@@ -25,6 +25,7 @@ const linkStyle = css`
 `;
 
 const metaStyle = css`
+  margin: 0.125rem 0 0;
   font: var(--meta-font);
   color: var(--grey);
 `;

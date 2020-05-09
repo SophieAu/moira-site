@@ -29,7 +29,6 @@ export const globals = css`
 export const reset = css`
   :global body,
   :global ul,
-  :global p,
   :global h1 {
     border: 0;
     list-style: none;
