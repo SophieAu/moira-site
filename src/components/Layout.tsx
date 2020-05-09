@@ -13,8 +13,7 @@ const body = css`
   display: grid;
   width: calc(100vw - 2 * var(--padding));
   max-width: 1600px;
-  margin: 0 max(0px, calc((100vw - 1600px) / 2));
-  padding-left: var(--padding);
+  padding: 0 0 0 var(--padding);
   grid-gap: var(--padding);
 
   ${MEDIA_DESKTOP} {
@@ -33,11 +32,10 @@ const body = css`
 
 const root = css`
   ${MEDIA_DESKTOP} {
-    padding: var(--padding) 0;
+    padding: var(--padding) max(calc(var(--padding) / 2), calc(var(--right-column) - 45rem)) 0 0;
     overflow-y: scroll;
     display: flex;
     flex-direction: column;
-    max-width: inherit;
   }
 `;
 
