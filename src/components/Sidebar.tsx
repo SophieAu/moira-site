@@ -3,10 +3,10 @@ import React from 'react';
 
 import { BASE_TITLE, Home, SubPages } from '../../data/strings';
 import Link from '../components/Link';
-import { MEDIA_DESKTOP, MEDIA_MOBILE } from '../styles';
+import { MEDIA_DESKTOP, MEDIA_MOBILE, SIDEBAR_WIDTH } from '../styles';
 
 const root = css`
-  width: 320px;
+  width: ${SIDEBAR_WIDTH}px;
   margin-top: var(--margin-top);
 
   ${MEDIA_DESKTOP} {
@@ -20,7 +20,7 @@ const root = css`
 
 const linkList = css`
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   margin-bottom: var(--small-margin);
 `;
 
@@ -33,6 +33,10 @@ const title = css`
 const navItem = css`
   font: var(--nav-font);
   color: var(--black);
+
+  &:not(:last-child) {
+    padding-right: 1.875rem;
+  }
 `;
 
 const inactive = css`

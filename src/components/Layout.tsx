@@ -2,7 +2,7 @@ import { css, cx } from 'linaria';
 import React from 'react';
 
 import bgPattern from '../../data/img/bg_pattern.png';
-import { globals, MEDIA_DESKTOP, MEDIA_MOBILE, reset } from '../styles';
+import { globals, MEDIA_DESKTOP, MEDIA_MOBILE, reset, SIDEBAR_WIDTH } from '../styles';
 import SEO from './SEO';
 import Sidebar from './Sidebar';
 
@@ -19,9 +19,9 @@ const body = css`
 
   ${MEDIA_DESKTOP} {
     --padding: var(--large-margin);
-    --right-column: calc(100vw - 2 * var(--padding) - 320px);
+    --right-column: calc(100vw - 2 * var(--padding) - ${SIDEBAR_WIDTH}px);
     height: 100vh;
-    grid-template-columns: 320px var(--right-column);
+    grid-template-columns: ${SIDEBAR_WIDTH}px var(--right-column);
   }
 
   ${MEDIA_MOBILE} {
