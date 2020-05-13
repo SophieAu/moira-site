@@ -26,7 +26,9 @@ const body = css`
   ${MEDIA_MOBILE} {
     --padding: var(--small-margin);
     grid-template-columns: 1fr;
+    min-height: calc(100vh - var(--padding));
     padding-bottom: var(--padding);
+    grid-template-rows: auto 1fr;
   }
 `;
 

@@ -27,6 +27,10 @@ export const globals = css`
 `;
 
 export const reset = css`
+  :global html {
+    background: #ecdbcb;
+  }
+
   :global body,
   :global ul,
   :global h1 {

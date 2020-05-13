@@ -5,6 +5,7 @@ import React from 'react';
 import { Writing as strings } from '../../data/strings';
 import Layout from '../components/Layout';
 import Link from '../components/Link';
+import { MEDIA_MOBILE } from '../styles';
 import { WritingQuery } from '../types';
 
 export const query = graphql`
@@ -17,6 +18,12 @@ export const query = graphql`
 
 const itemStyle = css`
   margin: calc(2 * var(--small-margin)) 0;
+
+  ${MEDIA_MOBILE} {
+    &:first-child {
+      margin: 0 0 calc(2 * var(--small-margin));
+    }
+  }
 `;
 
 const linkStyle = css`
