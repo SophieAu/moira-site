@@ -4,6 +4,7 @@ export const contact = graphql`
   fragment contact on MarkdownRemark {
     frontmatter {
       email
+      instagram
     }
   }
 `;

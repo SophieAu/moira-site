@@ -19,7 +19,8 @@ const buildMetaData = (title: Titles) => ({
 
 export const Home = buildMetaData('home');
 
-export const Contact = buildMetaData('contact');
+export const Contact = { ...buildMetaData('contact'), email: 'Email: ', instagram: 'Instagram: ' };
+export const INSTAGRAM_BASE = 'https://www.instagram.com/';
 
 export const Writing = buildMetaData('writing');
 
