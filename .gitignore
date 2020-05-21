@@ -1,8 +1,3 @@
-_non-code/
-
-# dotenv environment variables file
-.env
-
 # gatsby files
 .cache/
 public/
@@ -12,3 +7,5 @@ node_modules/
 # Mac files
 .DS_Store
 
+# assets
+_assets
