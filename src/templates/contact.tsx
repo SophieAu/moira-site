@@ -4,6 +4,7 @@ import React from 'react';
 
 import { Contact as strings, INSTAGRAM_BASE } from '../../data/strings';
 import Layout from '../components/Layout';
+import { MEDIA_DESKTOP } from '../styles';
 import { ContactQuery } from '../types';
 
 export const query = graphql`
@@ -18,10 +19,12 @@ const emailStyle = css`
   font: var(--normal-font);
   color: var(--black);
 
-  margin: calc(2 * var(--small-margin)) 0 0;
+  margin: 0 0 calc(2 * var(--small-margin));
 
-  :last-child {
-    margin: calc(2 * var(--small-margin)) 0;
+  ${MEDIA_DESKTOP} {
+    :first-child {
+      margin: calc(2 * var(--small-margin)) 0;
+    }
   }
 `;
 
@@ -30,14 +33,14 @@ const Contact: React.FC<ContactQuery> = ({ data }) => {
 
   return (
     <Layout title={strings.pageTitle} description={strings.description} slug={strings.slug}>
-      <span className={emailStyle}>
+      <p className={emailStyle}>
         {strings.email}
         <a href={`mailto:${email}`}>{email}</a>
-      </span>
-      <span className={emailStyle}>
+      </p>
+      <p className={emailStyle}>
         {strings.instagram}
         <a href={`${INSTAGRAM_BASE}${instagram}`}>{instagram}</a>
-      </span>
+      </p>
     </Layout>
   );
 };
