@@ -4,15 +4,10 @@
   "version": "0.1.0",
   "description": "Website for artist and translator Moira Barrett",
   "author": "Sophie Au <sophie@sophieau.com>",
-  "license": "MIT",
   "scripts": {
     "build": "GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=true gatsby build --log-pages",
     "prod": "gatsby build && gatsby serve",
-    "develop": "gatsby develop",
-    "start": "gatsby develop",
-    "serve": "gatsby serve",
     "format": "prettier --write '{src,data}/**/*.{tsx,ts}'",
-    "clean": "gatsby clean",
     "checks": "tsc && npm run lint",
     "lint": "eslint 'src/**/*.{tsx,ts,js,jsx}' --ignore-pattern '*.d.ts' --ignore-pattern 'src/assets/*' && stylelint 'src/**/*' --rd --risd",
     "stylelint": "stylelint '.' --rd --risd",
@@ -57,9 +52,5 @@
     "stylelint-config-standard": "^20.0.0",
     "stylelint-order": "^4.0.0",
     "typescript": "^3.9.3"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/SophieAu/spicy-sea-shells-site"
   }
 }
