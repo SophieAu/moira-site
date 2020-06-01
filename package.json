@@ -36,7 +36,7 @@
     "gatsby-transformer-remark": "^2.8.3",
     "gatsby-transformer-sharp": "^2.5.0",
     "linaria": "^2.0.0-alpha.2",
-    "netlify-cms-app": "^2.12.11",
+    "netlify-cms-app": "^2.12.13",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-helmet": "^5.2.1"
