@@ -58,7 +58,7 @@ const Layout: React.FC<Props> = props => {
   const { title, description, slug, additionalHead, children, className } = props;
 
   return (
-    <>
+    <React.StrictMode>
       <SEO title={title} description={description} slug={slug}>
         <link
           href="https://fonts.googleapis.com/css?family=Italiana&display=swap"
@@ -73,7 +73,7 @@ const Layout: React.FC<Props> = props => {
           <main className={cx(root, className)}>{children}</main>
         </div>
       </div>
-    </>
+    </React.StrictMode>
   );
 };
 
