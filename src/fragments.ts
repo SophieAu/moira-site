@@ -22,9 +22,7 @@ export const writing = graphql`
 
 export const cv = graphql`
   fragment cv on MarkdownRemark {
-    frontmatter {
-      cv
-    }
+    html
   }
 `;
 

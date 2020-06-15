@@ -14,18 +14,31 @@ export const query = graphql`
   }
 `;
 
-const placeholderStyle = css`
+const rootStyle = css`
   margin: calc(2 * var(--small-margin)) 0 0;
   font: var(--normal-font);
   color: var(--black);
+
+  li {
+    padding-bottom: 0.5rem;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+  }
+
+  li,
+  p {
+    font-size: 1rem;
+  }
 `;
 
 const Writing: React.FC<CVQuery> = ({ data }) => {
-  const { cv } = data.markdownRemark.frontmatter;
+  const { html } = data.markdownRemark;
 
   return (
     <Layout title={strings.pageTitle} description={strings.description} slug={strings.slug}>
-      <p className={placeholderStyle}>{cv}</p>
+      <div dangerouslySetInnerHTML={{ __html: html }} className={rootStyle} />
     </Layout>
   );
 };

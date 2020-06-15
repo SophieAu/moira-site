@@ -32,7 +32,6 @@ export const reset = css`
   }
 
   :global body,
-  :global ul,
   :global h1 {
     border: 0;
     list-style: none;

@@ -22,6 +22,11 @@ const linkList = css`
   display: flex;
   justify-content: flex-start;
   margin-bottom: var(--small-margin);
+
+  border: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 `;
 
 const title = css`

@@ -26,6 +26,13 @@ const itemStyle = css`
   }
 `;
 
+const listStyle = css`
+  border: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+`;
+
 const linkStyle = css`
   font: var(--normal-font);
   color: var(--black);
@@ -42,7 +49,7 @@ const Writing: React.FC<WritingQuery> = ({ data }) => {
 
   return (
     <Layout title={strings.pageTitle} description={strings.description} slug={strings.slug}>
-      <ul>
+      <ul className={listStyle}>
         {writing.map((item, i) => (
           <li key={i}>
             <article className={itemStyle}>
