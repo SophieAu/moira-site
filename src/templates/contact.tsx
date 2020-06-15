@@ -2,7 +2,7 @@ import { graphql } from 'gatsby';
 import { css } from 'linaria';
 import React from 'react';
 
-import { Contact as strings, INSTAGRAM_BASE } from '../../data/strings';
+import { Contact as strings } from '../../data/strings';
 import Layout from '../components/Layout';
 import { MEDIA_DESKTOP } from '../styles';
 import { ContactQuery } from '../types';
@@ -29,17 +29,13 @@ const emailStyle = css`
 `;
 
 const Contact: React.FC<ContactQuery> = ({ data }) => {
-  const { email, instagram } = data.markdownRemark.frontmatter;
+  const { email } = data.markdownRemark.frontmatter;
 
   return (
     <Layout title={strings.pageTitle} description={strings.description} slug={strings.slug}>
       <p className={emailStyle}>
         {strings.email}
         <a href={`mailto:${email}`}>{email}</a>
-      </p>
-      <p className={emailStyle}>
-        {strings.instagram}
-        <a href={`${INSTAGRAM_BASE}${instagram}`}>{instagram}</a>
       </p>
     </Layout>
   );
