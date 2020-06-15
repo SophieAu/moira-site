@@ -42,6 +42,13 @@ const navItem = css`
   &:not(:last-child) {
     padding-right: 1.875rem;
   }
+  a {
+    color: var(--black);
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
 `;
 
 const inactive = css`

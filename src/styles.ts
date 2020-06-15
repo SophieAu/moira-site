@@ -41,17 +41,18 @@ export const reset = css`
 
   :global a {
     color: var(--black);
-    text-decoration: none;
+
+    &:visited {
+      color: var(--black);
+    }
 
     &:hover {
-      text-decoration: underline;
+      color: var(--grey);
     }
+
     &:active {
       color: var(--black);
       text-decoration: underline;
-    }
-    &:visited {
-      color: inherit;
     }
   }
 `;
