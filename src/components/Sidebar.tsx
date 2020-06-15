@@ -9,6 +9,14 @@ const root = css`
   width: ${SIDEBAR_WIDTH}px;
   margin-top: var(--margin-top);
 
+  a {
+    color: var(--black);
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+
   ${MEDIA_DESKTOP} {
     --margin-top: 10vh;
   }
@@ -41,13 +49,6 @@ const navItem = css`
 
   &:not(:last-child) {
     padding-right: 1.875rem;
-  }
-  a {
-    color: var(--black);
-    text-decoration: none;
-  }
-  a:hover {
-    text-decoration: underline;
   }
 `;
 
