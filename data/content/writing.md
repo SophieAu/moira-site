@@ -20,6 +20,6 @@ writing:
     the sound of your voice in another language.'
 - title: Theory and Criticism
   link: https://www.livingcontent.online/interviews/hanne-lippard/
-  info: work posted here
+  info: https://www.livingcontent.online/interviews/kasia-fudakowski/
 
 ---
