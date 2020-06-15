@@ -19,7 +19,7 @@ writing:
     will be changed by the time your words reach me anyway I may as well listen to
     the sound of your voice in another language.'
 - title: Theory and Criticism
-  link: Moira Barrett and Hanne Lippard in Conversation https://www.livingcontent.online/interviews/hanne-lippard/
+  link: https://www.livingcontent.online/interviews/hanne-lippard/
   info: work posted here
 
 ---
