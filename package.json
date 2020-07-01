@@ -23,7 +23,7 @@
     "gatsby-plugin-netlify-cms": "^4.3.3",
     "gatsby-plugin-react-helmet": "^3.3.2",
     "gatsby-plugin-robots-txt": "^1.5.1",
-    "gatsby-plugin-sharp": "^2.6.9",
+    "gatsby-plugin-sharp": "^2.6.14",
     "gatsby-plugin-sitemap": "^2.4.3",
     "gatsby-plugin-typescript": "^2.4.3",
     "gatsby-remark-images": "^3.3.8",
