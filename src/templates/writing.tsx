@@ -65,4 +65,58 @@ const Writing: React.FC<WritingQuery> = ({ data }) => {
   );
 };
 
+const Categories = {
+  Writing: 'Writing',
+  Poetry: 'Poetry',
+  TaC: 'TaC',
+};
+
+const partitionWorks = data => {
+  const writing = data.filter(({ category }) => category === Categories.Writing);
+  const poetry = data.filter(({ category }) => category === Categories.Poetry);
+  const tac = data.filter(({ category }) => category === Categories.TaC);
+  const other = data.filter(
+    ({ category }) =>
+      category !== Categories.Writing &&
+      category !== Categories.Poetry &&
+      category !== Categories.TaC
+  );
+
+  return { writing, poetry, tac, other };
+};
+
+const WritingNew: React.FC<WritingQuery> = ({ data }) => {
+  const { writing, poetry, tac, other } = partitionWorks(data);
+
+  return (
+    <>
+      {writing.length && <WorksSection title="Writing" works={writing} />}
+      {poetry.length && <WorksSection title="Poetr" works={poetry} />}
+      {tac.length && <WorksSection title="Theory and Criticism" works={tac} />}
+      {other.length && <WorksSection title="Other" works={other} />}
+    </>
+  );
+};
+
+const WorksSection: React.FC<> = ({ title, works }) => (
+  <section>
+    <h2>{title}</h2>
+    {works.map(el => (
+      <WritingElem {...el} />
+    ))}
+  </section>
+);
+
+const WritingListElem = () => {
+  const { title, link, isSubpage, metainfo, text } = props;
+
+  return (
+    <>
+      {(link || isSubpage) && <a href={link || buildSlug(title)}>{title}</a>}
+      {!link && !isSubpage && <p>{title}</p>}
+      <p>{metainfo}</p>
+      {!isSubpage && <article>{text}</article>}
+    </>
+  );
+};
 export default Writing;

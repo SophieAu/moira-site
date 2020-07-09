@@ -49,37 +49,3 @@ Writing
 Poetry
 
 Theory and Criticism
-
-```js
-
-const List = () => {
-  // use reduce here by category
-  const {writing, poetry, tac, other} = partitionWorks(thingy)
-
-
-
-  return (
-    writing.map(el => {
-
-  })
-
-}
-
-const WritingListElem = () => {
-  const {
-    title,
-    link,
-    isSubpage
-    metainfo,
-    text,
-  } = props
-
- return (
-    {(link || isSubpage) && <a href={link ||| buildSlug(title)}>{title}</a>}
-    {(!link && !isSubpage) && <p>{title}</p>}
-    <p>{metainfo}</p>
-    {!isSubpage && <article>{text}</article>}
-  )
-}
-
-```
