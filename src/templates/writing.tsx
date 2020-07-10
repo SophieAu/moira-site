@@ -1,122 +1,91 @@
 import { graphql } from 'gatsby';
-import { css } from 'linaria';
 import React from 'react';
 
 import { Writing as strings } from '../../data/strings';
 import Layout from '../components/Layout';
 import Link from '../components/Link';
-import { MEDIA_MOBILE } from '../styles';
-import { WritingQuery } from '../types';
+import { Work, WorksQuery } from '../types';
+import * as style from './writing.style.ts';
 
 export const query = graphql`
-  query($id: String!) {
-    markdownRemark(id: { eq: $id }) {
-      ...writing
+  query {
+    allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/data/content/works/" } }) {
+      ...works
     }
   }
 `;
 
-const itemStyle = css`
-  margin: calc(2 * var(--small-margin)) 0;
+const transformData = ({ data }: WorksQuery) => {
+  const workData = data.allMarkdownRemark.edges.map(({ node }) => ({
+    ...node.frontmatter,
+    text: node.html,
+  }));
 
-  ${MEDIA_MOBILE} {
-    &:first-child {
-      margin: 0 0 calc(2 * var(--small-margin));
+  const emptyCleanData = {
+    writing: [] as Work[],
+    poetry: [] as Work[],
+    tac: [] as Work[],
+    other: [] as Work[],
+  };
+
+  const partitionedData = workData.reduce((arr, _work) => {
+    let link = _work.link || '';
+    if (_work.isSubpage) {
+      const slug = _work.title
+        .toLowerCase()
+        .replace(/\s/g, '-')
+        .replace(/[^\w-]/g, '')
+        .replace(/(-+)/g, '-');
+
+      link = `/work/${slug}`;
     }
-  }
-`;
+    const work = { ..._work, link };
 
-const listStyle = css`
-  border: 0;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-`;
+    if (work.category === 'Writing') arr.writing.push(work);
+    else if (work.category === 'Poetry') arr.poetry.push(work);
+    else if (work.category === 'Theory and Criticism') arr.tac.push(work);
+    else arr.other.push(work);
 
-const linkStyle = css`
-  font: var(--normal-font);
-  color: var(--black);
-`;
+    return arr;
+  }, emptyCleanData);
 
-const metaStyle = css`
-  margin: 0.125rem 0 0;
-  font: var(--meta-font);
-  color: var(--grey);
-`;
+  return partitionedData;
+};
 
-const Writing: React.FC<WritingQuery> = ({ data }) => {
-  const { writing } = data.markdownRemark.frontmatter;
+const Writing: React.FC<WorksQuery> = data => {
+  const { writing, poetry, tac, other } = transformData(data);
 
   return (
     <Layout title={strings.pageTitle} description={strings.description} slug={strings.slug}>
-      <ul className={listStyle}>
-        {writing.map((item, i) => (
-          <li key={i}>
-            <article className={itemStyle}>
-              <Link to={item.link} className={linkStyle}>
-                {item.title}
-              </Link>
-              <p className={metaStyle}>{item.info}</p>
-            </article>
-          </li>
-        ))}
-      </ul>
+      {!!writing.length && <WorksSection title="Writing" works={writing} />}
+      {!!poetry.length && <WorksSection title="Poetry" works={poetry} />}
+      {!!tac.length && <WorksSection title="Theory and Criticism" works={tac} />}
+      {!!other.length && <WorksSection title="Other" works={other} />}
     </Layout>
   );
 };
 
-const Categories = {
-  Writing: 'Writing',
-  Poetry: 'Poetry',
-  TaC: 'TaC',
-};
-
-const partitionWorks = data => {
-  const writing = data.filter(({ category }) => category === Categories.Writing);
-  const poetry = data.filter(({ category }) => category === Categories.Poetry);
-  const tac = data.filter(({ category }) => category === Categories.TaC);
-  const other = data.filter(
-    ({ category }) =>
-      category !== Categories.Writing &&
-      category !== Categories.Poetry &&
-      category !== Categories.TaC
-  );
-
-  return { writing, poetry, tac, other };
-};
-
-const WritingNew: React.FC<WritingQuery> = ({ data }) => {
-  const { writing, poetry, tac, other } = partitionWorks(data);
-
-  return (
-    <>
-      {writing.length && <WorksSection title="Writing" works={writing} />}
-      {poetry.length && <WorksSection title="Poetr" works={poetry} />}
-      {tac.length && <WorksSection title="Theory and Criticism" works={tac} />}
-      {other.length && <WorksSection title="Other" works={other} />}
-    </>
-  );
-};
-
-const WorksSection: React.FC<> = ({ title, works }) => (
+const WorksSection: React.FC<{ title: string; works: Work[] }> = ({ title, works }) => (
   <section>
     <h2>{title}</h2>
-    {works.map(el => (
-      <WritingElem {...el} />
-    ))}
+    <ul className={style.list}>
+      {works.map((work, i) => (
+        <li key={i}>
+          <article className={style.item}>
+            {!!work.link ? (
+              <Link to={work.link} className={style.link}>
+                {work.title}
+              </Link>
+            ) : (
+              <p className={style.link}>{work.title}</p>
+            )}
+            <p className={style.meta}>{work.metainfo}</p>
+            {!work.isSubpage && <div>{work.text}</div>}
+          </article>
+        </li>
+      ))}
+    </ul>
   </section>
 );
 
-const WritingListElem = () => {
-  const { title, link, isSubpage, metainfo, text } = props;
-
-  return (
-    <>
-      {(link || isSubpage) && <a href={link || buildSlug(title)}>{title}</a>}
-      {!link && !isSubpage && <p>{title}</p>}
-      <p>{metainfo}</p>
-      {!isSubpage && <article>{text}</article>}
-    </>
-  );
-};
 export default Writing;

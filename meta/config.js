@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/camelcase */
+//@ts-check
 
 const hiddenPages = [];
 

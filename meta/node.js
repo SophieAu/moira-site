@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
+//@ts-check
 
 exports.PAGES_QUERY = `
   {
@@ -29,6 +30,7 @@ exports.PAGES_QUERY = `
         id
         frontmatter {
           title
+          isSubpage
         }
       }
     }

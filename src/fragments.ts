@@ -32,7 +32,24 @@ export const work = graphql`
     html
     frontmatter {
       title
-      date: date(formatString: "MMMM DD, YYYY")
+    }
+  }
+`;
+
+export const works = graphql`
+  fragment works on MarkdownRemarkConnection {
+    edges {
+      node {
+        id
+        html
+        frontmatter {
+          title
+          link
+          metainfo
+          isSubpage
+          category
+        }
+      }
     }
   }
 `;

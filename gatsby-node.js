@@ -1,4 +1,6 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
+//@ts-check
+
 const { resolve } = require(`path`);
 const { PAGES_QUERY } = require('./meta/node');
 
@@ -21,6 +23,8 @@ exports.createPages = async ({ graphql, actions }) => {
     const component = resolve(`./src/templates/${path}.tsx`);
 
     result.data[path].edges.forEach(({ node: { id, frontmatter } }) => {
+      if (!frontmatter.isSubpage) return;
+
       const slug = frontmatter.title
         .toLowerCase()
         .replace(/\s/g, '-')

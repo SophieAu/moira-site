@@ -1,4 +1,6 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
+//@ts-check
+
 const {
   siteMetadata,
   cspOptions,

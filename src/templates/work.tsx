@@ -19,12 +19,6 @@ const titleStyle = css`
   color: var(--black);
 `;
 
-const dateStyle = css`
-  margin: 0;
-  font: var(--meta-font);
-  color: var(--grey);
-`;
-
 const contentStyle = css`
   margin: calc(2 * var(--small-margin)) 0;
   font: var(--normal-font);
@@ -38,7 +32,6 @@ const Writing: React.FC<WorkQuery> = ({ data, pageContext }) => {
     <Layout title={buildPageTitle(frontmatter.title)} description={''} slug={pageContext.slug}>
       <article>
         <h2 className={titleStyle}>{frontmatter.title}</h2>
-        <p className={dateStyle}>{frontmatter.date}</p>
         <div className={contentStyle} dangerouslySetInnerHTML={{ __html: html }} />
       </article>
     </Layout>
