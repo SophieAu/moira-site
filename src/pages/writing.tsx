@@ -16,7 +16,11 @@ export const query = graphql`
   }
 `;
 
-export const itemStyle = css`
+const sectionStyle = css`
+  font: var(--normal-font);
+`;
+
+const itemStyle = css`
   margin: calc(2 * var(--small-margin)) 0;
 
   ${MEDIA_MOBILE} {
@@ -26,22 +30,28 @@ export const itemStyle = css`
   }
 `;
 
-export const listStyle = css`
+const listStyle = css`
   border: 0;
   list-style: none;
   margin: 0;
   padding: 0;
 `;
 
-export const linkStyle = css`
+const linkStyle = css`
   color: var(--black);
   font: var(--normal-font);
 `;
 
-export const metaStyle = css`
+const metaStyle = css`
   color: var(--grey);
   font: var(--meta-font);
-  margin: 0.125rem 0 0;
+  margin: 0.5rem 0 0;
+`;
+
+const contentStyle = css`
+  color: var(--black);
+  font: var(--normal-font);
+  font-size: 1.25rem;
 `;
 
 const transformData = ({ data }: WorksQuery) => {
@@ -95,7 +105,7 @@ const Writing: React.FC<WorksQuery> = data => {
 };
 
 const WorksSection: React.FC<{ title: string; works: Work[] }> = ({ title, works }) => (
-  <section>
+  <section className={sectionStyle}>
     <h2>{title}</h2>
     <ul className={listStyle}>
       {works.map((work, i) => (
@@ -108,8 +118,10 @@ const WorksSection: React.FC<{ title: string; works: Work[] }> = ({ title, works
             ) : (
               <p className={linkStyle}>{work.title}</p>
             )}
-            <p className={metaStyle}>{work.metainfo}</p>
-            {!work.isSubpage && <div>{work.text}</div>}
+            {work.metainfo && <p className={metaStyle}>{work.metainfo}</p>}
+            {!work.isSubpage && (
+              <div dangerouslySetInnerHTML={{ __html: work.text }} className={contentStyle} />
+            )}
           </article>
         </li>
       ))}
