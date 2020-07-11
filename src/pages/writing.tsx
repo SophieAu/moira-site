@@ -1,11 +1,12 @@
 import { graphql } from 'gatsby';
+import { css } from 'linaria';
 import React from 'react';
 
 import { Writing as strings } from '../../data/strings';
 import Layout from '../components/Layout';
 import Link from '../components/Link';
+import { MEDIA_MOBILE } from '../styles';
 import { Work, WorksQuery } from '../types';
-import * as style from './writing.style.ts';
 
 export const query = graphql`
   query {
@@ -13,6 +14,34 @@ export const query = graphql`
       ...works
     }
   }
+`;
+
+export const itemStyle = css`
+  margin: calc(2 * var(--small-margin)) 0;
+
+  ${MEDIA_MOBILE} {
+    &:first-child {
+      margin: 0 0 calc(2 * var(--small-margin));
+    }
+  }
+`;
+
+export const listStyle = css`
+  border: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+`;
+
+export const linkStyle = css`
+  color: var(--black);
+  font: var(--normal-font);
+`;
+
+export const metaStyle = css`
+  color: var(--grey);
+  font: var(--meta-font);
+  margin: 0.125rem 0 0;
 `;
 
 const transformData = ({ data }: WorksQuery) => {
@@ -68,18 +97,18 @@ const Writing: React.FC<WorksQuery> = data => {
 const WorksSection: React.FC<{ title: string; works: Work[] }> = ({ title, works }) => (
   <section>
     <h2>{title}</h2>
-    <ul className={style.list}>
+    <ul className={listStyle}>
       {works.map((work, i) => (
         <li key={i}>
-          <article className={style.item}>
+          <article className={itemStyle}>
             {!!work.link ? (
-              <Link to={work.link} className={style.link}>
+              <Link to={work.link} className={linkStyle}>
                 {work.title}
               </Link>
             ) : (
-              <p className={style.link}>{work.title}</p>
+              <p className={linkStyle}>{work.title}</p>
             )}
-            <p className={style.meta}>{work.metainfo}</p>
+            <p className={metaStyle}>{work.metainfo}</p>
             {!work.isSubpage && <div>{work.text}</div>}
           </article>
         </li>

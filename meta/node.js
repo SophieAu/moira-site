@@ -10,13 +10,6 @@ exports.PAGES_QUERY = `
       }
     }
   }
-  writing: allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/data\/content\/writing/"}}) {
-    edges {
-      node {
-        id
-      }
-    }
-  }
   cv: allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/data\/content\/cv/"}}) {
     edges {
       node {

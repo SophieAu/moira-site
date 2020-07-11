@@ -39,9 +39,6 @@ exports.createPages = async ({ graphql, actions }) => {
   console.log('Building Contact page...');
   buildPage('contact');
 
-  console.log('Building Writing page...');
-  buildPage('writing');
-
   console.log('Building CV page...');
   buildPage('cv');
 

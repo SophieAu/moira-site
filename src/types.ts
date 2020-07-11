@@ -9,19 +9,9 @@ type BaseQuery<T> = {
 
 export type ContactQuery = BaseQuery<{}>;
 export type CVQuery = BaseQuery<{ cv: string }>;
-export type WritingQuery = BaseQuery<{ writing: WorkFrontmatter[] }>;
 
-export type WorkQuery = {
-  data: {
-    markdownRemark: {
-      frontmatter: WorkFrontmatter;
-      html: string;
-    };
-  };
-  pageContext: {
-    slug: string;
-  };
-};
+// Works-related Types
+export type Category = 'Writing' | 'Poetry' | 'Theory and Criticism' | 'Other';
 
 export type WorkFrontmatter = {
   title: string;
@@ -31,7 +21,9 @@ export type WorkFrontmatter = {
   category: Category;
 };
 
-export type Category = 'Writing' | 'Poetry' | 'Theory and Criticism' | 'Other';
+export interface Work extends WorkFrontmatter {
+  text: string;
+}
 
 export type WorksQuery = {
   data: {
@@ -47,6 +39,8 @@ export type WorksQuery = {
   };
 };
 
-export interface Work extends WorkFrontmatter {
-  text: string;
+export interface WorkQuery extends BaseQuery<WorkFrontmatter> {
+  pageContext: {
+    slug: string;
+  };
 }
