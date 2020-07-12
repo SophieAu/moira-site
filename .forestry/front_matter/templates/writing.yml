@@ -15,5 +15,3 @@ fields:
   - type: text
     name: info
     label: info
-pages:
-- data/content/writing.md

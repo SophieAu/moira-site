@@ -22,9 +22,9 @@ fields:
     source:
       type: custom
     options:
-        - "Writing"
-        - "Poetry"
-        - "Theory and Criticism"
-        - "Other"
+    - Writing
+    - Poetry
+    - Theory and Criticism
+    - Other
 pages:
-- data/content/works/**.md
+- data/content/works/test.md
