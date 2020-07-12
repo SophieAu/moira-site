@@ -16,7 +16,7 @@ fields:
   default: true
   label: Create Subpage
 - name: category
-  type: text
+  type: select
   label: Category
   config:
     source:
