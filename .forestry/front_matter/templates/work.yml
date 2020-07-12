@@ -12,7 +12,7 @@ fields:
   type: text
   label: Metainfo
 - name: isSubpage
-  type: toggle
+  type: boolean
   default: true
   label: Create Subpage
 - name: category
