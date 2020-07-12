@@ -1,0 +1,30 @@
+---
+label: Work
+hide_body: false
+fields:
+- name: title
+  type: text
+  label: Title
+- name: link
+  type: text
+  label: External Link
+- name: metainfo
+  type: text
+  label: Metainfo
+- name: isSubpage
+  type: toggle
+  default: true
+  label: Create Subpage
+- name: category
+  type: text
+  label: Category
+  config:
+    source:
+      type: custom
+    options:
+        - "Writing"
+        - "Poetry"
+        - "Theory and Criticism"
+        - "Other"
+pages:
+- data/content/works/**.md

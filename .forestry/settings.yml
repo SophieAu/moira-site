@@ -9,6 +9,8 @@ sections:
   label: Works
   create: documents
   match: "**/*"
+  templates:
+  - work
 - type: document
   path: data/content/cv.md
   label: CV
