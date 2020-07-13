@@ -11,7 +11,7 @@ export type ContactQuery = BaseQuery<{}>;
 export type CVQuery = BaseQuery<{ cv: string }>;
 
 // Works-related Types
-export type Category = 'Writing' | 'Poetry' | 'Theory and Criticism' | 'Other';
+export type Category = 'Fiction' | 'Poetry' | 'Theory and Criticism' | 'Other';
 
 export type WorkFrontmatter = {
   title: string;

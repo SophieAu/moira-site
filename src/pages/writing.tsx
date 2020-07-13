@@ -61,7 +61,7 @@ const transformData = ({ data }: WorksQuery) => {
   }));
 
   const emptyCleanData = {
-    writing: [] as Work[],
+    fiction: [] as Work[],
     poetry: [] as Work[],
     tac: [] as Work[],
     other: [] as Work[],
@@ -80,7 +80,7 @@ const transformData = ({ data }: WorksQuery) => {
     }
     const work = { ..._work, link };
 
-    if (work.category === 'Writing') arr.writing.push(work);
+    if (work.category === 'Fiction') arr.fiction.push(work);
     else if (work.category === 'Poetry') arr.poetry.push(work);
     else if (work.category === 'Theory and Criticism') arr.tac.push(work);
     else arr.other.push(work);
@@ -92,12 +92,12 @@ const transformData = ({ data }: WorksQuery) => {
 };
 
 const Writing: React.FC<WorksQuery> = data => {
-  const { writing, poetry, tac, other } = transformData(data);
+  const { fiction, poetry, tac, other } = transformData(data);
 
   return (
     <Layout title={strings.pageTitle} description={strings.description} slug={strings.slug}>
-      {!!writing.length && <WorksSection title="Writing" works={writing} />}
       {!!poetry.length && <WorksSection title="Poetry" works={poetry} />}
+      {!!fiction.length && <WorksSection title="Fiction" works={fiction} />}
       {!!tac.length && <WorksSection title="Theory and Criticism" works={tac} />}
       {!!other.length && <WorksSection title="Other" works={other} />}
     </Layout>

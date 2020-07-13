@@ -22,7 +22,7 @@ fields:
     source:
       type: custom
     options:
-    - Writing
+    - Fiction
     - Poetry
     - Theory and Criticism
     - Other
