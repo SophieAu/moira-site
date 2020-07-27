@@ -5,7 +5,6 @@ import React from 'react';
 import { Writing as strings } from '../../data/strings';
 import Layout from '../components/Layout';
 import Link from '../components/Link';
-import { MEDIA_MOBILE } from '../styles';
 import { Work, WorksQuery } from '../types';
 
 export const query = graphql`
@@ -23,11 +22,14 @@ const sectionStyle = css`
 const itemStyle = css`
   margin: calc(2 * var(--small-margin)) 0;
 
-  ${MEDIA_MOBILE} {
-    &:first-child {
-      margin: 0 0 calc(2 * var(--small-margin));
-    }
+  &:first-child {
+    margin: 0 0 calc(2 * var(--small-margin));
   }
+`;
+
+const headerStyle = css`
+  font-size: 1.5rem;
+  margin-bottom: 0.25rem;
 `;
 
 const listStyle = css`
@@ -40,6 +42,7 @@ const listStyle = css`
 const linkStyle = css`
   color: var(--black);
   font: var(--normal-font);
+  font-size: 1.25rem;
 `;
 
 const metaStyle = css`
@@ -51,7 +54,7 @@ const metaStyle = css`
 const contentStyle = css`
   color: var(--black);
   font: var(--normal-font);
-  font-size: 1.25rem;
+  font-size: 1rem;
 `;
 
 const transformData = ({ data }: WorksQuery) => {
@@ -106,7 +109,7 @@ const Writing: React.FC<WorksQuery> = data => {
 
 const WorksSection: React.FC<{ title: string; works: Work[] }> = ({ title, works }) => (
   <section className={sectionStyle}>
-    <h2>{title}</h2>
+    <h2 className={headerStyle}>{title}</h2>
     <ul className={listStyle}>
       {works.map((work, i) => (
         <li key={i}>
