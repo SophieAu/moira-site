@@ -1,35 +1,41 @@
 ---
-title: "a love of white noise"
-link: ""
-metainfo: ""
+title: A morning made in your image
+link: ''
+metainfo: ''
 isSubpage: false
 category: Poetry
+
 ---
+Coffee, shower, local news
 
-not to be consumed, but to be surrounded
+Ritual only conjures you,
 
-I can ask you to just lie on top and be heavy, but in the end
+truant.
 
-nothing holds me like the ocean roar of anonymity  
-where there is no projection upon, just a surrounding of
+Your outline flickers in the morning drizzle and
 
-no room for misunderstanding, just perfect dispersion around a solid object:
+stiff or sweet?
 
-the foam when a wave hits a rock  
-the static when your raised arm interferes with the radio signal
+It hovers there,
 
-a moving mold, never to be outgrown.
+outside my window
 
-When the operator puts me on hold, when the phone call gets distorted.  
-When the boundary blurs and dilates to hold me  
-I go home.
+crook of my neck
 
-Maybe I love the space between us too much to open all the way up except for special occasion penetration
+sore spot of my swollen daybreak
 
-lately I feel it snuggling up again, pink cottony insulation  
-my first friend, how could I discard it?
+Your outline ripples on the fire escape
 
-I was raised on distance so I learned to be nourished by it,
+any minute you’ll waft inside
 
-and since the meaning will be changed by the time your words reach me anyway  
-I may as well listen to the sound of your voice in another language.
+seep under my faulty skull and
+
+trickle down my throat
+
+to pool behind my ribcage.
+
+You’ll ebb and flow there,
+
+lapping at my backbone
+
+all day long.
