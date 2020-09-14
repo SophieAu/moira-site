@@ -1,3 +1,4 @@
 ---
-email: moira@moira-barrett.com
+email: bmoirabarrett@gmail.com
+
 ---
