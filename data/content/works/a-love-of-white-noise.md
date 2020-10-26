@@ -6,7 +6,7 @@ isSubpage: false
 category: Poetry
 
 ---
-I can ask someone to get on top and lie there, heavy  
+I can ask him to get on top and lie there, heavy  
 but nothing proves I am solid  
 and _can_ force transformation  
 like the ocean roar of anonymity  
