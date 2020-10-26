@@ -1,9 +1,9 @@
 ---
-title: The absence of desire in my grandmother’s bedroom
+title: The absence of desire in my grandmother’s bedroom (excerpt)
 link: ''
 metainfo: ''
 isSubpage: false
-category: ''
+category: Fiction
 
 ---
 When you wake up in Grandmother’s bed you turn your head to look out of the sliding glass door, through the trees and over the water of Hull Creek. Very early on the second morning between her death and her funeral, I see a group of wild geese floating on the water in the dim light, facing the house. They appear to be paying their respects, and watching over the land in this moment of leaderless stillness.
