@@ -20,10 +20,14 @@ exports.createPages = async ({ graphql, actions }) => {
   };
 
   const buildWorks = path => {
+    try{
     const component = resolve(`./src/templates/${path}.tsx`);
 
+    console.log("path", path)
     result.data[path].edges.forEach(({ node: { id, frontmatter } }) => {
+      console.log("maybes")
       if (!frontmatter.isSubpage) return;
+      console.log("woop")
 
       const slug = frontmatter.title
         .toLowerCase()
@@ -33,7 +37,10 @@ exports.createPages = async ({ graphql, actions }) => {
 
       actions.createPage({ path: `${path}/${slug}`, component, context: { slug, id: id } });
       console.log(frontmatter.title);
-    });
+    });}
+    catch(e) {
+      console.log("oh noes", e)
+    }
   };
 
   console.log('Building Contact page...');

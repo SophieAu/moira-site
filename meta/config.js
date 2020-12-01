@@ -37,9 +37,3 @@ exports.sitemapOptions = { exclude: hiddenPages };
 
 exports.filesystemContentOptions = { name: `content`, path: `${__dirname}/../data/content` };
 exports.filesystemImageOptions = { name: `images`, path: `${__dirname}/../data/img` };
-
-exports.transformerRemarkOptions = {
-  plugins: [
-    { resolve: 'gatsby-remark-images', options: { maxWidth: 970, quality: 90, withWebp: true } },
-  ],
-};
