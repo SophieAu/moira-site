@@ -1,7 +1,7 @@
 import { css, cx } from 'linaria';
 import React from 'react';
 
-import { BASE_TITLE, Home, SubPages } from '../../data/strings';
+import { BASE_TITLE, Home, pages, writingPages } from '../../data/strings';
 import Link from '../components/Link';
 import { MEDIA_DESKTOP, MEDIA_MOBILE, SIDEBAR_WIDTH } from '../styles';
 
@@ -52,34 +52,67 @@ const navItem = css`
   }
 `;
 
-const inactive = css`
-  color: var(--grey);
+const writingStyle = css`
+  p {
+    margin: 0;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+
+    position: absolute;
+    height: 0;
+    overflow: hidden;
+  }
+
+  li {
+    border: 0;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &:focus-within,
+  &:hover {
+    ul {
+      padding: 1rem 0 0;
+      display: flex;
+      flex-direction: row;
+      height: auto;
+
+      overflow: unset;
+    }
+  }
 `;
 
-interface Props {
-  currentPage: string;
-}
-
-const Sidebar: React.FC<Props> = ({ currentPage }) => {
-  const onHomePage = SubPages.findIndex(page => page.slug === currentPage) === -1;
-  const isActivePage = (slug: string) => onHomePage || currentPage === slug;
-
-  return (
-    <header className={root}>
-      <h1 className={title}>
-        <Link to={Home.path}>{BASE_TITLE}</Link>
-      </h1>
-      <nav>
-        <ul className={linkList}>
-          {SubPages.map(page => (
-            <li key={page.slug} className={cx(navItem, !isActivePage(page.slug) && inactive)}>
+const Sidebar: React.FC = () => (
+  <header className={root}>
+    <h1 className={title}>
+      <Link to={Home.path}>{BASE_TITLE}</Link>
+    </h1>
+    <nav>
+      <ul className={linkList}>
+        <>
+          <li key={writingPages.title} className={cx(navItem, writingStyle)}>
+            <p>{writingPages.title}</p>
+            <ul>
+              {writingPages.pages.map(page => (
+                <li key={page.slug} className={navItem}>
+                  <Link to={page.path}>{page.title}</Link>
+                </li>
+              ))}
+            </ul>
+          </li>
+          {pages.map(page => (
+            <li key={page.slug} className={navItem}>
               <Link to={page.path}>{page.title}</Link>
             </li>
           ))}
-        </ul>
-      </nav>
-    </header>
-  );
-};
+        </>
+      </ul>
+    </nav>
+  </header>
+);
 
 export default Sidebar;

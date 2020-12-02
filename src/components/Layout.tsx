@@ -69,7 +69,7 @@ const Layout: React.FC<Props> = props => {
       </SEO>
       <div className={wrapper}>
         <div className={cx(body, globals, reset)}>
-          <Sidebar currentPage={slug} />
+          <Sidebar />
           <main className={cx(root, className)}>{children}</main>
         </div>
       </div>
