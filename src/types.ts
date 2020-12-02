@@ -7,7 +7,7 @@ type BaseQuery<T> = {
   };
 };
 
-export type ContactQuery = BaseQuery<{}>;
+export type ContactQuery = BaseQuery<{ email: string }>;
 export type CVQuery = BaseQuery<{ cv: string }>;
 
 // Works-related Types

@@ -1,15 +1,12 @@
 export const slugs = {
   contact: 'contact',
   home: '',
-  writing: 'writing',
   cv: 'cv',
+  poetry: 'poetry',
+  fiction: 'fiction',
+  'theory-and-criticism': 'theory-and-criticism',
 };
 
-export const paths = {
-  contact: `/${slugs.contact}`,
-  home: `/`,
-  writing: `/${slugs.writing}`,
-  cv: `/${slugs.cv}`,
-};
+export const path = (slug: keyof typeof slugs) => `/${slug}`;
 
 export const BASE_URL = 'https://moira-barrett.com';

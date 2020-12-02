@@ -2,7 +2,7 @@ import { graphql } from 'gatsby';
 import { css } from 'linaria';
 import React from 'react';
 
-import { Writing as strings } from '../../data/strings';
+import { Fiction as strings } from '../../data/strings';
 import Layout from '../components/Layout';
 import Link from '../components/Link';
 import { Work, WorksQuery } from '../types';
@@ -95,14 +95,11 @@ const transformData = ({ data }: WorksQuery) => {
 };
 
 const Writing: React.FC<WorksQuery> = data => {
-  const { fiction, poetry, tac, other } = transformData(data);
+  const { fiction } = transformData(data);
 
   return (
     <Layout title={strings.pageTitle} description={strings.description} slug={strings.slug}>
-      {!!poetry.length && <WorksSection title="Poetry" works={poetry} />}
       {!!fiction.length && <WorksSection title="Fiction" works={fiction} />}
-      {!!tac.length && <WorksSection title="Theory and Criticism" works={tac} />}
-      {!!other.length && <WorksSection title="Other" works={other} />}
     </Layout>
   );
 };

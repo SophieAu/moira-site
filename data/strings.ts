@@ -1,6 +1,4 @@
-import { paths, slugs } from './config';
-
-type Titles = 'contact' | 'writing' | 'home' | 'cv';
+import { path, slugs } from './config';
 
 export const BASE_TITLE = 'Moira Barrett';
 
@@ -9,20 +7,23 @@ const toTitleCase = (str: string) =>
 
 export const buildPageTitle = (str: string) => `${toTitleCase(str)} | ${BASE_TITLE}`;
 
-const buildMetaData = (title: Titles) => ({
-  title: toTitleCase(title),
-  pageTitle: buildPageTitle(title),
+const buildMetaData = (title: keyof typeof slugs, stringTitle?: string) => ({
+  title: toTitleCase(stringTitle || title),
+  pageTitle: buildPageTitle(stringTitle || title),
   description: '',
   slug: slugs[title],
-  path: paths[title],
+  path: path(title),
 });
 
 export const Home = buildMetaData('home');
 
 export const Contact = { ...buildMetaData('contact'), email: 'Email: ' };
 
-export const Writing = buildMetaData('writing');
+export const Poetry = buildMetaData('poetry');
+export const Fiction = buildMetaData('fiction');
+export const TaC = buildMetaData('theory-and-criticism', 'Theory and Criticism');
 
-export const CV = { ...buildMetaData('cv'), title: 'CV', pageTitle: `CV | ${BASE_TITLE}` };
+export const CV = buildMetaData('cv', 'CV');
 
-export const SubPages = [Writing, CV, Contact];
+export const pages = [CV, Contact];
+export const writingPages = { title: 'Writing', pages: [Poetry, Fiction, TaC] };
