@@ -52,30 +52,23 @@ const navItem = css`
   }
 `;
 
-const writingStyle = css`
+const dropdown = css`
+  margin: 0;
+  padding: 0;
+
+  position: absolute;
+  height: 0;
+  overflow: hidden;
+`;
+
+const dropdownParent = css`
   p {
     margin: 0;
   }
 
-  ul {
-    margin: 0;
-    padding: 0;
-
-    position: absolute;
-    height: 0;
-    overflow: hidden;
-  }
-
-  li {
-    border: 0;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-
   &:focus-within,
   &:hover {
-    ul {
+    .${dropdown} {
       padding: 1rem 0 0;
       display: flex;
       flex-direction: row;
@@ -86,6 +79,29 @@ const writingStyle = css`
   }
 `;
 
+interface NavItemProps {
+  title: string;
+  slug: string;
+  path: string;
+}
+
+const NavItem: React.FC<NavItemProps> = props => (
+  <li key={props.slug} className={navItem}>
+    <Link to={props.path}>{props.title}</Link>
+  </li>
+);
+
+const Writing: React.FC = () => (
+  <li key={writingPages.title} className={cx(navItem, dropdownParent)}>
+    <p>{writingPages.title}</p>
+    <ul className={cx(linkList, dropdown)}>
+      {writingPages.pages.map(page => (
+        <NavItem key={page.slug} {...page} />
+      ))}
+    </ul>
+  </li>
+);
+
 const Sidebar: React.FC = () => (
   <header className={root}>
     <h1 className={title}>
@@ -93,23 +109,10 @@ const Sidebar: React.FC = () => (
     </h1>
     <nav>
       <ul className={linkList}>
-        <>
-          <li key={writingPages.title} className={cx(navItem, writingStyle)}>
-            <p>{writingPages.title}</p>
-            <ul>
-              {writingPages.pages.map(page => (
-                <li key={page.slug} className={navItem}>
-                  <Link to={page.path}>{page.title}</Link>
-                </li>
-              ))}
-            </ul>
-          </li>
-          {pages.map(page => (
-            <li key={page.slug} className={navItem}>
-              <Link to={page.path}>{page.title}</Link>
-            </li>
-          ))}
-        </>
+        <Writing />
+        {pages.map(page => (
+          <NavItem key={page.slug} {...page} />
+        ))}
       </ul>
     </nav>
   </header>
