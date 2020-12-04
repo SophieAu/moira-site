@@ -1,5 +1,5 @@
 ---
-title: Legacy
+title: ''
 link: ''
 metainfo: ''
 isSubpage: false
