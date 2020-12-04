@@ -1,9 +1,8 @@
 ---
 title: Legacy
-link: ''
+link: https://www.wepsert.de/artikel/poetry-moira-barrett
 metainfo: ''
 isSubpage: false
 category: Poetry
 
 ---
-[https://www.wepsert.de/artikel/poetry-moira-barrett](https://www.wepsert.de/artikel/poetry-moira-barrett "https://www.wepsert.de/artikel/poetry-moira-barrett")
