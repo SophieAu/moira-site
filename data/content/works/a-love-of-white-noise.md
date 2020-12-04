@@ -6,3 +6,4 @@ isSubpage: false
 category: Poetry
 
 ---
+[Legacy](https://www.wepsert.de/artikel/poetry-moira-barrett "Legacy")
