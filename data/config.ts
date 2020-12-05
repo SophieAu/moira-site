@@ -7,6 +7,6 @@ export const slugs = {
   'theory-and-criticism': 'theory-and-criticism',
 };
 
-export const path = (slug: keyof typeof slugs) => `/${slug}`;
+export const path = (slug: keyof typeof slugs) => `/${slugs[slug]}`;
 
 export const BASE_URL = 'https://moira-barrett.com';

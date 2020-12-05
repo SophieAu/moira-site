@@ -4,6 +4,7 @@ import React from 'react';
 
 import { CV as strings } from '../../data/strings';
 import Layout from '../components/Layout';
+import { MEDIA_MOBILE } from '../styles';
 import { CVQuery } from '../types';
 
 export const query = graphql`
@@ -30,6 +31,10 @@ const rootStyle = css`
   li,
   p {
     font-size: 1rem;
+  }
+
+  ${MEDIA_MOBILE} {
+    margin: 0;
   }
 `;
 

@@ -67,7 +67,8 @@ const dropdownParent = css`
   }
 
   &:focus-within,
-  &:hover {
+  &:hover,
+  &:active {
     .${dropdown} {
       padding: 1rem 0 0;
       display: flex;
@@ -76,6 +77,10 @@ const dropdownParent = css`
 
       overflow: unset;
     }
+  }
+
+  ${MEDIA_MOBILE} {
+    margin-bottom: 1rem;
   }
 `;
 
