@@ -98,7 +98,7 @@ const Writing: React.FC<WorksQuery> = data => {
 
   return (
     <Layout title={strings.pageTitle} description={strings.description} slug={strings.slug}>
-      {!!tac.length && <WorksSection title="Theory and Criticism" works={tac} />}
+      {!!tac.length && <WorksSection title={strings.title} works={tac} />}
     </Layout>
   );
 };

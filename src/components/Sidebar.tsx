@@ -81,6 +81,16 @@ const dropdownParent = css`
 
   ${MEDIA_MOBILE} {
     margin-bottom: 1rem;
+
+    &:focus-within,
+    &:hover,
+    &:active {
+      margin-bottom: 1.5rem;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      transition: margin-bottom 0.3s ease-in;
+    }
   }
 `;
 

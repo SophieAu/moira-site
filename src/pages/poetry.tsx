@@ -15,11 +15,9 @@ export const query = graphql`
   }
 `;
 
-const sectionStyle = css`
-  font: var(--normal-font);
-`;
-
 const itemStyle = css`
+  font: var(--normal-font);
+
   margin: calc(2 * var(--small-margin)) 0;
 
   &:first-child {
@@ -28,6 +26,7 @@ const itemStyle = css`
 `;
 
 const headerStyle = css`
+  font: var(--normal-font);
   font-size: 1.5rem;
   margin-bottom: 0.25rem;
 `;
@@ -99,14 +98,14 @@ const Writing: React.FC<WorksQuery> = data => {
 
   return (
     <Layout title={strings.pageTitle} description={strings.description} slug={strings.slug}>
-      {!!poetry.length && <WorksSection title="Poetry" works={poetry} />}
+      {!!poetry.length && <WorksSection title={strings.title} works={poetry} />}
     </Layout>
   );
 };
 
 const WorksSection: React.FC<{ title: string; works: Work[] }> = ({ title, works }) => (
-  <section className={sectionStyle}>
-    <h2 className={headerStyle}>{title}</h2>
+  <>
+    <h1 className={headerStyle}>{title}</h1>
     <ul className={listStyle}>
       {works.map((work, i) => (
         <li key={i}>
@@ -126,7 +125,7 @@ const WorksSection: React.FC<{ title: string; works: Work[] }> = ({ title, works
         </li>
       ))}
     </ul>
-  </section>
+  </>
 );
 
 export default Writing;
