@@ -1,4 +1,4 @@
-type BaseQuery<T> = {
+type SingleQuery<T> = {
   data: {
     markdownRemark: {
       frontmatter: T;
@@ -7,10 +7,19 @@ type BaseQuery<T> = {
   };
 };
 
-export type ContactQuery = BaseQuery<{ email: string }>;
-export type CVQuery = BaseQuery<{ cv: string }>;
+type ListQuery<T> = {
+  data: {
+    allMarkdownRemark: {
+      edges: T[];
+    };
+  };
+};
 
-// Works-related Types
+// TEMPLATE PAGES
+export type ContactQuery = SingleQuery<{ email: string }>;
+export type CVQuery = SingleQuery<{ cv: string }>;
+
+// WORK-QUERY RELATED
 export type Category = 'Fiction' | 'Poetry' | 'Theory and Criticism' | 'Other';
 
 export type WorkFrontmatter = {
@@ -21,26 +30,25 @@ export type WorkFrontmatter = {
   category: Category;
 };
 
-export interface Work extends WorkFrontmatter {
-  text: string;
+export interface WorkQuery extends SingleQuery<WorkFrontmatter> {
+  pageContext: { slug: string };
 }
 
-export type WorksQuery = {
-  data: {
-    allMarkdownRemark: {
-      edges: {
-        node: {
-          id: number;
-          frontmatter: WorkFrontmatter;
-          html: string;
-        };
-      }[];
-    };
+export type WorkNode = {
+  node: {
+    id: number;
+    frontmatter: WorkFrontmatter;
+    html: string;
   };
 };
 
-export interface WorkQuery extends BaseQuery<WorkFrontmatter> {
-  pageContext: {
-    slug: string;
-  };
-}
+export type WorksQuery = ListQuery<WorkNode>;
+
+// OTHER
+export type PageMetaData = {
+  title: string;
+  pageTitle: string;
+  description: string;
+  slug: string;
+  path: string;
+};

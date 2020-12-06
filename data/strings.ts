@@ -1,3 +1,4 @@
+import { PageMetaData } from '../src/types';
 import { path, slugs } from './config';
 
 export const BASE_TITLE = 'Moira Barrett';
@@ -7,7 +8,7 @@ const toTitleCase = (str: string) =>
 
 export const buildPageTitle = (str: string) => `${toTitleCase(str)} | ${BASE_TITLE}`;
 
-const buildMetaData = (title: keyof typeof slugs, stringTitle?: string) => ({
+const buildMetaData = (title: keyof typeof slugs, stringTitle?: string): PageMetaData => ({
   title: toTitleCase(stringTitle || title),
   pageTitle: buildPageTitle(stringTitle || title),
   description: '',

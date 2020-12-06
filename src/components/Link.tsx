@@ -3,37 +3,27 @@ import React from 'react';
 
 interface Props {
   to: string;
-  rel?: string;
   className?: string;
-  style?: React.CSSProperties;
-  ariaLabel?: string;
-  handleClick?: () => void;
 }
 
-const Link: React.FC<Props> = ({ to, className, children, style, rel, ariaLabel, handleClick }) =>
+const Link: React.FC<Props> = ({ to, className, children }) =>
   /^http/.test(to) ? (
-    <a
-      className={className}
-      href={to}
-      target="_blank"
-      rel="noopener noreferrer"
-      style={style}
-      aria-label={ariaLabel}
-      onClick={handleClick}
-    >
+    <a className={className} href={to} target="_blank" rel="noopener noreferrer">
       {children}
     </a>
   ) : (
-    <GatsbyLink
-      className={className}
-      to={to}
-      style={style}
-      rel={rel}
-      onClick={handleClick}
-      aria-label={ariaLabel}
-    >
+    <GatsbyLink className={className} to={to}>
       {children}
     </GatsbyLink>
   );
+
+interface MaybeLinkProps {
+  to?: string;
+  title: string;
+  className: string;
+}
+
+export const MaybeLink: React.FC<MaybeLinkProps> = ({ to, title, className }) =>
+  !!to ? <Link {...{ to, className }}>{title}</Link> : <p className={className}>{title}</p>;
 
 export default Link;

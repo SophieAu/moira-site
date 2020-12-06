@@ -10,3 +10,5 @@ export const slugs = {
 export const path = (slug: keyof typeof slugs) => `/${slugs[slug]}`;
 
 export const BASE_URL = 'https://moira-barrett.com';
+
+export const WORK_SUBPATH = '/work';
