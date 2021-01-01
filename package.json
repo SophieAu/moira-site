@@ -23,7 +23,7 @@
     "gatsby-plugin-react-helmet": "^3.7.0",
     "gatsby-plugin-robots-txt": "^1.5.5",
     "gatsby-plugin-sitemap": "^2.9.0",
-    "gatsby-plugin-typescript": "^2.7.0",
+    "gatsby-plugin-typescript": "^2.9.0",
     "gatsby-source-filesystem": "^2.8.1",
     "gatsby-transformer-remark": "^2.11.1",
     "linaria": "^2.0.2",
