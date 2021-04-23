@@ -1,21 +1,16 @@
 ---
-title: The absence of desire in my grandmother's bedroom (excerpt)
+title: Visitations [excerpt]
 link: ''
 metainfo: ''
 isSubpage: false
 category: Fiction
 
 ---
-When you wake up in Grandmother’s bed you turn your head to look out of the sliding glass door, through the trees and over the water of Hull Creek. Very early on the second morning between her death and her funeral, I see a group of wild geese floating on the water in the dim light, facing the house. They appear to be paying their respects and watching over the land in this moment of leaderless stillness,
+_Even to the barbarian with no gods, the guest remains sacred.   
+_\[Die Nibelungen\]
 
-before everything shifts.
+But in order to enjoy time away from home or work with less domestic or financial worries, a renter or owner sometimes makes a temporary pact with an unholy guest: the house-sitter or studio sub-letter left up to her host’s devices. Because an absent host is unable to graciously muffle her guest’s thoughts and desires at every turn and an idle mind is the devil’s amusement park, the guest will gradually forget her manners.
 
-I feel the glass curving around these days already.
+A perk of being an absent host is not having to talk to your guests, but regardless of how well guest knows host and whether or not host knows it, the two will become closer when the latter leaves the former to it or it to her, removing any need for the guest’s ceremonial validation of the way the host lives. Unburdened of its function as setting for performances such as _The Perfect Hostess_ or _The Frazzled Hostess_, her world asks for nothing and does not need to be seen.
 
-As Grandmother lay dying in the hospital I couldn’t wait to go sleep in her room and survey the wealth of materials she was leaving behind. I open the closets before she dies, but I don’t walk in and sit down until afterwards. The carpet continues from the stairs into the two bedrooms, the two bathrooms, and the two walk-in closets. Every corner is cushioned. Shelves and racks are filled with sweaters folded into squares. Less visible but equally organized are folders of paperwork, old letters, a box of expensive liquor hidden from those family members with drinking problems who are still among us, the commissioner’s military medals.
-
-Seems like she never had to come up against any walls after he died.
-
-I never heard her say “cheap,” just “inexpensive.”
-
-I never asked if she had any real problems that I didn’t know about.
+An absent host's possessions are self-satisfied monads waiting faithfully for the return of their owner’s touch, keeping some secrets covered and speaking plainly of others with no hint of either pride or shame. The good guest’s task is to live among them stealthily and to preserve their untouched look and feel. An absent host trusts an unholy guest to snoop with love, if she must.
