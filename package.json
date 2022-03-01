@@ -14,7 +14,7 @@
     "lint:fix": "eslint 'src/**/*.{tsx,ts,js,jsx}' --ignore-pattern '*.d.ts'  --ignore-pattern 'src/assets/*' --fix && stylelint 'src/**/*' --rd --risd --fix"
   },
   "dependencies": {
-    "core-js": "^3.15.2",
+    "core-js": "^3.21.1",
     "gatsby": "^2.32.13",
     "gatsby-image": "^3.8.0",
     "gatsby-plugin-csp": "^1.1.3",
