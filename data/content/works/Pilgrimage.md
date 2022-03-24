@@ -1,9 +1,8 @@
 ---
 isSubpage: true
-title: ''
-link: ''
+title: Pilgrimage in Zarrafel 3
+link: http://zaraffel-magazin.de/index.php/veroeffentlichungen
 metainfo: ''
 category: Poetry
 
 ---
-[_Pilgrimage_ in Zarrafel 3](http://zaraffel-magazin.de/)
