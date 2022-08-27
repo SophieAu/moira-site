@@ -11,6 +11,13 @@ sections:
   match: "**/*"
   templates:
   - work
+- type: directory
+  path: data/content/collages
+  label: Collages
+  create: documents
+  match: "**/*"
+  templates:
+  - collage
 - type: document
   path: data/content/cv.md
   label: CV
