@@ -1,7 +1,7 @@
-import { css, cx } from 'linaria';
+import { css } from 'linaria';
 import React from 'react';
 
-import { BASE_TITLE, Home, pages, writingPages } from '../../data/strings';
+import { BASE_TITLE, Home, pages } from '../../data/strings';
 import Link from '../components/Link';
 import { MEDIA_DESKTOP, MEDIA_MOBILE, SIDEBAR_WIDTH } from '../styles';
 
@@ -52,48 +52,6 @@ const navItem = css`
   }
 `;
 
-const dropdown = css`
-  margin: 0;
-  padding: 0;
-
-  position: absolute;
-  height: 0;
-  overflow: hidden;
-`;
-
-const dropdownParent = css`
-  p {
-    margin: 0;
-  }
-
-  &:focus-within,
-  &:hover,
-  &:active {
-    .${dropdown} {
-      padding: 1rem 0 0;
-      display: flex;
-      flex-direction: row;
-      height: auto;
-
-      overflow: unset;
-    }
-  }
-
-  ${MEDIA_MOBILE} {
-    margin-bottom: 1rem;
-
-    &:focus-within,
-    &:hover,
-    &:active {
-      margin-bottom: 1.5rem;
-    }
-
-    @media (prefers-reduced-motion: no-preference) {
-      transition: margin-bottom 0.3s ease-in;
-    }
-  }
-`;
-
 interface NavItemProps {
   title: string;
   slug: string;
@@ -106,17 +64,6 @@ const NavItem: React.FC<NavItemProps> = props => (
   </li>
 );
 
-const Writing: React.FC = () => (
-  <li key={writingPages.title} className={cx(navItem, dropdownParent)}>
-    <p>{writingPages.title}</p>
-    <ul className={cx(linkList, dropdown)}>
-      {writingPages.pages.map(page => (
-        <NavItem key={page.slug} {...page} />
-      ))}
-    </ul>
-  </li>
-);
-
 const Sidebar: React.FC = () => (
   <header className={root}>
     <h1 className={title}>
@@ -124,7 +71,6 @@ const Sidebar: React.FC = () => (
     </h1>
     <nav>
       <ul className={linkList}>
-        <Writing />
         {pages.map(page => (
           <NavItem key={page.slug} {...page} />
         ))}

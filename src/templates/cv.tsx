@@ -8,7 +8,7 @@ import { MEDIA_MOBILE } from '../styles';
 import { CVQuery } from '../types';
 
 export const query = graphql`
-  query($id: String!) {
+  query ($id: String!) {
     markdownRemark(id: { eq: $id }) {
       ...cv
     }

@@ -17,7 +17,18 @@ exports.PAGES_QUERY = `
       }
     }
   }
-  work: allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/data\/content\/works/"}}) {
+  writing: allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/data\/content\/works/"}}) {
+    edges {
+      node {
+        id
+        frontmatter {
+          title
+          isSubpage
+        }
+      }
+    }
+  }
+  collages: allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/data\/content\/works/"}}) {
     edges {
       node {
         id

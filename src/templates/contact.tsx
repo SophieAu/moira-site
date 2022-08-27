@@ -8,7 +8,7 @@ import { MEDIA_DESKTOP } from '../styles';
 import { ContactQuery } from '../types';
 
 export const query = graphql`
-  query($id: String!) {
+  query ($id: String!) {
     markdownRemark(id: { eq: $id }) {
       ...contact
     }

@@ -19,31 +19,17 @@ exports.createPages = async ({ graphql, actions }) => {
     );
   };
 
-  const buildWorks = path => {
-    const component = resolve(`./src/templates/${path}.tsx`);
-
-    result.data[path].edges.forEach(({ node: { id, frontmatter } }) => {
-      if (!frontmatter.isSubpage) return;
-
-      const slug = frontmatter.title
-        .toLowerCase()
-        .replace(/\s/g, '-')
-        .replace(/[^\w-]/g, '')
-        .replace(/(-+)/g, '-');
-
-      actions.createPage({ path: `${path}/${slug}`, component, context: { slug, id: id } });
-      console.log(frontmatter.title);
-    });
-  };
-
   console.log('Building Contact page...');
   buildPage('contact');
 
   console.log('Building CV page...');
   buildPage('cv');
 
-  console.log('\nBuilding Works pages');
-  buildWorks('work');
+  console.log('Building Writing page...');
+  buildPage('writing');
+
+  console.log('Building Collages page...');
+  buildPage('collages');
 
   console.log('\n');
 };

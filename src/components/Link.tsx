@@ -4,6 +4,7 @@ import React from 'react';
 interface Props {
   to: string;
   className?: string;
+  children: React.ReactNode;
 }
 
 const Link: React.FC<Props> = ({ to, className, children }) =>

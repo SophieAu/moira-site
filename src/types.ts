@@ -43,6 +43,14 @@ export type WorkNode = {
 };
 
 export type WorksQuery = ListQuery<WorkNode>;
+export type WritingQuery = {
+  data: {
+    poetry: { edges: WorkNode[] };
+    fiction: { edges: WorkNode[] };
+    theory: { edges: WorkNode[] };
+    other: { edges: WorkNode[] };
+  };
+};
 
 // OTHER
 export type PageMetaData = {
