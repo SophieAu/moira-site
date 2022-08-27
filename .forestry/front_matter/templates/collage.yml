@@ -2,3 +2,5 @@
 label: Collage
 hide_body: true
 fields: []
+pages:
+- data/content/collages/Test Collage.md
