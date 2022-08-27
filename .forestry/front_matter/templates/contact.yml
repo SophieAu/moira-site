@@ -5,5 +5,12 @@ fields:
 - type: text
   name: email
   label: email
+- name: social_media
+  type: list
+  config:
+    use_select: false
+    min: 
+    max: 
+  label: Social Media
 pages:
 - data/content/contact.md
