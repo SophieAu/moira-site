@@ -25,7 +25,7 @@ fields:
     config:
       required: false
     label: Link
-    description: e.g. instgram.com/solvi_au
+    description: e.g. instagram.com/solvi_au
   config:
     min: 
     max: 
