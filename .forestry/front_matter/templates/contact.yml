@@ -8,34 +8,24 @@ fields:
 - name: social_media
   type: field_group_list
   fields:
-  - name: platform
-    type: field_group
-    config: {}
-    fields:
-    - name: platform_name
-      type: text
-      config:
-        required: false
-      label: Platform Name
-      description: e.g. Instagram
-    - name: profile_name
-      type: text
-      config:
-        required: false
-      label: Profile Name
-      description: e.g. @solvi_au
-    - name: link
-      type: text
-      config:
-        required: false
-      label: Link
-      description: e.g. instagram.com/solvi_au
-    label: Platform
   - name: platform_name
     type: text
     config:
       required: false
     label: Platform Name
+    description: e.g. Instagram
+  - name: profile_name
+    type: text
+    config:
+      required: false
+    label: Profile Name
+    description: e.g. @solvi_au
+  - name: link
+    type: text
+    config:
+      required: false
+    label: Link
+    description: e.g. instgram.com/solvi_au
   config:
     min: 
     max: 
