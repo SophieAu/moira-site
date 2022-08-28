@@ -1,8 +1,8 @@
 ---
 email: bmoirabarrett@gmail.com
-social_media:
-- platform_name: Instagram
+socialMedia:
+- platformName: Instagram
   link: instagram.com/solvi_au
-  profile_name: "@solvi_au"
+  profileName: "@solvi_au"
 
 ---

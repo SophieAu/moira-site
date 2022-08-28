@@ -5,16 +5,16 @@ fields:
 - type: text
   name: email
   label: email
-- name: social_media
+- name: socialMedia
   type: field_group_list
   fields:
-  - name: platform_name
+  - name: platformName
     type: text
     config:
       required: false
     label: Platform Name
     description: e.g. Instagram
-  - name: profile_name
+  - name: profileName
     type: text
     config:
       required: false

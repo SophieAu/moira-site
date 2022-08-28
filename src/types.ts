@@ -10,13 +10,24 @@ type SingleQuery<T> = {
 type ListQuery<T> = {
   data: {
     allMarkdownRemark: {
-      edges: T[];
+      edges: Node<T>[];
     };
   };
 };
 
-// TEMPLATE PAGES
-export type ContactQuery = SingleQuery<{ email: string }>;
+export type Node<T> = {
+  node: {
+    id: number;
+    frontmatter: T;
+    html: string;
+  };
+};
+
+// SINGLE PAGES
+export type ContactQuery = SingleQuery<{
+  email: string;
+  socialMedia: { profileName: string; platformName: string; link: string }[];
+}>;
 export type CVQuery = SingleQuery<{ cv: string }>;
 
 // WORK-QUERY RELATED

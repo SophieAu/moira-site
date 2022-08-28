@@ -19,17 +19,17 @@ const emailStyle = css`
   font: var(--normal-font);
   color: var(--black);
 
-  margin: 0 0 calc(2 * var(--small-margin));
+  margin: 0 0 var(--small-margin);
 
   ${MEDIA_DESKTOP} {
     :first-child {
-      margin: calc(2 * var(--small-margin)) 0;
+      margin-top: calc(2 * var(--small-margin));
     }
   }
 `;
 
 const Contact: React.FC<ContactQuery> = ({ data }) => {
-  const { email } = data.markdownRemark.frontmatter;
+  const { email, socialMedia } = data.markdownRemark.frontmatter;
 
   return (
     <Layout title={strings.pageTitle} description={strings.description} slug={strings.slug}>
@@ -37,6 +37,12 @@ const Contact: React.FC<ContactQuery> = ({ data }) => {
         {strings.email}
         <a href={`mailto:${email}`}>{email}</a>
       </p>
+      {socialMedia.map(s => (
+        <p key={s.platformName} className={emailStyle}>
+          {`${s.platformName}: `}
+          <a href={s.link}>{s.profileName}</a>
+        </p>
+      ))}
     </Layout>
   );
 };
