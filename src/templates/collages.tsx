@@ -46,8 +46,8 @@ const itemStyle = css`
   }
 
   img {
-    width: calc(100vw - 2 * var(--padding));
-    max-width: 1600px;
+    width: stretch;
+    width: -moz-available;
   }
 `;
 
