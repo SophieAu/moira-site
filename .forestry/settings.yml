@@ -24,6 +24,12 @@ sections:
 - type: document
   path: data/content/contact.md
   label: Contact
+- type: document
+  path: data/content/news.md
+  label: News
+- type: document
+  path: data/content/translation.md
+  label: Translation
 upload_dir: static/uploads
 public_path: "/uploads"
 front_matter_path: ''
