@@ -52,6 +52,8 @@ export type WritingQuery = {
   };
 };
 
+export type CollagesQuery = ListQuery<{ title: string; image: string }>;
+
 // OTHER
 export type PageMetaData = {
   title: string;

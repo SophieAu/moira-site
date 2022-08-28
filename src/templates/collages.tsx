@@ -3,42 +3,77 @@ import { graphql } from 'gatsby';
 import { css } from 'linaria';
 import React from 'react';
 
-import { buildPageTitle } from '../../data/strings';
+import { Collages as strings } from '../../data/strings';
 import Layout from '../components/Layout';
-import { WorkQuery } from '../types';
+import { CollagesQuery } from '../types';
 
 export const query = graphql`
-  query ($id: String!) {
-    markdownRemark(id: { eq: $id }) {
-      ...work
+  query {
+    allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/data/content/collages/" } }) {
+      edges {
+        node {
+          id
+          frontmatter {
+            title
+            image
+          }
+        }
+      }
     }
   }
 `;
 
-const titleStyle = css`
-  font: var(--title-font);
-  color: var(--black);
-`;
-
-const contentStyle = css`
-  margin: calc(2 * var(--small-margin)) 0;
+const headerStyle = css`
   font: var(--normal-font);
-  color: var(--black);
+  font-size: 1.75rem;
+  margin-bottom: 0.25rem;
 `;
 
-const Writing: React.FC<WorkQuery> = ({ data, pageContext }) => {
-  const { frontmatter } = data.markdownRemark;
+const listStyle = css`
+  border: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+`;
+
+const itemStyle = css`
+  font: var(--normal-font);
+
+  margin: calc(2 * var(--small-margin)) 0;
+
+  &:first-child {
+    margin: 1rem 0 calc(2 * var(--small-margin));
+  }
+
+  img {
+    width: calc(100vw - 2 * var(--padding));
+    max-width: 1600px;
+  }
+`;
+
+const titleStyle = css`
+  font-size: 1.25rem;
+  margin: 0;
+`;
+
+const Collages: React.FC<CollagesQuery> = ({ data }) => {
+  const collages = data.allMarkdownRemark.edges;
 
   return (
-    <Layout title={buildPageTitle(frontmatter.title)} description={''} slug={pageContext.slug}>
-      <article>
-        {/* <h2 className={titleStyle}>{frontmatter.title}</h2> */}
-        {/* <div className={contentStyle} dangerouslySetInnerHTML={{ __html: html }} /> */}
-        <h2 className={titleStyle}>Collages</h2>
-        <p className={contentStyle}> Collages will appear here soon</p>
-      </article>
+    <Layout title={strings.pageTitle} description={strings.description} slug={strings.slug}>
+      <h1 className={headerStyle}>{strings.title}</h1>
+      <ul className={listStyle}>
+        {collages.map(({ node }, i) => (
+          <li key={i}>
+            <article className={itemStyle}>
+              <img src={node.frontmatter.image} alt={node.frontmatter.title} />
+              <p className={titleStyle}>{node.frontmatter.title}</p>
+            </article>
+          </li>
+        ))}
+      </ul>
     </Layout>
   );
 };
 
-export default Writing;
+export default Collages;
