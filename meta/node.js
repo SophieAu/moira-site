@@ -32,10 +32,20 @@ exports.PAGES_QUERY = `
     edges {
       node {
         id
-        frontmatter {
-          title
-          isSubpage
-        }
+      }
+    }
+  }
+  translation: allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/data\/content\/translation/"}}) {
+    edges {
+      node {
+        id
+      }
+    }
+  }
+  news: allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/data\/content\/news/"}}) {
+    edges {
+      node {
+        id
       }
     }
   }

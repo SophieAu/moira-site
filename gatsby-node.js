@@ -31,5 +31,11 @@ exports.createPages = async ({ graphql, actions }) => {
   console.log('Building Collages page...');
   buildPage('collages');
 
+  console.log('Building News page...');
+  buildPage('news');
+
+  console.log('Building Translation page...');
+  buildPage('translation');
+
   console.log('\n');
 };

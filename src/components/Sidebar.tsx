@@ -28,6 +28,7 @@ const root = css`
 
 const linkList = css`
   display: flex;
+  flex-direction: column;
   justify-content: flex-start;
   margin-bottom: var(--small-margin);
 
@@ -35,6 +36,11 @@ const linkList = css`
   list-style: none;
   margin: 0;
   padding: 0;
+
+  ${MEDIA_MOBILE} {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
 `;
 
 const title = css`
@@ -46,6 +52,8 @@ const title = css`
 const navItem = css`
   font: var(--nav-font);
   color: var(--black);
+
+  padding: 0.325rem 0;
 
   &:not(:last-child) {
     padding-right: 1.875rem;

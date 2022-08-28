@@ -3,6 +3,8 @@ export const slugs = {
   home: '',
   cv: 'cv',
   collages: 'collages',
+  translation: 'translation',
+  news: 'news',
   writing: 'writing',
   poetry: 'poetry',
   fiction: 'fiction',

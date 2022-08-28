@@ -5,7 +5,7 @@ const MOBILE_BREAKPOINT = 768;
 export const MEDIA_MOBILE = `@media all and (max-width: ${MOBILE_BREAKPOINT - 1}px)`;
 export const MEDIA_DESKTOP = `@media all and (min-width: ${MOBILE_BREAKPOINT}px)`;
 
-export const SIDEBAR_WIDTH = 256;
+export const SIDEBAR_WIDTH = 224;
 
 export const globals = css`
   :global :root {

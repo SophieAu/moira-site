@@ -6,8 +6,26 @@ import { WORK_SUBPATH } from '../../data/config';
 import { Writing as strings } from '../../data/strings';
 import Layout from '../components/Layout';
 import { MaybeLink } from '../components/Link';
-import { WorkFrontmatter, WritingQuery } from '../types';
-import { Node } from '../types';
+import { Node, WorkFrontmatter, WritingQuery } from '../types';
+
+export const query = graphql`
+  query {
+    poetry: allMarkdownRemark(filter: { frontmatter: { category: { eq: "Poetry" } } }) {
+      ...works
+    }
+    fiction: allMarkdownRemark(filter: { frontmatter: { category: { eq: "Fiction" } } }) {
+      ...works
+    }
+    theory: allMarkdownRemark(
+      filter: { frontmatter: { category: { eq: "Theory and Criticism" } } }
+    ) {
+      ...works
+    }
+    other: allMarkdownRemark(filter: { frontmatter: { category: { eq: "Other" } } }) {
+      ...works
+    }
+  }
+`;
 
 const itemStyle = css`
   font: var(--normal-font);
@@ -55,25 +73,6 @@ const contentStyle = css`
   color: var(--black);
   font: var(--normal-font);
   font-size: 1rem;
-`;
-
-export const query = graphql`
-  query {
-    poetry: allMarkdownRemark(filter: { frontmatter: { category: { eq: "Poetry" } } }) {
-      ...works
-    }
-    fiction: allMarkdownRemark(filter: { frontmatter: { category: { eq: "Fiction" } } }) {
-      ...works
-    }
-    theory: allMarkdownRemark(
-      filter: { frontmatter: { category: { eq: "Theory and Criticism" } } }
-    ) {
-      ...works
-    }
-    other: allMarkdownRemark(filter: { frontmatter: { category: { eq: "Other" } } }) {
-      ...works
-    }
-  }
 `;
 
 const mapWorks = (works: Node<WorkFrontmatter>[]) =>
