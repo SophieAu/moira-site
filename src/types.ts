@@ -52,7 +52,7 @@ export type WritingQuery = {
 
 export type CollagesQuery = ListQuery<{ title: string; image: string }>;
 export type NewsQuery = SingleQuery<{ news: { title: string; link: string }[] }>;
-export type TranslationQuery = SingleQuery<{ news: { title: string; link: string }[] }>;
+export type TranslationQuery = SingleQuery<{ links: { title: string; link: string }[] }>;
 
 // OTHER
 export type PageMetaData = {

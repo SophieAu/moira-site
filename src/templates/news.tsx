@@ -2,7 +2,7 @@ import { graphql } from 'gatsby';
 import { css } from 'linaria';
 import React from 'react';
 
-import { Writing as strings } from '../../data/strings';
+import { News as strings } from '../../data/strings';
 import Layout from '../components/Layout';
 import Link from '../components/Link';
 import { NewsQuery } from '../types';
@@ -32,6 +32,14 @@ const listStyle = css`
   list-style: none;
   margin: 0;
   padding: 0;
+
+  li {
+    margin: 1.25rem 0;
+  }
+
+  li:first-child {
+    margin-top: 1.5rem;
+  }
 `;
 
 const linkStyle = css`
@@ -41,21 +49,19 @@ const linkStyle = css`
   margin: 1rem 0;
 `;
 
-const News: React.FC<NewsQuery> = ({ data }) => {
-  return (
-    <Layout title={strings.pageTitle} description={strings.description} slug={strings.slug}>
-      <h1 className={headerStyle}>{strings.title}</h1>
-      <ul className={listStyle}>
-        {data.markdownRemark.frontmatter.news.map(({ title, link }, i) => (
-          <li key={i}>
-            <Link className={linkStyle} to={link}>
-              {title}
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </Layout>
-  );
-};
+const News: React.FC<NewsQuery> = ({ data }) => (
+  <Layout title={strings.pageTitle} description={strings.description} slug={strings.slug}>
+    <h1 className={headerStyle}>{strings.title}</h1>
+    <ul className={listStyle}>
+      {data.markdownRemark.frontmatter.news.map(({ title, link }, i) => (
+        <li key={i}>
+          <Link className={linkStyle} to={link}>
+            {title}
+          </Link>
+        </li>
+      ))}
+    </ul>
+  </Layout>
+);
 
 export default News;

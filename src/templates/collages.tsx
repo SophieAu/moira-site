@@ -42,7 +42,7 @@ const itemStyle = css`
   margin: calc(2 * var(--small-margin)) 0;
 
   &:first-child {
-    margin: 1rem 0 calc(2 * var(--small-margin));
+    margin-top: 1rem;
   }
 
   img {
