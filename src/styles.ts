@@ -23,6 +23,10 @@ export const globals = css`
     --large-margin: 4rem;
 
     font-size: 16px;
+
+    a {
+      word-break: break-word;
+    }
   }
 `;
 

@@ -41,25 +41,12 @@ export type WorkFrontmatter = {
   category: Category;
 };
 
-export interface WorkQuery extends SingleQuery<WorkFrontmatter> {
-  pageContext: { slug: string };
-}
-
-export type WorkNode = {
-  node: {
-    id: number;
-    frontmatter: WorkFrontmatter;
-    html: string;
-  };
-};
-
-export type WorksQuery = ListQuery<WorkNode>;
 export type WritingQuery = {
   data: {
-    poetry: { edges: WorkNode[] };
-    fiction: { edges: WorkNode[] };
-    theory: { edges: WorkNode[] };
-    other: { edges: WorkNode[] };
+    poetry: { edges: Node<WorkFrontmatter>[] };
+    fiction: { edges: Node<WorkFrontmatter>[] };
+    theory: { edges: Node<WorkFrontmatter>[] };
+    other: { edges: Node<WorkFrontmatter>[] };
   };
 };
 

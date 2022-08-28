@@ -6,8 +6,8 @@ import { WORK_SUBPATH } from '../../data/config';
 import { Writing as strings } from '../../data/strings';
 import Layout from '../components/Layout';
 import { MaybeLink } from '../components/Link';
-import { WritingQuery } from '../types';
-import { WorkNode } from '../types';
+import { WorkFrontmatter, WritingQuery } from '../types';
+import { Node } from '../types';
 
 const itemStyle = css`
   font: var(--normal-font);
@@ -76,7 +76,7 @@ export const query = graphql`
   }
 `;
 
-const mapWorks = (works: WorkNode[]) =>
+const mapWorks = (works: Node<WorkFrontmatter>[]) =>
   works.map(({ node }) => {
     const work = { ...node.frontmatter, text: node.html };
     if (!work.isSubpage) return work;
@@ -90,13 +90,13 @@ const mapWorks = (works: WorkNode[]) =>
   });
 
 interface SectionProps {
-  works: any[];
+  works: (WorkFrontmatter & { text: string })[];
   title: string;
 }
 
 const Section: React.FC<SectionProps> = ({ works, title }) => (
   <>
-    <h2 className={subHeaderStyle}> {title}</h2>
+    <h2 className={subHeaderStyle}>{title}</h2>
     <ul className={listStyle}>
       {works.map((work, i) => (
         <li key={i}>
@@ -122,10 +122,10 @@ const Writing: React.FC<WritingQuery> = ({ data }) => {
   return (
     <Layout title={strings.pageTitle} description={strings.description} slug={strings.slug}>
       <h1 className={headerStyle}>{strings.title}</h1>
-      {poetry && <Section title={'Poetry'} works={poetry} />}
-      {fiction && <Section title={'Fiction'} works={fiction} />}
-      {theory && <Section title={'Theory and Criticism'} works={theory} />}
-      {other && <Section title={'Other'} works={other} />}
+      {!!poetry.length && <Section title={'Poetry'} works={poetry} />}
+      {!!fiction.length && <Section title={'Fiction'} works={fiction} />}
+      {!!theory.length && <Section title={'Theory and Criticism'} works={theory} />}
+      {!!other.length && <Section title={'Other'} works={other} />}
     </Layout>
   );
 };
