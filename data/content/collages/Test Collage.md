@@ -1,5 +1,5 @@
 ---
-image: "/uploads/screen-shot-2022-07-31-at-8-03-15-pm.png"
-title: Test Title
+image: "/uploads/still-room_1-kopie.tif"
+title: Samples from the Still Room (1 of 5), digital + analogue collage on paper
 
 ---
