@@ -1,6 +1,6 @@
 ---
-label: News
-hide_body: true
+label: Translation
+hide_body: false
 fields:
 - name: links
   type: field_group_list

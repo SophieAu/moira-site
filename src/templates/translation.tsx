@@ -11,6 +11,7 @@ export const query = graphql`
   query ($id: String!) {
     markdownRemark(id: { eq: $id }) {
       id
+      html
       frontmatter {
         links {
           title
@@ -49,9 +50,16 @@ const linkStyle = css`
   margin: 1rem 0;
 `;
 
+const contentStyle = css`
+  color: var(--black);
+  font: var(--normal-font);
+  font-size: 1rem;
+`;
+
 const Translation: React.FC<TranslationQuery> = ({ data }) => (
   <Layout title={strings.pageTitle} description={strings.description} slug={strings.slug}>
     <h1 className={headerStyle}>{strings.title}</h1>
+    <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} className={contentStyle} />
     <ul className={listStyle}>
       {data.markdownRemark.frontmatter.links.map(({ title, link }, i) => (
         <li key={i}>
