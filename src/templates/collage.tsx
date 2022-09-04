@@ -48,6 +48,10 @@ const itemStyle = css`
   img {
     width: stretch;
     width: -moz-available;
+
+    max-height: 720px; /* this is the max width of the containing body. not great but eh */
+    object-fit: contain;
+    object-position: left;
   }
 `;
 
