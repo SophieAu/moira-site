@@ -2,7 +2,7 @@ export const slugs = {
   contact: 'contact',
   home: '',
   cv: 'cv',
-  collages: 'collages',
+  collage: 'collage',
   translation: 'translation',
   news: 'news',
   writing: 'writing',
