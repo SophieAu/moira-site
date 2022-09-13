@@ -1,0 +1,23 @@
+---
+label: Artwork
+hide_body: true
+fields:
+- name: image
+  type: file
+  config:
+    maxSize: 64
+  label: Image
+- name: title
+  type: text
+  config:
+    required: false
+  label: Title etc.
+pages:
+- data/content/artwork/kypseli-2022.md
+- data/content/artwork/opening-hours-6-of-6.md
+- data/content/artwork/samples-from-the-still-room-3-of-5-2020.md
+- data/content/artwork/samples-from-the-still-room-i.md
+- data/content/artwork/speed-dial-2022.md
+- data/content/artwork/switchboard-for-the-spiritually-scheming-mind-2021.md
+- data/content/artwork/thanks-anyway.md
+- data/content/artwork/the-man-the-myth-2022.md

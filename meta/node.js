@@ -28,7 +28,7 @@ exports.PAGES_QUERY = `
       }
     }
   }
-  collage: allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/data\/content\/collages/"}}) {
+  artwork: allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/data\/content\/artwork/"}}) {
     edges {
       node {
         id

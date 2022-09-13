@@ -26,9 +26,9 @@ export const TaC = buildMetaData('theory-and-criticism', 'Theory and Criticism')
 
 export const CV = buildMetaData('cv', 'CV');
 export const Writing = buildMetaData('writing', 'Writing');
-export const Collages = buildMetaData('collage', 'Collage');
+export const Artwork = buildMetaData('artwork', 'Artwork');
 export const Translation = buildMetaData('translation', 'Translation');
 export const News = buildMetaData('news', 'News');
 
-export const pages = [Writing, Collages, Translation, News, CV, Contact];
+export const pages = [Writing, Artwork, Translation, News, CV, Contact];
 export const writingPages = { title: 'Writing', pages: [Poetry, Fiction, TaC] };

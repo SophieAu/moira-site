@@ -12,12 +12,12 @@ sections:
   templates:
   - work
 - type: directory
-  path: data/content/collages
-  label: Collages
+  path: data/content/artwork
+  label: Artwork
   create: documents
   match: "**/*"
   templates:
-  - collage
+  - artwork
 - type: document
   path: data/content/cv.md
   label: CV

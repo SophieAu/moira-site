@@ -3,13 +3,13 @@ import { graphql } from 'gatsby';
 import { css } from 'linaria';
 import React from 'react';
 
-import { Collages as strings } from '../../data/strings';
+import { Artwork as strings } from '../../data/strings';
 import Layout from '../components/Layout';
-import { CollagesQuery } from '../types';
+import { ArtworkQuery } from '../types';
 
 export const query = graphql`
   query {
-    allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/data/content/collages/" } }) {
+    allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/data/content/artwork/" } }) {
       edges {
         node {
           id
@@ -48,6 +48,7 @@ const itemStyle = css`
   img {
     width: stretch;
     width: -moz-available;
+    max-width: calc(100vw - var(--padding) - var(--padding));
 
     max-height: 720px; /* this is the max width of the containing body. not great but eh */
     object-fit: contain;
@@ -60,14 +61,14 @@ const titleStyle = css`
   margin: 0;
 `;
 
-const Collages: React.FC<CollagesQuery> = ({ data }) => {
-  const collages = data.allMarkdownRemark.edges;
+const Artwork: React.FC<ArtworkQuery> = ({ data }) => {
+  const artwork = data.allMarkdownRemark.edges;
 
   return (
     <Layout title={strings.pageTitle} description={strings.description} slug={strings.slug}>
       <h1 className={headerStyle}>{strings.title}</h1>
       <ul className={listStyle}>
-        {collages.map(({ node }, i) => (
+        {artwork.map(({ node }, i) => (
           <li key={i}>
             <article className={itemStyle}>
               <img src={node.frontmatter.image} alt={node.frontmatter.title} />
@@ -80,4 +81,4 @@ const Collages: React.FC<CollagesQuery> = ({ data }) => {
   );
 };
 
-export default Collages;
+export default Artwork;
