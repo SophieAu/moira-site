@@ -14,6 +14,8 @@ fields:
   label: Title etc.
 pages:
 - data/content/collages/Test Collage.md
+- data/content/collages/opening-hours-6-of-6-1.md
+- data/content/collages/opening-hours-6-of-6.md
 - data/content/collages/samples-from-the-still-room-2-of-5-2020.md
 - data/content/collages/samples-from-the-still-room-3-of-5-2020.md
 - data/content/collages/speed-dial-2022.md
