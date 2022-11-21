@@ -13,6 +13,7 @@ fields:
     required: false
   label: Title etc.
 pages:
+- data/content/artwork/detail-from-on-offer-site-specific-window-work-at-kypseli-print-studio-athens-2022.md
 - data/content/artwork/kypseli-2022.md
 - data/content/artwork/on-offer-site-specific-window-work-at-kypseli-print-studio-athens.md
 - data/content/artwork/opening-hours-6-of-6.md
