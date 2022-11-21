@@ -1,5 +1,5 @@
 ---
-isSubpage: true
+isSubpage: false
 title: Oracle Under the Influence [excerpt]
 link: ''
 metainfo: ''
