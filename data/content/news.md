@@ -1,5 +1,7 @@
 ---
 news:
+- title: Participating Artist in Dead Darlings Special Winter Auction
+  link: https://deaddarlings.nl/
 - title: SUNKISSED at Kypseli Print Studio, Athens
   link: https://www.instagram.com/p/CjVFBK_qUfI/?utm_source=ig_web_copy_link
 - title: Fall Residency at Kypseli Print Studio Athens
