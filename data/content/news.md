@@ -1,5 +1,7 @@
 ---
 news:
+- title: Holiday Print Sale!
+  link: https://www.instagram.com/p/Cl1VhjOjWgP/?utm_source=ig_web_copy_link
 - title: Participating Artist in Dead Darlings Special Winter Auction
   link: https://deaddarlings.nl/
 - title: SUNKISSED at Kypseli Print Studio, Athens
