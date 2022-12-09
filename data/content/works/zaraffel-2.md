@@ -1,6 +1,6 @@
 ---
 isSubpage: false
-title: zaraffel 2
+title: ''
 link: ''
 metainfo: ''
 category: Poetry
