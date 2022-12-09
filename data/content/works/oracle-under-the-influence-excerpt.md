@@ -3,7 +3,7 @@ isSubpage: false
 title: Oracle Under the Influence [excerpt]
 link: ''
 metainfo: ''
-category: Other
+category: Poetry
 
 ---
 I was raised to believe that my name is an ancient Greek word for fate.
