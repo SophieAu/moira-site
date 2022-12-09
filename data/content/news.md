@@ -1,5 +1,7 @@
 ---
 news:
+- title: The absence of desire in my grandmother's bedroom in Zaraffel-Magazin
+  link: http://zaraffel-magazin.de/index.php/veroeffentlichungen
 - title: Holiday Print Sale!
   link: https://www.instagram.com/p/Cl1VhjOjWgP/?utm_source=ig_web_copy_link
 - title: Participating Artist in Dead Darlings Special Winter Auction
