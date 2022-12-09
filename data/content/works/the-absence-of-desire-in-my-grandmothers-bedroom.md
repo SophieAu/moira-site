@@ -3,7 +3,7 @@ title: Visitations [excerpt]
 link: ''
 metainfo: ''
 isSubpage: false
-category: Fiction
+category: Poetry
 
 ---
 _Even to the barbarian with no gods, the guest remains sacred.   
