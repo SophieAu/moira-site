@@ -1,8 +1,10 @@
 ---
 news:
+- title: '"Visitations" in Stadtsprachen Magazin'
+  link: https://stadtsprachen.de/de/text/visitations/
 - title: Holiday Print Sale!
   link: https://www.instagram.com/p/Cl1VhjOjWgP/?utm_source=ig_web_copy_link
-- title: The absence of desire in my grandmother's bedroom in Zaraffel-Magazin
+- title: '"The absence of desire in my grandmother''s bedroom" in Zaraffel-Magazin'
   link: http://zaraffel-magazin.de/index.php/veroeffentlichungen
 - title: Participating Artist in Dead Darlings Special Winter Auction
   link: https://deaddarlings.nl/
