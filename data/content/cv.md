@@ -1,12 +1,22 @@
+---
 
+---
 ## Publications, Exhibitions, Conferences
 
+* _Visitations_, published in Stadtsprachen Magazin, January 2023
+* _The absence of desire in my grandmother’s bedroom,_ published in Zaraffel-Magazin, December 2022
+* _SUNKISSED_, Residency Exhibition at Kypseli Print Studio, October 2022
+* _Pilgrimage,_ published in Zaraffel-Magazin, February 2022
+* _Dafna Maimon and Moira Barrett in Conversation_, published at Living Content, October 2021
+* _Legacy_, published in Wepsert Onlinemagazine, November 2020
+* _Kasia Fudakowski and Moira Barrett in Conversation,_ published at Living Content Online, April 2020
+* _Hanne Lippard and Moira Barrett in Conversation_, published at Living Content Online, February 2020 
 * _Cutting out of Home: Legacy and Conceptualization of Folk Art and Femininity in Hannah Höch’s Photomontages_, presentation at Disrupting Narratives: New Perspectives on Collage, Early Career Workshop at Edinburgh College of Art, June 2019
 * _Writing the Informal Self: The Diary and Feminine Solitude_, presentation at _„_Being a Hedgehog: Isolation, Creativity, and Destruction“ - Graduate Student Conference at the University of Washington, May 2018
 * _Das Gastgeschenk: Restitution nach Versöhnung und Wiedervereinigung_ **–** Commentary on François Mitterrand's Speech about the Restitution of a Collection of Stolen Paintings to France, Translocations Anthology (Online Anthology) ([https://translanth.hypotheses.org/ueber/mitterand](https://translanth.hypotheses.org/ueber/mitterand "https://translanth.hypotheses.org/ueber/mitterand")).
 * _The Next Room_. Outdoor audio installation, 60 Henry St, New York, USA 2015
-* _What Remains?_ Exhibition on education and its material remains_,_ curator and artist   
- Gallatin School of Individualized Study, New York, USA 2015
+* _What Remains?_ Exhibition on education and its material remains_,_ curator and artist  
+  Gallatin School of Individualized Study, New York, USA 2015
 * _I want to feel better._ Collaborative video installation, Gallatin Arts Festival 2013, New York, USA
 
 ## Education
