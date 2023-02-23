@@ -1,9 +1,8 @@
 ---
 isSubpage: false
-title: ''
-link: ''
+title: The absence of desire in my grandmother's bedroom in Zaraffel-Magazin
+link: http://zaraffel-magazin.de/index.php/veroeffentlichungen
 metainfo: ''
 category: Poetry
 
 ---
-[_The absence of desire in my grandmother's bedroom_ in Zaraffel-Magazin]( "http://zaraffel-magazin.de/index.php/veroeffentlichungen")
