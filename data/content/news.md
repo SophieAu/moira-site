@@ -1,5 +1,7 @@
 ---
 news:
+- title: '25 March: Reading for the Weirding Module: Blessed (with Guests)'
+  link: https://www.instagram.com/p/Cp3UFFAoCG2/?utm_source=ig_web_copy_link
 - title: '"Visitations" in Stadtsprachen Magazin'
   link: https://stadtsprachen.de/de/text/visitations/
 - title: Holiday Print Sale!
