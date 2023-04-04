@@ -1,5 +1,7 @@
 ---
 news:
+- title: '21 April: Reading at ap: The Zodiac Club Revisited'
+  link: https://www.a-p.berlin/blogs/events/alex-and-erin-draft-need-to-add-event-brite-and-set-visibility-date
 - title: '25 March: Reading for the Weirding Module: Blessed (with Guests)'
   link: https://www.instagram.com/p/Cp3UFFAoCG2/?utm_source=ig_web_copy_link
 - title: '"Visitations" in Stadtsprachen Magazin'
