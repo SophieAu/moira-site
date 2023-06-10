@@ -7,7 +7,7 @@ import { translationFields } from './templates';
 import { workFields } from './templates';
 
 // Your hosting provider likely exposes this as an environment variable
-const branch = process.env.HEAD || process.env.VERCEL_GIT_COMMIT_REF || 'main';
+const branch = process.env.HEAD || 'master';
 
 export default defineConfig({
   branch,
@@ -16,12 +16,12 @@ export default defineConfig({
   client: { skip: true },
   build: {
     outputFolder: 'admin',
-    publicFolder: 'data',
+    publicFolder: 'static',
   },
   media: {
     tina: {
       mediaRoot: '',
-      publicFolder: 'data',
+      publicFolder: 'static',
     },
   },
   schema: {
