@@ -1,6 +1,7 @@
 ---
-
+_template: cv
 ---
+
 ## Publications, Exhibitions, Conferences
 
 * _Visitations_, published in Stadtsprachen Magazin, January 2023

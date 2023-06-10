@@ -1,11 +1,12 @@
 ---
 isSubpage: false
-title: Oracle Under the Influence [excerpt]
+title: 'Oracle Under the Influence [excerpt]'
 link: ''
 metainfo: ''
 category: Poetry
-
+_template: work
 ---
+
 I was raised to believe that my name is an ancient Greek word for fate.
 
 Last September I worked in Paris for a week before flying down the Adriatic coast to Athens to visit my friend Rodanthí. Her name means rosebud.  
