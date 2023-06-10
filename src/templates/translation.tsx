@@ -1,11 +1,14 @@
+/** @jsx jsx */
+
 import { graphql } from 'gatsby';
-import { css } from 'linaria';
 import React from 'react';
 
 import { Translation as strings } from '../../data/strings';
 import Layout from '../components/Layout';
 import Link from '../components/Link';
 import { TranslationQuery } from '../types';
+import { css, jsx } from '@emotion/react';
+import HTMLHeader from '../components/HTMLHeader';
 
 export const query = graphql`
   query ($id: String!) {
@@ -57,19 +60,23 @@ const contentStyle = css`
 `;
 
 const Translation: React.FC<TranslationQuery> = ({ data }) => (
-  <Layout title={strings.pageTitle} description={strings.description} slug={strings.slug}>
-    <h1 className={headerStyle}>{strings.title}</h1>
-    <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} className={contentStyle} />
-    <ul className={listStyle}>
+  <Layout>
+    <h1 css={headerStyle}>{strings.title}</h1>
+    <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} css={contentStyle} />
+    <ul css={listStyle}>
       {data.markdownRemark.frontmatter.links.map(({ title, link }, i) => (
         <li key={i}>
-          <Link className={linkStyle} to={link}>
+          <Link eCss={linkStyle} to={link}>
             {title}
           </Link>
         </li>
       ))}
     </ul>
   </Layout>
+);
+
+export const Head = () => (
+  <HTMLHeader title={strings.pageTitle} description={strings.description} slug={strings.slug} />
 );
 
 export default Translation;

@@ -1,5 +1,6 @@
+/** @jsx jsx */
+
 import { graphql } from 'gatsby';
-import { css } from 'linaria';
 import React from 'react';
 
 import { WORK_SUBPATH } from '../../data/config';
@@ -7,6 +8,8 @@ import { Writing as strings } from '../../data/strings';
 import Layout from '../components/Layout';
 import { MaybeLink } from '../components/Link';
 import { Node, WorkFrontmatter, WritingQuery } from '../types';
+import { css, jsx } from '@emotion/react';
+import HTMLHeader from '../components/HTMLHeader';
 
 export const query = graphql`
   query {
@@ -94,22 +97,22 @@ interface SectionProps {
 }
 
 const Section: React.FC<SectionProps> = ({ works, title }) => (
-  <>
-    <h2 className={subHeaderStyle}>{title}</h2>
-    <ul className={listStyle}>
+  <React.Fragment>
+    <h2 css={subHeaderStyle}>{title}</h2>
+    <ul css={listStyle}>
       {works.map((work, i) => (
         <li key={i}>
-          <article className={itemStyle}>
-            {work.title && <MaybeLink to={work.link} className={linkStyle} title={work.title} />}
-            {work.metainfo && <p className={metaStyle}>{work.metainfo}</p>}
+          <article css={itemStyle}>
+            {work.title && <MaybeLink to={work.link} eCss={linkStyle} title={work.title} />}
+            {work.metainfo && <p css={metaStyle}>{work.metainfo}</p>}
             {!work.isSubpage && (
-              <div dangerouslySetInnerHTML={{ __html: work.text }} className={contentStyle} />
+              <div dangerouslySetInnerHTML={{ __html: work.text }} css={contentStyle} />
             )}
           </article>
         </li>
       ))}
     </ul>
-  </>
+  </React.Fragment>
 );
 
 const Writing: React.FC<WritingQuery> = ({ data }) => {
@@ -119,8 +122,8 @@ const Writing: React.FC<WritingQuery> = ({ data }) => {
   const other = mapWorks(data.other.edges);
 
   return (
-    <Layout title={strings.pageTitle} description={strings.description} slug={strings.slug}>
-      <h1 className={headerStyle}>{strings.title}</h1>
+    <Layout>
+      <h1 css={headerStyle}>{strings.title}</h1>
       {!!poetry.length && <Section title={'Poetry'} works={poetry} />}
       {!!fiction.length && <Section title={'Fiction'} works={fiction} />}
       {!!theory.length && <Section title={'Theory and Criticism'} works={theory} />}
@@ -128,5 +131,9 @@ const Writing: React.FC<WritingQuery> = ({ data }) => {
     </Layout>
   );
 };
+
+export const Head = () => (
+  <HTMLHeader title={strings.pageTitle} description={strings.description} slug={strings.slug} />
+);
 
 export default Writing;

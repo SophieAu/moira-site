@@ -1,11 +1,14 @@
+/** @jsx jsx */
+
 /* eslint-disable react/jsx-no-literals */
 import { graphql } from 'gatsby';
-import { css } from 'linaria';
+import { css, jsx } from '@emotion/react';
 import React from 'react';
 
 import { Artwork as strings } from '../../data/strings';
 import Layout from '../components/Layout';
 import { ArtworkQuery } from '../types';
+import HTMLHeader from '../components/HTMLHeader';
 
 export const query = graphql`
   query {
@@ -65,14 +68,14 @@ const Artwork: React.FC<ArtworkQuery> = ({ data }) => {
   const artwork = data.allMarkdownRemark.edges;
 
   return (
-    <Layout title={strings.pageTitle} description={strings.description} slug={strings.slug}>
-      <h1 className={headerStyle}>{strings.title}</h1>
-      <ul className={listStyle}>
+    <Layout>
+      <h1 css={headerStyle}>{strings.title}</h1>
+      <ul css={listStyle}>
         {artwork.map(({ node }, i) => (
           <li key={i}>
-            <article className={itemStyle}>
+            <article css={itemStyle}>
               <img src={node.frontmatter.image} alt={node.frontmatter.title} />
-              <p className={titleStyle}>{node.frontmatter.title}</p>
+              <p css={titleStyle}>{node.frontmatter.title}</p>
             </article>
           </li>
         ))}
@@ -80,5 +83,9 @@ const Artwork: React.FC<ArtworkQuery> = ({ data }) => {
     </Layout>
   );
 };
+
+export const Head = () => (
+  <HTMLHeader title={strings.pageTitle} description={strings.description} slug={strings.slug} />
+);
 
 export default Artwork;

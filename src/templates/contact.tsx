@@ -1,11 +1,14 @@
+/** @jsx jsx */
+
 import { graphql } from 'gatsby';
-import { css } from 'linaria';
 import React from 'react';
 
 import { Contact as strings } from '../../data/strings';
 import Layout from '../components/Layout';
 import { MEDIA_DESKTOP } from '../styles';
 import { ContactQuery } from '../types';
+import { css, jsx } from '@emotion/react';
+import HTMLHeader from '../components/HTMLHeader';
 
 export const query = graphql`
   query ($id: String!) {
@@ -32,13 +35,13 @@ const Contact: React.FC<ContactQuery> = ({ data }) => {
   const { email, socialMedia } = data.markdownRemark.frontmatter;
 
   return (
-    <Layout title={strings.pageTitle} description={strings.description} slug={strings.slug}>
-      <p className={emailStyle}>
+    <Layout>
+      <p css={emailStyle}>
         {strings.email}
         <a href={`mailto:${email}`}>{email}</a>
       </p>
       {socialMedia.map(s => (
-        <p key={s.platformName} className={emailStyle}>
+        <p key={s.platformName} css={emailStyle}>
           {`${s.platformName}: `}
           <a href={s.link}>{s.profileName}</a>
         </p>
@@ -46,5 +49,9 @@ const Contact: React.FC<ContactQuery> = ({ data }) => {
     </Layout>
   );
 };
+
+export const Head = () => (
+  <HTMLHeader title={strings.pageTitle} description={strings.description} slug={strings.slug} />
+);
 
 export default Contact;

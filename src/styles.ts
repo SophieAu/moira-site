@@ -1,4 +1,4 @@
-import { css } from 'linaria';
+import { css } from '@emotion/react';
 
 const MOBILE_BREAKPOINT = 768;
 
@@ -8,7 +8,7 @@ export const MEDIA_DESKTOP = `@media all and (min-width: ${MOBILE_BREAKPOINT}px)
 export const SIDEBAR_WIDTH = 224;
 
 export const globals = css`
-  :global :root {
+  :root {
     --font: 'Italiana', serif;
 
     --meta-font: italic 500 1rem var(--font);
@@ -31,19 +31,19 @@ export const globals = css`
 `;
 
 export const reset = css`
-  :global html {
+  html {
     background: #ecdbcb;
   }
 
-  :global body,
-  :global h1 {
+  body,
+  h1 {
     border: 0;
     list-style: none;
     margin: 0;
     padding: 0;
   }
 
-  :global a {
+  a {
     color: var(--black);
 
     &:visited {

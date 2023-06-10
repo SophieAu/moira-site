@@ -1,11 +1,14 @@
+/** @jsx jsx */
+
 import { graphql } from 'gatsby';
-import { css } from 'linaria';
 import React from 'react';
 
 import { CV as strings } from '../../data/strings';
 import Layout from '../components/Layout';
 import { MEDIA_MOBILE } from '../styles';
 import { CVQuery } from '../types';
+import { css, jsx } from '@emotion/react';
+import HTMLHeader from '../components/HTMLHeader';
 
 export const query = graphql`
   query ($id: String!) {
@@ -38,14 +41,18 @@ const rootStyle = css`
   }
 `;
 
-const Writing: React.FC<CVQuery> = ({ data }) => {
+const CV: React.FC<CVQuery> = ({ data }) => {
   const { html } = data.markdownRemark;
 
   return (
-    <Layout title={strings.pageTitle} description={strings.description} slug={strings.slug}>
-      <div dangerouslySetInnerHTML={{ __html: html }} className={rootStyle} />
+    <Layout>
+      <div dangerouslySetInnerHTML={{ __html: html }} css={rootStyle} />
     </Layout>
   );
 };
 
-export default Writing;
+export const Head = () => (
+  <HTMLHeader title={strings.pageTitle} description={strings.description} slug={strings.slug} />
+);
+
+export default CV;

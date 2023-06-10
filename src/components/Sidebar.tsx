@@ -1,4 +1,6 @@
-import { css } from 'linaria';
+/** @jsx jsx */
+
+import { css, jsx } from '@emotion/react';
 import React from 'react';
 
 import { BASE_TITLE, Home, pages } from '../../data/strings';
@@ -67,18 +69,18 @@ interface NavItemProps {
 }
 
 const NavItem: React.FC<NavItemProps> = props => (
-  <li key={props.slug} className={navItem}>
+  <li key={props.slug} css={navItem}>
     <Link to={props.path}>{props.title}</Link>
   </li>
 );
 
 const Sidebar: React.FC = () => (
-  <header className={root}>
-    <h1 className={title}>
+  <header css={root}>
+    <h1 css={title}>
       <Link to={Home.path}>{BASE_TITLE}</Link>
     </h1>
     <nav>
-      <ul className={linkList}>
+      <ul css={linkList}>
         {pages.map(page => (
           <NavItem key={page.slug} {...page} />
         ))}

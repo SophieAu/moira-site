@@ -2,7 +2,6 @@
 .cache/
 public/
 node_modules/
-.linaria-cache/
 
 # Mac files
 .DS_Store

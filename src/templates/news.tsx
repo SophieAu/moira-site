@@ -1,11 +1,14 @@
+/** @jsx jsx */
+
 import { graphql } from 'gatsby';
-import { css } from 'linaria';
 import React from 'react';
 
 import { News as strings } from '../../data/strings';
 import Layout from '../components/Layout';
 import Link from '../components/Link';
 import { NewsQuery } from '../types';
+import { css, jsx } from '@emotion/react';
+import HTMLHeader from '../components/HTMLHeader';
 
 export const query = graphql`
   query ($id: String!) {
@@ -50,18 +53,22 @@ const linkStyle = css`
 `;
 
 const News: React.FC<NewsQuery> = ({ data }) => (
-  <Layout title={strings.pageTitle} description={strings.description} slug={strings.slug}>
-    <h1 className={headerStyle}>{strings.title}</h1>
-    <ul className={listStyle}>
+  <Layout>
+    <h1 css={headerStyle}>{strings.title}</h1>
+    <ul css={listStyle}>
       {data.markdownRemark.frontmatter.news.map(({ title, link }, i) => (
         <li key={i}>
-          <Link className={linkStyle} to={link}>
+          <Link eCss={linkStyle} to={link}>
             {title}
           </Link>
         </li>
       ))}
     </ul>
   </Layout>
+);
+
+export const Head = () => (
+  <HTMLHeader title={strings.pageTitle} description={strings.description} slug={strings.slug} />
 );
 
 export default News;

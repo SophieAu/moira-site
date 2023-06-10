@@ -1,7 +1,10 @@
+/** @jsx jsx */
+
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import React from 'react';
 
 import Link from './Link';
+import { SerializedStyles, jsx } from '@emotion/react';
 
 const SPLIT_PER_LINK = /(\[[^\]]+\]\([^\)]+\))/;
 const CONTAINS_LINK = /^[\[]/;
@@ -9,11 +12,11 @@ const EXTRACT_LINK = /\[([^\]]+)\]\(([^\)]+)\)/;
 
 interface Props {
   children: string;
-  className?: string;
+  eCss?: SerializedStyles;
 }
 
-const MarkdownWithLink: React.FC<Props> = ({ children, className }) => (
-  <p className={className}>
+const MarkdownWithLink: React.FC<Props> = ({ children, eCss }) => (
+  <p css={eCss}>
     {children.split(SPLIT_PER_LINK).map((subString, i) => {
       if (!CONTAINS_LINK.test(subString)) return subString;
 

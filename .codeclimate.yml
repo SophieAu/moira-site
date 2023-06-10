@@ -10,5 +10,5 @@ exclude_paths:
   - "node_modules/"
   - "public/"
   - ".cache/"
-  - ".linaria-cache/"
+  - ".emotion-cache/"
 

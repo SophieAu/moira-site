@@ -13,18 +13,6 @@ export const contact = graphql`
   }
 `;
 
-export const writing = graphql`
-  fragment writing on MarkdownRemark {
-    frontmatter {
-      writing {
-        title
-        link
-        info
-      }
-    }
-  }
-`;
-
 export const cv = graphql`
   fragment cv on MarkdownRemark {
     html
