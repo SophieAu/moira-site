@@ -1,5 +1,8 @@
 ---
 news:
+  - title: 'June 25: Reading with the FU Review at Poropati Bar'
+    link: >-
+      https://www.instagram.com/p/CtT3QByMEVK/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==
   - title: '21 April: Reading at ap: The Zodiac Club Revisited'
     link: >-
       https://www.a-p.berlin/blogs/events/alex-and-erin-draft-need-to-add-event-brite-and-set-visibility-date
@@ -21,6 +24,6 @@ news:
     link: 'https://www.facebook.com/events/468341551555316/?ref=newsfeed'
   - title: Reading as guest of Zaraffel at Hopscotch Reading Room
     link: 'http://zaraffel-magazin.de/index.php/news'
-_template: news
 ---
+
 
