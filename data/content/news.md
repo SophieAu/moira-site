@@ -1,6 +1,6 @@
 ---
 news:
-  - title: '25 June: Reading with the FU Review at Poropati Bar'
+  - title: '25 June: Reading with the FU Review: A Good Long Scream'
     link: >-
       https://www.instagram.com/p/CtT3QByMEVK/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==
   - title: '21 April: Reading at ap: The Zodiac Club Revisited'
@@ -25,6 +25,7 @@ news:
   - title: Reading as guest of Zaraffel at Hopscotch Reading Room
     link: 'http://zaraffel-magazin.de/index.php/news'
 ---
+
 
 
 
