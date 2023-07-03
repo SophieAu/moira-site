@@ -1,6 +1,6 @@
 ---
 isSubpage: false
-title: Pilgrimage in Zaraffel-Magazin
+title: 'Pilgrimage '
 link: 'http://zaraffel-magazin.de/index.php/veroeffentlichungen'
 metainfo: ''
 category: Poetry
