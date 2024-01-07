@@ -1,5 +1,8 @@
 ---
 news:
+  - title: According to My Wishes - Opening December 8
+    link: >-
+      https://www.evangelisch-in-huerth.de/kulturkirche-vernissage-according-to-my-wishes/
   - title: '25 June: Reading with the FU Review: A Good Long Scream'
     link: >-
       https://www.instagram.com/p/CtT3QByMEVK/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==
@@ -25,7 +28,4 @@ news:
   - title: Reading as guest of Zaraffel at Hopscotch Reading Room
     link: 'http://zaraffel-magazin.de/index.php/news'
 ---
-
-
-
 
