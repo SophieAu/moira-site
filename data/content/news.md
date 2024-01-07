@@ -1,6 +1,6 @@
 ---
 news:
-  - title: According to My Wishes - Opening December 8
+  - title: 'According to My Wishes at Kulturkirche Hürth, Opening Demeber 8'
     link: >-
       https://www.evangelisch-in-huerth.de/kulturkirche-vernissage-according-to-my-wishes/
   - title: '25 June: Reading with the FU Review: A Good Long Scream'
