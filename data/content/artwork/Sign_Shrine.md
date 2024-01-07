@@ -1,0 +1,6 @@
+---
+image: /uploads/IMG_7504.pdf
+title: 'Audio: https://soundcloud.com/user-355126810/in-the-shrine-of-sleeping-signs'
+---
+
+In the Shrine of Sleeping Signs
