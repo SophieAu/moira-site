@@ -65,7 +65,7 @@ const titleStyle = css`
 `;
 
 const Artwork: React.FC<ArtworkQuery> = ({ data }) => {
-  const artwork = data.allMarkdownRemark.edges;
+  const artwork = data.allMarkdownRemark.edges.toReversed();
 
   return (
     <Layout>
