@@ -11,4 +11,5 @@ exclude_paths:
   - "public/"
   - ".cache/"
   - ".emotion-cache/"
+  - "src/gatsby-types.d.ts"
 
