@@ -1,7 +1,7 @@
 
 ## Publications, Exhibitions, Conferences
 
-* *According to My Wishes*, Solo-Exhibition at the Kulturkirche Hürth, December 2023
+* *According to My Wishes*, Solo-Exhibition at Kulturkirche Hürth, December 2023
 * *to be loved by white noise*, poem published in Allium Journal of Poetry and Prose, Summer 2023
 * *Infidelities*, poem published in Stadtsprachen Magazin, June 2023
 * *Visitations*, poem published in Stadtsprachen Magazin, January 2023
