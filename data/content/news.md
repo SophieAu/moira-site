@@ -1,5 +1,7 @@
 ---
 news:
+  - title: 'DUETS at Dzialdov, April 5 - 21 2024'
+    link: 'https://dzialdov.de/'
   - title: 'According to My Wishes at Kulturkirche Hürth, Opening December 8'
     link: >-
       https://www.evangelisch-in-huerth.de/kulturkirche-vernissage-according-to-my-wishes/
