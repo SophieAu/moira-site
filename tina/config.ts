@@ -13,7 +13,7 @@ const collection = (label: string, fields: TinaField[], isCollection: boolean = 
   format: 'md' as 'md' | 'json' | 'markdown' | 'mdx' | 'yaml' | 'yml' | 'toml',
   label,
   name: label.toLowerCase(),
-  path: `data/content/${label.toLowerCase()}`,
+  path: `src/content/${label.toLowerCase()}`,
   ...(!isCollection && { ui: { allowedActions: { create: false, delete: false } } }),
   match: { include: '**/*' },
   fields,
