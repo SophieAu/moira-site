@@ -1,0 +1,36 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../components/Layout.astro";
+import { Contact as strings } from "../strings";
+
+const { email, socialMedia } = (await getCollection("contact"))[0]!.data;
+---
+
+<Layout title={strings.pageTitle} description={strings.description} slug={strings.slug}>
+	<p class="emailStyle">
+		{strings.email}
+		<a href={`mailto:${email}`}>{email}</a>
+	</p>
+	{
+		socialMedia.map((s: any) => (
+			<p class="emailStyle">
+				{`${s.platformName}: `}
+				<a href={s.link}>{s.profileName}</a>
+			</p>
+		))
+	}
+</Layout>
+<style>
+	.emailStyle {
+		font: var(--normal-font);
+		color: var(--black);
+
+		margin: 0 0 var(--small-margin);
+	}
+
+	@media (min-width: 48rem) {
+		.emailStyle:first-child {
+			margin-top: calc(2 * var(--small-margin));
+		}
+	}
+</style>

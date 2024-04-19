@@ -1,0 +1,107 @@
+---
+import BaseHead from './BaseHead.astro';
+
+import Sidebar from './Sidebar.astro';
+
+interface Props {
+	class?: string;
+	title: string;
+	description: string;
+	slug: string;
+}
+
+const { class: className, title, description, slug } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<BaseHead title={title} description={description} slug={slug} />
+	<body>
+		<Sidebar />
+		<main class={className}><slot /></main>
+		<style is:global>
+			:root {
+				font-size: 16px;
+
+				--font: 'Italiana', serif;
+
+				--meta-font: italic 500 1rem var(--font);
+				--nav-font: 500 1rem var(--font);
+				--normal-font: 500 1.5rem var(--font);
+				--title-font: 700 2rem var(--font);
+
+				--black: #1b1c25;
+				--grey: #3d3e4a;
+
+				--small-margin: 1.5rem;
+				--large-margin: 4rem;
+
+				--sidebar-width: 14rem;
+				--mobile-breakpoint: 48rem;
+			}
+
+			html {
+				background: #ecdbcb;
+			}
+
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+
+			main {
+				a {
+					color: var(--black);
+					word-break: break-word;
+				}
+
+				a:visited {
+					color: var(--black);
+				}
+
+				a:hover {
+					color: var(--grey);
+				}
+
+				a:active {
+					color: var(--black);
+					text-decoration: underline;
+				}
+			}
+
+			body {
+				border: 0;
+				list-style: none;
+
+				background: url('/bg_pattern.png');
+
+				width: 100vw;
+				max-width: 1600px;
+				min-height: 100vh;
+				padding: 0 var(--padding) var(--padding);
+
+				display: grid;
+				grid-gap: var(--padding);
+				grid-template-rows: auto 1fr;
+
+				/* MOBILE-ONLY */
+				--padding: var(--small-margin);
+				grid-template-columns: 1fr;
+			}
+
+			@media all and (min-width: 48rem) {
+				body {
+					--padding: var(--large-margin);
+					grid-template-columns: var(--sidebar-width) minmax(auto, 45rem);
+				}
+			}
+
+			main {
+				padding: var(--padding) 0 0 0;
+
+				overflow-y: scroll;
+			}
+		</style>
+	</body>
+</html>

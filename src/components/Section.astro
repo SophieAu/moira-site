@@ -1,0 +1,66 @@
+---
+import type { AstroComponentFactory } from 'astro/runtime/server/index.js';
+import Link from './Link.astro';
+import CleanList from './CleanList.astro';
+
+interface Props {
+	works: {
+		Content: AstroComponentFactory;
+		title: string;
+		link: string;
+		isSubpage: boolean;
+		category: 'Fiction' | 'Poetry' | 'Theory and Criticism' | 'Other';
+		metainfo?: string | undefined;
+	}[];
+	title: string;
+}
+const { works, title } = Astro.props;
+---
+
+<h2 class="subHeader">{title}</h2>
+<CleanList class="list">
+	{
+		works.map(({ Content, ...work }) => (
+			<article class="item">
+				<Link href={work.link} title={work.title}>
+					{work.title}
+				</Link>
+
+				{work.metainfo && <p class="meta">{work.metainfo}</p>}
+				{!work.isSubpage && <Content class="content" />}
+			</article>
+		))
+	}
+</CleanList>
+<style>
+	.item {
+		font: var(--normal-font);
+	}
+
+	.subHeader {
+		font: var(--normal-font);
+		font-size: 1.5rem;
+		margin-top: 1.25rem;
+		margin-bottom: 0.25rem;
+	}
+
+	.list {
+		display: flex;
+		flex-direction: column;
+		gap: calc(2 * var(--small-margin));
+		margin-bottom: calc(2 * var(--small-margin));
+	}
+
+	.meta {
+		color: var(--grey);
+		font: var(--meta-font);
+		margin: 0.5rem 0 0;
+	}
+
+	.content {
+		color: var(--black);
+		font: var(--normal-font);
+
+		font-size: 1rem;
+	}
+</style>

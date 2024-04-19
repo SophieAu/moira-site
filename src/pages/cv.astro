@@ -1,0 +1,39 @@
+---
+import { CV as strings } from '../strings';
+import Layout from '../components/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const cv = (await getCollection('cv'))[0]!;
+const { Content } = await cv.render();
+---
+
+<Layout title={strings.pageTitle} description={strings.description} slug={strings.slug}>
+	<Content class="rootStyle" />
+</Layout>
+
+<style>
+	.rootStyle {
+		margin: calc(2 * var(--small-margin)) 0 0;
+		font: var(--normal-font);
+		color: var(--black);
+
+		li {
+			padding-bottom: 0.5rem;
+		}
+
+		h2 {
+			font-size: 1.25rem;
+		}
+
+		li,
+		p {
+			font-size: 1rem;
+		}
+	}
+
+	@media (max-width: 47.9375rem) {
+		.rootStyle {
+			margin: 0;
+		}
+	}
+</style>

@@ -1,0 +1,31 @@
+---
+import { parseHTML } from 'linkedom';
+
+interface Props {
+	class?: string;
+}
+
+const html = await Astro.slots.render('default');
+const { document } = parseHTML(html);
+const children = Array.from(document.children);
+
+const { class: className, ...rest } = Astro.props;
+---
+
+<ul class={className} {...rest}>
+	{
+		children.map(e => (
+			<li>
+				<Fragment set:html={e} />
+			</li>
+		))
+	}
+</ul>
+<style>
+	ul {
+		border: 0;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+</style>

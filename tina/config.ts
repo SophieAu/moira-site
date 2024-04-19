@@ -1,150 +1,41 @@
-import { defineConfig } from 'tinacms';
-import { artworkFields } from './templates';
-import { contactFields } from './templates';
-import { cvFields } from './templates';
-import { newsFields } from './templates';
-import { translationFields } from './templates';
-import { workFields } from './templates';
+import { defineConfig, type TinaField } from 'tinacms';
+import {
+  workFields,
+  artworkFields,
+  cvFields,
+  contactFields,
+  newsFields,
+  translationFields,
+} from './templates';
+
+const collection = (label: string, fields: TinaField[], path?: string) => ({
+  format: 'md' as 'md' | 'json' | 'markdown' | 'mdx' | 'yaml' | 'yml' | 'toml',
+  label,
+  name: label.toLowerCase(),
+  path: 'data/content' + path ? `/${path}` : '',
+  ...(path && { ui: { allowedActions: { create: false, delete: false } } }),
+  match: { include: path ? label.toLowerCase() : '**/*' },
+  fields,
+});
 
 // Your hosting provider likely exposes this as an environment variable
 const branch = process.env.HEAD || 'master';
 
 export default defineConfig({
   branch,
-  clientId: process.env.TINA_CLIENT_ID || null, // Get this from tina.io
-  token: process.env.TINA_TOKEN || null, // Get this from tina.io
+  clientId: process.env.TINA_CLIENT_ID || null,
+  token: process.env.TINA_TOKEN || null,
   client: { skip: true },
-  build: {
-    outputFolder: 'admin',
-    publicFolder: 'static',
-  },
-  media: {
-    tina: {
-      mediaRoot: 'uploads/',
-      publicFolder: 'static',
-    },
-  },
+  build: { outputFolder: 'admin', publicFolder: 'public' },
+  media: { tina: { mediaRoot: '', publicFolder: 'public' } },
   schema: {
     collections: [
-      {
-        format: 'md',
-        label: 'Works',
-        name: 'works',
-        path: 'data/content/works',
-        match: {
-          include: '**/*',
-        },
-        fields: [
-          {
-            type: 'rich-text',
-            name: 'body',
-            label: 'Body of Document',
-            description: 'This is the markdown body',
-            isBody: true,
-          },
-          ...workFields(),
-        ],
-      },
-      {
-        format: 'md',
-        label: 'Artwork',
-        name: 'artwork',
-        path: 'data/content/artwork',
-        match: {
-          include: '**/*',
-        },
-        fields: [
-          {
-            type: 'rich-text',
-            name: 'body',
-            label: 'Body of Document',
-            description: 'This is the markdown body',
-            isBody: true,
-          },
-          ...artworkFields(),
-        ],
-      },
-      {
-        format: 'md',
-        label: 'CV',
-        name: 'cv',
-        path: 'data/content',
-        ui: {
-          allowedActions: {
-            create: false,
-            delete: false,
-          },
-        },
-        match: {
-          include: 'cv',
-        },
-        fields: [
-          {
-            type: 'rich-text',
-            name: 'body',
-            label: 'Body of Document',
-            description: 'This is the markdown body',
-            isBody: true,
-          },
-        ],
-      },
-      {
-        format: 'md',
-        label: 'Contact',
-        name: 'contact',
-        path: 'data/content',
-        ui: {
-          allowedActions: {
-            create: false,
-            delete: false,
-          },
-        },
-        match: {
-          include: 'contact',
-        },
-        fields: [...contactFields()],
-      },
-      {
-        format: 'md',
-        label: 'News',
-        name: 'news',
-        path: 'data/content',
-        ui: {
-          allowedActions: {
-            create: false,
-            delete: false,
-          },
-        },
-        match: {
-          include: 'news',
-        },
-        fields: [...newsFields()],
-      },
-      {
-        format: 'md',
-        label: 'Translation',
-        name: 'translation',
-        path: 'data/content',
-        ui: {
-          allowedActions: {
-            create: false,
-            delete: false,
-          },
-        },
-        match: {
-          include: 'translation',
-        },
-        fields: [
-          {
-            type: 'rich-text',
-            name: 'body',
-            label: 'Body of Document',
-            description: 'This is the markdown body',
-            isBody: true,
-          },
-          ...translationFields(),
-        ],
-      },
+      collection('Works', workFields, 'works'),
+      collection('Artwork', artworkFields, 'artwork'),
+      collection('CV', cvFields),
+      collection('Contact', contactFields),
+      collection('News', newsFields),
+      collection('Translation', translationFields),
     ],
   },
 });
