@@ -6,15 +6,16 @@ import {
   contactFields,
   newsFields,
   translationFields,
+  artworksListFields,
 } from './templates';
 
-const collection = (label: string, fields: TinaField[], path?: string) => ({
+const collection = (label: string, fields: TinaField[], isCollection: boolean = false) => ({
   format: 'md' as 'md' | 'json' | 'markdown' | 'mdx' | 'yaml' | 'yml' | 'toml',
   label,
   name: label.toLowerCase(),
-  path: 'data/content' + path ? `/${path}` : '',
-  ...(path && { ui: { allowedActions: { create: false, delete: false } } }),
-  match: { include: path ? label.toLowerCase() : '**/*' },
+  path: `data/content/${label.toLowerCase()}`,
+  ...(!isCollection && { ui: { allowedActions: { create: false, delete: false } } }),
+  match: { include: '**/*' },
   fields,
 });
 
@@ -30,8 +31,9 @@ export default defineConfig({
   media: { tina: { mediaRoot: '', publicFolder: 'public' } },
   schema: {
     collections: [
-      collection('Works', workFields, 'works'),
-      collection('Artwork', artworkFields, 'artwork'),
+      collection('Works', workFields, true),
+      collection('Artwork', artworkFields, true),
+      collection('Artworks', artworksListFields),
       collection('CV', cvFields),
       collection('Contact', contactFields),
       collection('News', newsFields),

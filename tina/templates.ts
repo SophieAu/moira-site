@@ -71,3 +71,20 @@ export const workFields: TinaField[] = [
     options: ['Fiction', 'Poetry', 'Theory and Criticism', 'Other'],
   },
 ];
+
+export const artworksListFields: TinaField[] = [
+  {
+    type: 'object',
+    list: true,
+    name: 'list',
+    label: 'List',
+    fields: [
+      {
+        type: 'reference',
+        label: 'Artwork',
+        name: 'artwork',
+        collections: ['artwork'],
+      },
+    ],
+  },
+];
