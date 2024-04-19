@@ -28,7 +28,7 @@ export default defineConfig({
   token: process.env.TINA_TOKEN || null,
   client: { skip: true },
   build: { outputFolder: 'admin', publicFolder: 'public' },
-  media: { tina: { mediaRoot: '', publicFolder: 'public' } },
+  media: { tina: { mediaRoot: 'uploads', publicFolder: 'public' } },
   schema: {
     collections: [
       collection('Works', workFields, true),
