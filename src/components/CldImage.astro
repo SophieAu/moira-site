@@ -1,0 +1,31 @@
+---
+import { Cloudinary } from '@cloudinary/url-gen';
+import { Image } from 'astro:assets';
+
+const myCld = new Cloudinary({
+	cloud: { cloudName: 'dbqwb9i08' },
+	url: { secure: true },
+});
+
+interface Props {
+	public_id: string;
+	alt: string;
+	height: number;
+	width: number;
+}
+
+const { public_id, alt, height, width } = Astro.props;
+let img = myCld.image(public_id);
+img.format('auto').quality('auto');
+// do stuff
+
+const imgSrc = img.toURL();
+---
+
+<Image src={imgSrc} alt={alt} width={width} height={height} />
+<style>
+	img {
+		object-fit: cover;
+		width: 100%;
+	}
+</style>

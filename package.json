@@ -13,14 +13,20 @@
     "@astrojs/check": "^0.5.10",
     "@astrojs/rss": "^4.0.5",
     "@astrojs/sitemap": "^3.1.2",
+    "@cloudinary/url-gen": "^1.19.0",
+    "@tinacms/auth": "^1.0.4",
     "astro": "^4.5.16",
     "astro-robots-txt": "^1.0.0",
+    "express": "^4.19.2",
     "linkedom": "^0.16.11",
+    "next-tinacms-cloudinary": "^5.0.1",
+    "serverless-http": "^3.2.0",
     "tinacms": "^1.6.1",
     "typescript": "^5.4.4"
   },
   "devDependencies": {
     "@tinacms/cli": "^1.5.43",
+    "@types/express": "^4.17.21",
     "@types/node": "^20.12.5"
   }
 }
