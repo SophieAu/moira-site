@@ -13,7 +13,7 @@ const posts = await getCollection('artwork');
 		{
 			posts.map(({ data }) => (
 				<article class="itemStyle">
-					<img src={data.image.src} alt={data.title} />
+					<img src={data.image} alt={data.title} />
 					<p class="titleStyle">{data.title}</p>
 				</article>
 			))

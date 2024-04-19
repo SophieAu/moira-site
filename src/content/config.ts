@@ -1,68 +1,67 @@
-import { defineCollection, z } from "astro:content";
+import { defineCollection, z } from 'astro:content';
 
 const artwork = defineCollection({
-	type: "content",
-	schema: ({ image }) =>
-		z.object({
-			title: z.string(),
-			image: image(),
-		}),
+  type: 'content',
+  schema: z.object({
+    title: z.string(),
+    image: z.string(),
+  }),
 });
 
 const works = defineCollection({
-	type: "content",
-	schema: z.object({
-		title: z.string(),
-		link: z.string().url(),
-		metainfo: z.string().optional(),
-		isSubpage: z.boolean().default(false),
-		category: z.enum(["Fiction", "Poetry", "Theory and Criticism", "Other"]),
-	}),
+  type: 'content',
+  schema: z.object({
+    title: z.string(),
+    link: z.string().url(),
+    metainfo: z.string().optional(),
+    isSubpage: z.boolean().default(false),
+    category: z.enum(['Fiction', 'Poetry', 'Theory and Criticism', 'Other']),
+  }),
 });
 
 const contact = defineCollection({
-	type: "content",
-	schema: z.object({
-		email: z.string().email(),
-		socialMedia: z.array(
-			z.object({
-				platformName: z.enum(["Instagram"]),
-				link: z.string().url(),
-				profileName: z.string(),
-			})
-		),
-	}),
+  type: 'content',
+  schema: z.object({
+    email: z.string().email(),
+    socialMedia: z.array(
+      z.object({
+        platformName: z.enum(['Instagram']),
+        link: z.string().url(),
+        profileName: z.string(),
+      })
+    ),
+  }),
 });
 
 const cv = defineCollection({
-	type: "content",
-	schema: z.object({}),
+  type: 'content',
+  schema: z.object({}),
 });
 
 const news = defineCollection({
-	type: "content",
-	schema: z.object({
-		news: z.array(
-			z.object({
-				title: z.string(),
-				link: z.string().url(),
-			})
-		),
-	}),
+  type: 'content',
+  schema: z.object({
+    news: z.array(
+      z.object({
+        title: z.string(),
+        link: z.string().url(),
+      })
+    ),
+  }),
 });
 
 const translation = defineCollection({
-	type: "content",
-	schema: z.object({
-		links: z
-			.array(
-				z.object({
-					title: z.string(),
-					link: z.string().url(),
-				})
-			)
-			.optional(),
-	}),
+  type: 'content',
+  schema: z.object({
+    links: z
+      .array(
+        z.object({
+          title: z.string(),
+          link: z.string().url(),
+        })
+      )
+      .optional(),
+  }),
 });
 
 export const collections = { artwork, works, contact, cv, news, translation };
