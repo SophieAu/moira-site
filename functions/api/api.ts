@@ -10,6 +10,9 @@ const mediaHandler = createMediaHandler({
   authorized: async (req, _res) => {
     try {
       if (process.env.NODE_ENV == 'development') return true;
+      if (!process.env.CLOUDINARY_CLOUD_NAME) throw Error('missing cloud name');
+      if (!process.env.CLOUDINARY_API_KEY) throw Error('missing CLOUDINARY_API_KEY');
+      if (!process.env.CLOUDINARY_API_SECRET) throw Error('missing CLOUDINARY_API_SECRET');
 
       return !!(await isAuthorized(req))?.verified;
     } catch (e) {
