@@ -28,7 +28,10 @@ export default defineConfig({
   token: process.env.TINA_TOKEN || null,
   client: { skip: true },
   build: { outputFolder: 'admin', publicFolder: 'public' },
-  media: { tina: { mediaRoot: 'uploads', publicFolder: 'public' } },
+  media: {
+    loadCustomStore: async () =>
+      (await import('next-tinacms-cloudinary')).TinaCloudCloudinaryMediaStore,
+  },
   schema: {
     collections: [
       collection('Works', workFields, true),
