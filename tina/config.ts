@@ -33,7 +33,7 @@ export default defineConfig({
     collections: [
       collection('Works', workFields, true),
       collection('Artwork', artworkFields, true),
-      collection('Artworks', artworksListFields),
+      collection('ArtworksList', artworksListFields),
       collection('CV', cvFields),
       collection('Contact', contactFields),
       collection('News', newsFields),
