@@ -1,5 +1,6 @@
 ---
-image: /uploads/f9cc2360-9f49-4d89-8140-2232edae5f20_1_105_c.jpeg
+image: >-
+  https://res.cloudinary.com/dbqwb9i08/image/upload/v1713655086/dwjtno71oqu9nprgu0rm.jpg
 title: ON OFFER (detail)
 ---
 
