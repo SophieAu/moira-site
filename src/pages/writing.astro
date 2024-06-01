@@ -23,10 +23,10 @@ const mappedPosts = await Promise.all(
 );
 
 const groupedPosts = {
-	fiction: mappedPosts.filter(p => p.category == 'Fiction'),
-	poetry: mappedPosts.filter(p => p.category == 'Poetry'),
-	theory: mappedPosts.filter(p => p.category == 'Theory and Criticism'),
-	other: mappedPosts.filter(p => p.category == 'Other'),
+	fiction: mappedPosts.filter(p => p.category === 'Fiction'),
+	poetry: mappedPosts.filter(p => p.category === 'Poetry'),
+	theory: mappedPosts.filter(p => p.category === 'Theory and Criticism'),
+	other: mappedPosts.filter(p => p.category === 'Other'),
 };
 ---
 

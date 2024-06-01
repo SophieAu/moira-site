@@ -7,5 +7,5 @@ import robotsTxt from 'astro-robots-txt';
 export default defineConfig({
   site: 'https://moira-barrett.com',
   integrations: [sitemap(), robotsTxt()],
-  image: { domains: ['res.cloudinary.com'], service: passthroughImageService },
+  image: { domains: ['res.cloudinary.com'], service: passthroughImageService() },
 });

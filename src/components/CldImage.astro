@@ -1,5 +1,6 @@
 ---
 import { Cloudinary } from '@cloudinary/url-gen';
+import { fit } from '@cloudinary/url-gen/actions/resize';
 import { Image } from 'astro:assets';
 
 const myCld = new Cloudinary({
@@ -8,18 +9,24 @@ const myCld = new Cloudinary({
 });
 
 interface Props {
-	public_id: string;
+	url: string;
 	alt: string;
 	height: number;
 	width: number;
 }
 
-const { public_id, alt, height, width } = Astro.props;
-let img = myCld.image(public_id);
-img.format('auto').quality('auto');
-// do stuff
+const { url, alt, height, width } = Astro.props;
+
+const publicId = url.split('/').pop()?.split('.')[0];
+if (!publicId) throw Error(`public id for ${url} not found`);
+
+console.log(publicId);
+const img = myCld.image(publicId);
+
+img.format('auto').quality('auto').resize(fit().width(width).height(height));
 
 const imgSrc = img.toURL();
+console.log(imgSrc);
 ---
 
 <Image src={imgSrc} alt={alt} width={width} height={height} />
@@ -27,5 +34,6 @@ const imgSrc = img.toURL();
 	img {
 		object-fit: cover;
 		width: 100%;
+		height: auto;
 	}
 </style>

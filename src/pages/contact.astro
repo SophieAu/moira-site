@@ -3,6 +3,7 @@ import { getCollection } from "astro:content";
 import Layout from "../components/Layout.astro";
 import { Contact as strings } from "../strings";
 
+// biome-ignore lint/style/noNonNullAssertion: <explanation>
 const { email, socialMedia } = (await getCollection("contact"))[0]!.data;
 ---
 

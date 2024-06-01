@@ -3,6 +3,7 @@ import { Artwork as strings } from '../strings';
 import Layout from '../components/Layout.astro';
 import { getCollection } from 'astro:content';
 import CleanList from '../components/CleanList.astro';
+import CldImage from '../components/CldImage.astro';
 
 const posts = await getCollection('artwork');
 ---
@@ -13,8 +14,9 @@ const posts = await getCollection('artwork');
 		{
 			posts.map(({ data }) => (
 				<article class="itemStyle">
-					<img src={data.image} alt={data.title} />
+					<CldImage url={data.image} alt={data.title} width={720} height={720} />
 					<p class="titleStyle">{data.title}</p>
+					<p class=""></p>
 				</article>
 			))
 		}
