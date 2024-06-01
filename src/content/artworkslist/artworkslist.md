@@ -1,26 +1,26 @@
 ---
 list:
+  - artwork: src/content/artwork/valentine.md
+  - artwork: src/content/artwork/sign_shrine.md
+  - artwork: src/content/artwork/offer_paper.md
   - artwork: src/content/artwork/on_offer.md
-  - artwork: src/content/artwork/kypseli_i.md
+  - artwork: src/content/artwork/on_offer.md
+  - artwork: src/content/artwork/offer_detail.md
   - artwork: src/content/artwork/as_a_sign.md
+  - artwork: src/content/artwork/speed_dial.md
+  - artwork: src/content/artwork/things_said.md
+  - artwork: src/content/artwork/man_myth.md
+  - artwork: src/content/artwork/opening_hours.md
+  - artwork: src/content/artwork/opening_hrs_i.md
+  - artwork: src/content/artwork/kypseli_i.md
   - artwork: src/content/artwork/kypseli_i.md
   - artwork: src/content/artwork/kypseli_iii.md
   - artwork: src/content/artwork/kyspeli_ii.md
-  - artwork: src/content/artwork/man_myth.md
-  - artwork: src/content/artwork/offer_detail.md
-  - artwork: src/content/artwork/offer_paper.md
-  - artwork: src/content/artwork/on_offer.md
-  - artwork: src/content/artwork/opening_hours.md
-  - artwork: src/content/artwork/opening_hrs_i.md
-  - artwork: src/content/artwork/prayer.md
-  - artwork: src/content/artwork/sign_shrine.md
-  - artwork: src/content/artwork/speed_dial.md
   - artwork: src/content/artwork/still_room_1.md
   - artwork: src/content/artwork/still_room_2.md
   - artwork: src/content/artwork/still_room_3.md
   - artwork: src/content/artwork/switchboard.md
   - artwork: src/content/artwork/thanks_anyway.md
-  - artwork: src/content/artwork/things_said.md
-  - artwork: src/content/artwork/valentine.md
+  - artwork: src/content/artwork/prayer.md
 ---
 
