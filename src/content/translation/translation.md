@@ -5,18 +5,12 @@ Born to a German mother and a US-American father, I grew up speaking both German
 
 For inquiries and quotes please email bmoirabarrett@gmail.com.
 
-*References:*
+### References:
 
-Bauhaus Archiv | Museum für Gestaltung
-
-Neue Nationalgalerie
-
-ifa-Galerie Berlin
-
-Kunst im Stadtraum an der Karl-Marx-Allee
-
-Deutsche Kinematek - Museum für Film und Fernsehen
-
-Kunstverein in Hamburg
-
-E-Werk Luckenwalde
+* Bauhaus Archiv | Museum für Gestaltung
+* Neue Nationalgalerie
+* ifa-Galerie Berlin
+* Kunst im Stadtraum an der Karl-Marx-Allee
+* Deutsche Kinematek - Museum für Film und Fernsehen
+* Kunstverein in Hamburg
+* E-Werk Luckenwalde

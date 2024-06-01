@@ -1,5 +1,5 @@
 
-## Publications, Exhibitions, Conferences
+### Publications, Exhibitions, Conferences
 
 * *According to My Wishes*, Solo-Exhibition at Kulturkirche Hürth, December 2023
 * *to be loved by white noise*, poem published in Allium Journal of Poetry and Prose, Summer 2023
@@ -20,7 +20,7 @@
   Gallatin School of Individualized Study, New York, USA 2015
 * *I want to feel better.* Collaborative video installation, Gallatin Arts Festival 2013, New York, USA
 
-## Education
+### Education
 
 **Potsdam University**\
 *Master of Arts*\

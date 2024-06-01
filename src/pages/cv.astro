@@ -2,6 +2,7 @@
 import { CV as strings } from '../strings';
 import Layout from '../components/Layout.astro';
 import { getCollection } from 'astro:content';
+import WrappedContent from '../components/WrappedContent.astro';
 
 // biome-ignore lint/style/noNonNullAssertion: <explanation>
 const cv = (await getCollection('cv'))[0]!;
@@ -9,28 +10,15 @@ const { Content } = await cv.render();
 ---
 
 <Layout title={strings.pageTitle} description={strings.description} slug={strings.slug}>
-	<div class="rootStyle">
+	<WrappedContent class="rootStyle">
 		<Content />
-	</div>
+	</WrappedContent>
 </Layout>
 
 <style>
 	.rootStyle {
-		margin: calc(2 * var(--small-margin)) 0 0;
-		font: var(--normal-font);
-		color: var(--black);
-
-		li {
-			padding-bottom: 0.5rem;
-		}
-
-		h2 {
-			font-size: 1.25rem;
-		}
-
-		li,
-		p {
-			font-size: 1rem;
+		> *:first-child {
+			margin-top: 0;
 		}
 	}
 

@@ -2,6 +2,7 @@
 import type { AstroComponentFactory } from 'astro/runtime/server/index.js';
 import Link from './Link.astro';
 import CleanList from './CleanList.astro';
+import WrappedContent from './WrappedContent.astro';
 
 interface Props {
 	works: {
@@ -28,9 +29,9 @@ const { works, title } = Astro.props;
 
 				{work.metainfo && <p class="meta">{work.metainfo}</p>}
 				{!work.isSubpage && (
-					<div class="content">
+					<WrappedContent class="content">
 						<Content />
-					</div>
+					</WrappedContent>
 				)}
 			</article>
 		))
