@@ -9,7 +9,7 @@ import {
   artworksListFields,
 } from './templates';
 
-const collection = (label: string, fields: TinaField[], isCollection: boolean = false) => ({
+const collection = (label: string, fields: TinaField[], isCollection = false) => ({
   format: 'md' as 'md' | 'json' | 'markdown' | 'mdx' | 'yaml' | 'yml' | 'toml',
   label,
   name: label.toLowerCase(),

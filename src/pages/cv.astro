@@ -9,7 +9,9 @@ const { Content } = await cv.render();
 ---
 
 <Layout title={strings.pageTitle} description={strings.description} slug={strings.slug}>
-	<Content class="rootStyle" />
+	<div class="rootStyle">
+		<Content />
+	</div>
 </Layout>
 
 <style>

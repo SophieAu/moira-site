@@ -8,6 +8,17 @@ const artwork = defineCollection({
   }),
 });
 
+const artworkslist = defineCollection({
+  type: 'content',
+  schema: z.object({
+    list: z.array(
+      z.object({
+        artwork: z.string(),
+      })
+    ),
+  }),
+});
+
 const works = defineCollection({
   type: 'content',
   schema: z.object({
@@ -64,4 +75,4 @@ const translation = defineCollection({
   }),
 });
 
-export const collections = { artwork, works, contact, cv, news, translation };
+export const collections = { artwork, works, contact, cv, news, translation, artworkslist };

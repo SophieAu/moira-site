@@ -12,7 +12,10 @@ const { Content } = await tx.render();
 
 <Layout title={strings.pageTitle} description={strings.description} slug={strings.slug}>
 	<h1 class="headerStyle">{strings.title}</h1>
-	<Content class="contentStyle" />
+	<div class="contentStyle">
+		<Content />
+	</div>
+
 	<CleanList class="listStyle">
 		{
 			tx.data.links?.map(({ title, link }) => (
