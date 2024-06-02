@@ -1,6 +1,7 @@
 
 ### Publications, Exhibitions, Conferences
 
+* DUETS, Exhibition with Yasmin Nebenführ at DZIALDOV, Berlin, April 2024
 * *According to My Wishes*, Solo-Exhibition at Kulturkirche Hürth, December 2023
 * *to be loved by white noise*, poem published in Allium Journal of Poetry and Prose, Summer 2023
 * *Infidelities*, poem published in Stadtsprachen Magazin, June 2023
