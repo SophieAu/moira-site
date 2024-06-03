@@ -1,5 +1,9 @@
 ---
 news:
+  - title: >-
+      DUETS - Works on Paper by Yasmin Nebenführ and Moira Barrett, opening
+      April 25 at DZIALDOV, Berlin
+    link: 'https://dzialdov.de/'
   - title: '15 May 2024: Salad Days Reading Series in Athens, Greece'
     link: >-
       https://www.instagram.com/p/C6qeVGII_A-/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==
