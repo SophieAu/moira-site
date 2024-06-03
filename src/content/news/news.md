@@ -7,7 +7,9 @@ news:
       DUETS - Works on Paper by Yasmin Nebenführ and Moira Barrett, opening
       April 5 at DZIALDOV, Berlin
     link: 'https://dzialdov.de/'
-  - title: 'According to My Wishes at Kulturkirche Hürth, Opening December 8'
+  - title: >-
+      According to My Wishes, solo exhibition at Kulturkirche Hürth, Opening
+      December 8
     link: >-
       https://www.evangelisch-in-huerth.de/kulturkirche-vernissage-according-to-my-wishes/
   - title: '25 June: Reading with the FU Review: A Good Long Scream'
