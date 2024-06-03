@@ -1,12 +1,12 @@
 ---
 news:
-  - title: >-
-      DUETS - Works on Paper by Yasmin Nebenführ and Moira Barrett, opening
-      April 25 at DZIALDOV, Berlin
-    link: 'https://dzialdov.de/'
   - title: '15 May 2024: Salad Days Reading Series in Athens, Greece'
     link: >-
       https://www.instagram.com/p/C6qeVGII_A-/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==
+  - title: >-
+      DUETS - Works on Paper by Yasmin Nebenführ and Moira Barrett, opening
+      April 5 at DZIALDOV, Berlin
+    link: 'https://dzialdov.de/'
   - title: 'According to My Wishes at Kulturkirche Hürth, Opening December 8'
     link: >-
       https://www.evangelisch-in-huerth.de/kulturkirche-vernissage-according-to-my-wishes/
