@@ -1,5 +1,5 @@
 
-### Publications, Exhibitions, Conferences
+## Publications, Exhibitions, Conferences
 
 * DUETS, Exhibition with Yasmin Nebenführ at DZIALDOV, Berlin, April 2024
 * *According to My Wishes*, Solo-Exhibition at Kulturkirche Hürth, December 2023
@@ -14,14 +14,14 @@
 * *Kasia Fudakowski and Moira Barrett in Conversation,* published at Living Content Online, April 2020
 * *Hanne Lippard and Moira Barrett in Conversation*, published at Living Content Online, February 2020
 * *Cutting out of Home: Legacy and Conceptualization of Folk Art and Femininity in Hannah Höch’s Photomontages*, presentation at Disrupting Narratives: New Perspectives on Collage, Early Career Workshop at Edinburgh College of Art, June 2019
-* *Writing the Informal Self: The Diary and Feminine Solitude*, presentation at \_„\_Being a Hedgehog: Isolation, Creativity, and Destruction“ - Graduate Student Conference at the University of Washington, May 2018
+* *Writing the Informal Self: The Diary and Feminine Solitude*, presentation at „Being a Hedgehog: Isolation, Creativity, and Destruction“ - Graduate Student Conference at the University of Washington, May 2018
 * *Das Gastgeschenk: Restitution nach Versöhnung und Wiedervereinigung* **–** Commentary on François Mitterrand's Speech about the Restitution of a Collection of Stolen Paintings to France, Translocations Anthology (Online Anthology) ([https://translanth.hypotheses.org/ueber/mitterand](https://translanth.hypotheses.org/ueber/mitterand "https://translanth.hypotheses.org/ueber/mitterand")).
 * *The Next Room*. Outdoor audio installation, 60 Henry St, New York, USA 2015
 * *What Remains?* Exhibition on education and its material remains\_,\_ curator and artist\
   Gallatin School of Individualized Study, New York, USA 2015
 * *I want to feel better.* Collaborative video installation, Gallatin Arts Festival 2013, New York, USA
 
-### Education
+## Education
 
 **Potsdam University**\
 *Master of Arts*\

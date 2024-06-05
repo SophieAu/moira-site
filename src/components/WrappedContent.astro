@@ -12,62 +12,16 @@ const { class: className, ...rest } = Astro.props;
 
 <style>
 	.prose {
+		font: var(--body-font);
+		letter-spacing: 0.02em;
 		color: var(--black);
-		font: var(--normal-font);
-
-		p {
-			font-size: 1.25rem;
-			padding: var(--space-3xs) 0;
-		}
 
 		ul {
-			padding-left: var(--space-m);
-			padding-top: var(--space-2xs);
+			list-style: disc;
+			margin-left: 1.5rem;
 
-			li {
-				font-size: 1.25rem;
-				padding: var(--space-3xs) 0;
-				padding-bottom: var(--space-2xs);
-			}
-		}
-
-		a {
-			color: var(--font-dark);
-			text-decoration: none;
-			border-bottom: 1px dashed var(--font-dark);
-		}
-
-		a:hover {
-			opacity: 60%;
-			cursor: pointer;
-		}
-
-		h2 {
-			font: var(--normal-font);
-			font-size: 3.5rem;
-
-			margin: var(--space-xl-2xl) 0 var(--space-xs-s);
-		}
-
-		h3 {
-			font: var(--h3-font);
-			font-size: 2rem;
-
-			margin: var(--space-l-xl) 0 var(--space-2xs-xs);
-		}
-
-		h4 {
-			font: var(--h4-font);
-			font-size: 1.75rem;
-
-			margin: var(--space-m-l) 0 var(--space-3xs-2xs);
-		}
-
-		h5 {
-			font: var(--h5-font);
-			font-size: 1.5rem;
-
-			margin: var(--space-s-m) 0 var(--space-3xs-2xs);
+			display: grid;
+			gap: 1rem;
 		}
 	}
 </style>

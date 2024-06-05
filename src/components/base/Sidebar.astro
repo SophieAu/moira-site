@@ -1,0 +1,65 @@
+---
+import { BASE_TITLE, Home, pages } from '../../strings';
+import CleanList from '../CleanList.astro';
+import Link from '../Link.astro';
+---
+
+<header>
+	<Link href={Home.path} class="siteHeading link">{BASE_TITLE}</Link>
+	<nav>
+		<CleanList class="list">
+			{
+				pages.map(page => (
+					<Link href={page.path} class="link navItem">
+						{page.title}
+					</Link>
+				))
+			}
+		</CleanList>
+	</nav>
+</header>
+<style>
+	header {
+		display: flex;
+		flex-direction: column;
+		gap: var(--small-margin);
+	}
+
+	.siteHeading {
+		font: var(--h1-font);
+		letter-spacing: 0.02em;
+
+		color: var(--black);
+	}
+
+	.navItem {
+		font: var(--nav-font);
+
+		color: var(--grey);
+	}
+
+	.link {
+		text-decoration: none;
+	}
+	.link:hover {
+		opacity: 0.8;
+		text-decoration: underline;
+	}
+
+	.list {
+		display: grid;
+		grid-template-columns: repeat(2, min-content);
+		gap: 0.75rem 1.875rem;
+	}
+
+	/* DESKTOP */
+	@media (min-width: 48rem) {
+		header {
+			margin-top: 6vh;
+		}
+
+		.list {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>

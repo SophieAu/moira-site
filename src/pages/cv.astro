@@ -1,6 +1,6 @@
 ---
 import { CV as strings } from '../strings';
-import Layout from '../components/Layout.astro';
+import Layout from '../components/base/Layout.astro';
 import { getCollection } from 'astro:content';
 import WrappedContent from '../components/WrappedContent.astro';
 
@@ -9,7 +9,12 @@ const cv = (await getCollection('cv'))[0]!;
 const { Content } = await cv.render();
 ---
 
-<Layout title={strings.pageTitle} description={strings.description} slug={strings.slug}>
+<Layout
+	title={strings.title}
+	description={strings.description}
+	slug={strings.slug}
+	showTitle={false}
+>
 	<WrappedContent class="rootStyle">
 		<Content />
 	</WrappedContent>
@@ -19,12 +24,6 @@ const { Content } = await cv.render();
 	.rootStyle {
 		> *:first-child {
 			margin-top: 0;
-		}
-	}
-
-	@media (max-width: 47.9375rem) {
-		.rootStyle {
-			margin: 0;
 		}
 	}
 </style>

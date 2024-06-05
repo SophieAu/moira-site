@@ -23,9 +23,16 @@ const { class: className, ...rest } = Astro.props;
 </ul>
 <style>
 	ul {
-		border: 0;
 		list-style: none;
-		margin: 0;
-		padding: 0;
+
+		display: grid;
+		gap: 2rem;
+	}
+
+	li {
+		font: var(--body-font);
+		letter-spacing: 0.02em;
+
+		color: var(--black);
 	}
 </style>

@@ -5,7 +5,7 @@ Born to a German mother and a US-American father, I grew up speaking both German
 
 For inquiries and quotes please email bmoirabarrett@gmail.com.
 
-### References:
+## References:
 
 * Bauhaus Archiv | Museum für Gestaltung
 * Neue Nationalgalerie

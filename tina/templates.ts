@@ -10,6 +10,7 @@ export const mdField: TinaField = {
 export const artworkFields: TinaField[] = [
   { type: 'image', name: 'image', label: 'Image' },
   { type: 'string', name: 'title', label: 'Title etc.' },
+  { type: 'string', name: 'embed', label: 'Optional Media Embed Code' },
   mdField,
 ];
 

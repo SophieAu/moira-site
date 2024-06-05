@@ -1,0 +1,89 @@
+---
+import BaseHead from './BaseHead.astro';
+import BaseStyle from './BaseStyle.astro';
+
+import Sidebar from './Sidebar.astro';
+
+interface Props {
+	class?: string;
+	title: string;
+	description: string;
+	slug: string;
+	showTitle: boolean;
+}
+
+const { class: className, title, description, slug, showTitle } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<BaseHead title={title} description={description} slug={slug} />
+	<body>
+		<BaseStyle />
+		<Sidebar />
+		<main class={className}>
+			{showTitle && <h1 class="headerStyle">{title}</h1>}
+			<slot />
+		</main>
+		<style is:global>
+			html {
+				background: var(--beige);
+			}
+
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+
+			main {
+				overflow-y: scroll;
+
+				a {
+					color: var(--black);
+					word-break: break-word;
+				}
+
+				a:visited {
+					color: var(--black);
+				}
+
+				a:hover {
+					opacity: 0.6;
+				}
+
+				a:active {
+					opacity: 0.8;
+					text-decoration: underline;
+				}
+			}
+
+			body {
+				border: 0;
+				list-style: none;
+
+				background: url('/bg_pattern.png');
+
+				width: 100vw;
+				max-width: 1600px;
+				min-height: 100vh;
+				padding: var(--padding);
+
+				display: grid;
+				grid-gap: var(--padding);
+				grid-template-rows: auto 1fr;
+
+				/* MOBILE-ONLY */
+				--padding: var(--small-margin);
+				grid-template-columns: 1fr;
+			}
+
+			@media (min-width: 48rem) {
+				body {
+					--padding: var(--large-margin);
+					grid-template-columns: var(--sidebar-width) minmax(auto, var(--main-width));
+				}
+			}
+		</style>
+	</body>
+</html>

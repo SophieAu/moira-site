@@ -1,9 +1,7 @@
 ---
 import { Translation as strings } from '../strings';
-import Layout from '../components/Layout.astro';
-import Link from '../components/Link.astro';
+import Layout from '../components/base/Layout.astro';
 import { getCollection } from 'astro:content';
-import CleanList from '../components/CleanList.astro';
 import WrappedContent from '../components/WrappedContent.astro';
 
 // biome-ignore lint/style/noNonNullAssertion: <explanation>
@@ -11,43 +9,12 @@ const tx = (await getCollection('translation'))[0]!;
 const { Content } = await tx.render();
 ---
 
-<Layout title={strings.pageTitle} description={strings.description} slug={strings.slug}>
-	<h1 class="headerStyle">{strings.title}</h1>
+<Layout title={strings.title} description={strings.description} slug={strings.slug} showTitle>
 	<WrappedContent class="contentStyle">
 		<Content />
 	</WrappedContent>
-
-	<CleanList class="listStyle">
-		{
-			tx.data.links?.map(({ title, link }) => (
-				<Link class="linkStyle" href={link}>
-					{title}
-				</Link>
-			))
-		}
-	</CleanList>
 </Layout>
 <style>
-	.headerStyle {
-		font: var(--normal-font);
-		font-size: 1.75rem;
-		margin-bottom: 0.25rem;
-	}
-
-	.listStyle {
-		li {
-			margin: 1.25rem 0;
-		}
-
-		li:first-child {
-			margin-top: 1.5rem;
-		}
-	}
-
-	.linkStyle {
-		color: var(--black);
-		font: var(--normal-font);
-		font-size: 1.25rem;
-		margin: 1rem 0;
+	p {
 	}
 </style>

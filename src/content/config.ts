@@ -5,6 +5,7 @@ const artwork = defineCollection({
   schema: z.object({
     title: z.string(),
     image: z.string(),
+    embed: z.string().optional(),
   }),
 });
 

@@ -1,7 +1,7 @@
 ---
 import { WORK_SUBPATH } from '../consts';
 import { Writing as strings } from '../strings';
-import Layout from '../components/Layout.astro';
+import Layout from '../components/base/Layout.astro';
 import Section from '../components/Section.astro';
 
 import { getCollection } from 'astro:content';
@@ -30,8 +30,7 @@ const groupedPosts = {
 };
 ---
 
-<Layout title={strings.pageTitle} description={strings.description} slug={strings.slug}>
-	<h1 class="headerStyle">{strings.title}</h1>
+<Layout title={strings.title} description={strings.description} slug={strings.slug} showTitle>
 	{!!groupedPosts.poetry.length && <Section title={'Poetry'} works={groupedPosts.poetry} />}
 	{!!groupedPosts.fiction.length && <Section title={'Fiction'} works={groupedPosts.fiction} />}
 	{
@@ -42,10 +41,4 @@ const groupedPosts = {
 	{!!groupedPosts.other.length && <Section title={'Other'} works={groupedPosts.other} />}
 </Layout>
 
-<style>
-	.headerStyle {
-		margin-bottom: 0.25rem;
-		font: var(--normal-font);
-		font-size: 1.75rem;
-	}
-</style>
+<style></style>

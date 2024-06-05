@@ -13,9 +13,10 @@ interface Props {
 	alt: string;
 	height: number;
 	width: number;
+	class?: string;
 }
 
-const { url, alt, height, width } = Astro.props;
+const { url, alt, height, width, class: className, ...rest } = Astro.props;
 
 const publicId = url.split('/').pop()?.split('.')[0];
 if (!publicId) throw Error(`public id for ${url} not found`);
@@ -29,7 +30,7 @@ const imgSrc = img.toURL();
 console.log(imgSrc);
 ---
 
-<Image src={imgSrc} alt={alt} width={width} height={height} />
+<Image src={imgSrc} alt={alt} width={width} height={height} class={className} {...rest} />
 <style>
 	img {
 		object-fit: cover;

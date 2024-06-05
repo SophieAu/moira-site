@@ -1,6 +1,6 @@
 ---
 import { News as strings } from '../strings';
-import Layout from '../components/Layout.astro';
+import Layout from '../components/base/Layout.astro';
 import Link from '../components/Link.astro';
 import { getCollection } from 'astro:content';
 import CleanList from '../components/CleanList.astro';
@@ -9,8 +9,7 @@ import CleanList from '../components/CleanList.astro';
 const { news } = (await getCollection('news'))[0]!.data;
 ---
 
-<Layout title={strings.pageTitle} description={strings.description} slug={strings.slug}>
-	<h1 class="headerStyle">{strings.title}</h1>
+<Layout title={strings.title} description={strings.description} slug={strings.slug} showTitle>
 	<CleanList class="listStyle">
 		{
 			news.map(({ title, link }) => (
@@ -22,27 +21,4 @@ const { news } = (await getCollection('news'))[0]!.data;
 	</CleanList>
 </Layout>
 
-<style>
-	.headerStyle {
-		font: var(--normal-font);
-		font-size: 1.75rem;
-		margin-bottom: 0.25rem;
-	}
-
-	.listStyle {
-		li {
-			margin: 1.25rem 0;
-		}
-
-		li:first-child {
-			margin-top: 1.5rem;
-		}
-	}
-
-	.linkStyle {
-		color: var(--black);
-		font: var(--normal-font);
-		font-size: 1.25rem;
-		margin: 1rem 0;
-	}
-</style>
+<style></style>

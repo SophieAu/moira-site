@@ -1,6 +1,11 @@
 ---
-import { Home as strings } from "../strings";
-import Layout from "../components/Layout.astro";
+import { Home as strings } from '../strings';
+import Layout from '../components/base/Layout.astro';
 ---
 
-<Layout title={strings.pageTitle} description={strings.description} slug={strings.slug} />
+<Layout
+	title={strings.title}
+	description={strings.description}
+	slug={strings.slug}
+	showTitle={false}
+/>
