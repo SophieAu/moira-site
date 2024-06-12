@@ -1,5 +1,6 @@
 ---
 list:
+  - artwork: src/content/artwork/the_chain.md
   - artwork: src/content/artwork/valentine.md
   - artwork: src/content/artwork/sign_shrine.md
   - artwork: src/content/artwork/offer_paper.md
