@@ -2,6 +2,7 @@
 import { Cloudinary } from '@cloudinary/url-gen';
 import { fit } from '@cloudinary/url-gen/actions/resize';
 import { Image } from 'astro:assets';
+import Link from './Link.astro';
 
 const myCld = new Cloudinary({
 	cloud: { cloudName: 'dbqwb9i08' },
@@ -21,16 +22,24 @@ const { url, alt, height, width, class: className, ...rest } = Astro.props;
 const publicId = url.split('/').pop()?.split('.')[0];
 if (!publicId) throw Error(`public id for ${url} not found`);
 
-console.log(publicId);
 const img = myCld.image(publicId);
 
 img.format('auto').quality('auto').resize(fit().width(width).height(height));
 
 const imgSrc = img.toURL();
-console.log(imgSrc);
 ---
 
-<Image src={imgSrc} alt={alt} width={width} height={height} class={className} {...rest} />
+<Link href={url}>
+	<Image
+		id={publicId}
+		src={imgSrc}
+		alt={alt}
+		width={width}
+		height={height}
+		class={className}
+		{...rest}
+	/>
+</Link>
 <style>
 	img {
 		object-fit: cover;
