@@ -1,5 +1,6 @@
 ---
 news:
+  - title: 'July 11 2024: Poetry is Famous reading at Topos Too, Ridgewood NYC'
   - title: '15 May 2024: Salad Days Reading Series in Athens, Greece'
     link: >-
       https://www.instagram.com/p/C6qeVGII_A-/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==
