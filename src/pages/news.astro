@@ -7,16 +7,22 @@ import CleanList from '../components/CleanList.astro';
 
 // biome-ignore lint/style/noNonNullAssertion: <explanation>
 const { news } = (await getCollection('news'))[0]!.data;
+
+console.log({ news });
 ---
 
 <Layout title={strings.title} description={strings.description} slug={strings.slug} showTitle>
 	<CleanList class="listStyle">
 		{
-			news.map(({ title, link }) => (
-				<Link class="linkStyle" href={link}>
-					{title}
-				</Link>
-			))
+			news.map(({ title, link }) =>
+				!!link ? (
+					<Link class="linkStyle" href={link}>
+						{title}
+					</Link>
+				) : (
+					<span>{title}</span>
+				)
+			)
 		}
 	</CleanList>
 </Layout>

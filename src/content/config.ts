@@ -56,7 +56,7 @@ const news = defineCollection({
     news: z.array(
       z.object({
         title: z.string(),
-        link: z.string().url(),
+        link: z.string().url().optional(),
       })
     ),
   }),

@@ -8,8 +8,8 @@ export const mdField: TinaField = {
 };
 
 export const artworkFields: TinaField[] = [
-  { type: 'image', name: 'image', label: 'Image' },
-  { type: 'string', name: 'title', label: 'Title etc.' },
+  { type: 'string', name: 'title', label: 'Title etc.', required: true },
+  { type: 'image', name: 'image', label: 'Image' , required: true },
   { type: 'string', name: 'embed', label: 'Optional Media Embed Code' },
   mdField,
 ];
@@ -23,9 +23,9 @@ export const contactFields: TinaField[] = [
     list: true,
     ui: { itemProps: item => ({ label: `${item?.platformName} | ${item?.profileName}` }) },
     fields: [
-      { type: 'string', name: 'platformName', label: 'Platform Name' },
-      { type: 'string', name: 'profileName', label: 'Profile Name' },
-      { type: 'string', name: 'link', label: 'Link' },
+      { type: 'string', name: 'platformName', label: 'Platform Name', required: true },
+      { type: 'string', name: 'profileName', label: 'Profile Name', required: true },
+      { type: 'string', name: 'link', label: 'Link' , required: true },
     ],
   },
 ];
@@ -40,8 +40,8 @@ export const newsFields: TinaField[] = [
     list: true,
     ui: { itemProps: item => ({ label: item?.title }) },
     fields: [
-      { type: 'string', name: 'title', label: 'Link Name' },
-      { type: 'string', name: 'link', label: 'Link' },
+      { type: 'string', name: 'title', label: 'Link Name' , required: true },
+      { type: 'string', name: 'link', label: 'Link', required: true },
     ],
   },
 ];
@@ -55,15 +55,15 @@ export const translationFields: TinaField[] = [
     list: true,
     ui: { itemProps: item => ({ label: item?.title }) },
     fields: [
-      { type: 'string', name: 'title', label: 'Link Name' },
-      { type: 'string', name: 'link', label: 'Link' },
+      { type: 'string', name: 'title', label: 'Link Name', required: true },
+      { type: 'string', name: 'link', label: 'Link', required: true },
     ],
   },
 ];
 
 export const workFields: TinaField[] = [
-  { type: 'string', name: 'title', label: 'Title' },
-  { type: 'string', name: 'link', label: 'External Link' },
+  { type: 'string', name: 'title', label: 'Title' , required: true },
+  { type: 'string', name: 'link', label: 'External Link' , required: true },
   { type: 'string', name: 'metainfo', label: 'Metainfo' },
   { type: 'boolean', name: 'isSubpage', label: 'Create Subpage' },
   {
@@ -71,6 +71,7 @@ export const workFields: TinaField[] = [
     name: 'category',
     label: 'Category',
     options: ['Fiction', 'Poetry', 'Theory and Criticism', 'Other'],
+    required: true
   },
   mdField,
 ];
@@ -88,6 +89,7 @@ export const artworksListFields: TinaField[] = [
         label: 'Artwork',
         name: 'artwork',
         collections: ['artwork'],
+        required: true
       },
     ],
   },
