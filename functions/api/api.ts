@@ -11,7 +11,6 @@ const mediaHandler = createMediaHandler({
     try {
       if (process.env.NODE_ENV == 'development') return true;
       const isAuthd = !!(await isAuthorized(req))?.verified;
-      console.log(`Authorized: ${isAuthd ? 'yes' : 'no'}`);
 
       return isAuthd;
     } catch (e) {
