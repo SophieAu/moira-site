@@ -9,7 +9,7 @@ const router = Router();
 const mediaHandler = createMediaHandler({
   authorized: async (req, _res) => {
     try {
-      if (process.env.NODE_ENV == 'development') return true;
+      if (process.env.NODE_ENV === 'development') return true;
       const isAuthd = !!(await isAuthorized(req))?.verified;
 
       return isAuthd;
