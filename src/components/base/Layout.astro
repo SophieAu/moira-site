@@ -37,7 +37,6 @@ const { class: className, title, description, slug, showTitle } = Astro.props;
 			}
 
 			main {
-				overflow-y: scroll;
 
 				a {
 					color: var(--black);
@@ -55,6 +54,10 @@ const { class: className, title, description, slug, showTitle } = Astro.props;
 				a:active {
 					opacity: 0.8;
 					text-decoration: underline;
+				}
+
+				> * {
+					max-width: var(--main-width);
 				}
 			}
 
@@ -81,7 +84,19 @@ const { class: className, title, description, slug, showTitle } = Astro.props;
 			@media (min-width: 48rem) {
 				body {
 					--padding: var(--large-margin);
-					grid-template-columns: var(--sidebar-width) minmax(auto, var(--main-width));
+					grid-template-columns: var(--sidebar-width) auto;
+					padding: 0 0 0 var(--padding);
+					height: 100vh;
+				}
+
+				body > * {
+					padding:  var(--padding) 0;
+
+				}
+
+				main {
+					height: 100vh;
+					overflow-y: scroll;
 				}
 			}
 		</style>
