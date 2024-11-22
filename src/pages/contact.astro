@@ -5,7 +5,6 @@ import { Contact as strings } from '../strings';
 import CleanList from '../components/CleanList.astro';
 import Link from '../components/Link.astro';
 
-// biome-ignore lint/style/noNonNullAssertion: <explanation>
 const { email, socialMedia } = (await getCollection('contact'))[0]!.data;
 
 const preppedEmail = { label: strings.email, link: `mailto:${email}`, text: email };

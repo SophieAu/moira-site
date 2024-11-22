@@ -1,32 +1,33 @@
 {
-  "name": "moira-site-astro",
-  "type": "module",
-  "version": "0.0.1",
-  "scripts": {
-    "dev": "npx tinacms dev -c \"astro dev\"",
-    "start": "npx tinacms dev -c \"astro dev\"",
-    "build": "npx tinacms build && astro check && astro build",
-    "preview": "astro preview",
-    "astro": "astro"
-  },
-  "dependencies": {
-    "@astrojs/check": "^0.9.4",
-    "@astrojs/rss": "^4.0.8",
-    "@astrojs/sitemap": "^3.2.0",
-    "@cloudinary/url-gen": "^1.21.0",
-    "@tinacms/auth": "^1.0.8",
-    "astro": "^4.16.3",
-    "astro-robots-txt": "^1.0.0",
-    "express": "^4.21.1",
-    "linkedom": "^0.18.5",
-    "next-tinacms-cloudinary": "^8.0.9",
-    "serverless-http": "^3.2.0",
-    "tinacms": "^2.2.9",
-    "typescript": "^5.6.3"
-  },
-  "devDependencies": {
-    "@tinacms/cli": "^1.6.9",
-    "@types/express": "^5.0.0",
-    "@types/node": "^20.12.5"
-  }
+	"name": "moira-site-astro",
+	"type": "module",
+	"version": "0.0.1",
+	"scripts": {
+		"dev": "npx tinacms dev -c \"astro dev\"",
+		"start": "npx tinacms dev -c \"astro dev\"",
+		"build": "npx tinacms build && astro check && astro build",
+		"preview": "astro preview",
+		"astro": "astro"
+	},
+	"dependencies": {
+		"@astrojs/check": "^0.9.4",
+		"@astrojs/rss": "^4.0.9",
+		"@astrojs/sitemap": "^3.2.1",
+		"@cloudinary/url-gen": "^1.21.0",
+		"@tinacms/auth": "^1.0.8",
+		"astro": "^4.16.14",
+		"astro-robots-txt": "^1.0.0",
+		"express": "^4.21.1",
+		"linkedom": "^0.18.5",
+		"next-tinacms-cloudinary": "^10.0.0",
+		"serverless-http": "^3.2.0",
+		"tinacms": "^2.2.9",
+		"typescript": "^5.6.3"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "1.9.4",
+		"@tinacms/cli": "^1.6.11",
+		"@types/express": "^5.0.0",
+		"@types/node": "^20.17.6"
+	}
 }

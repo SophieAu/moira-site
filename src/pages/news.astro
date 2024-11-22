@@ -5,7 +5,6 @@ import Link from '../components/Link.astro';
 import { getCollection } from 'astro:content';
 import CleanList from '../components/CleanList.astro';
 
-// biome-ignore lint/style/noNonNullAssertion: <explanation>
 const { news } = (await getCollection('news'))[0]!.data;
 ---
 

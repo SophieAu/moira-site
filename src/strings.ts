@@ -3,15 +3,15 @@ import { path, slugs, type PageMetaData } from './consts';
 export const BASE_TITLE = 'Moira Barrett';
 
 const toTitleCase = (str: string) =>
-  str.length ? `${str.charAt(0).toUpperCase()}${str.slice(1)}` : str;
+	str.length ? `${str.charAt(0).toUpperCase()}${str.slice(1)}` : str;
 
 export const buildPageTitle = (str: string) => `${toTitleCase(str)} | ${BASE_TITLE}`;
 
 const buildMetaData = (title: keyof typeof slugs, stringTitle?: string): PageMetaData => ({
-  title: toTitleCase(stringTitle || title),
-  description: '',
-  slug: slugs[title],
-  path: path(title),
+	title: toTitleCase(stringTitle || title),
+	description: '',
+	slug: slugs[title],
+	path: path(title),
 });
 
 export const Home = buildMetaData('home');

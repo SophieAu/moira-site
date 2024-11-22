@@ -4,7 +4,6 @@ import Layout from '../components/base/Layout.astro';
 import { getCollection } from 'astro:content';
 import WrappedContent from '../components/WrappedContent.astro';
 
-// biome-ignore lint/style/noNonNullAssertion: <explanation>
 const tx = (await getCollection('translation'))[0]!;
 const { Content } = await tx.render();
 ---

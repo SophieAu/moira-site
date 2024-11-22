@@ -19,7 +19,7 @@ const mappedPosts = await Promise.all(
 			.replace(/[^\w-]/g, '')
 			.replace(/(-+)/g, '-');
 		return { ...work, link: `${WORK_SUBPATH}/${slug}` };
-	})
+	}),
 );
 
 const groupedPosts = {
