@@ -37,6 +37,7 @@ const { class: className, title, description, slug, showTitle } = Astro.props;
 			}
 
 			main {
+				padding-right: max(var(--padding), var(--padding) + 100vw - 1600px);
 
 				a {
 					color: var(--black);
@@ -68,9 +69,7 @@ const { class: className, title, description, slug, showTitle } = Astro.props;
 				background: url('/bg_pattern.png');
 
 				width: 100vw;
-				max-width: 1600px;
 				min-height: 100vh;
-				padding: var(--padding);
 
 				display: grid;
 				grid-gap: var(--padding);
@@ -79,24 +78,27 @@ const { class: className, title, description, slug, showTitle } = Astro.props;
 				/* MOBILE-ONLY */
 				--padding: var(--small-margin);
 				grid-template-columns: 1fr;
+				padding: var(--padding);
+				padding-right: 0;
 			}
 
 			@media (min-width: 48rem) {
 				body {
 					--padding: var(--large-margin);
-					grid-template-columns: var(--sidebar-width) auto;
-					padding: 0 0 0 var(--padding);
+					grid-template-columns: calc(var(--sidebar-width) + var(--padding)) auto;
 					height: 100vh;
+					padding: 0;
 				}
 
-				body > * {
-					padding:  var(--padding) 0;
-
+				body > header {
+					padding: var(--padding) 0 var(--padding) var(--padding);
 				}
 
-				main {
+				body > main {
+					padding-top: var(--padding);
+					padding-bottom: var(--padding);
 					height: 100vh;
-					overflow-y: scroll;
+					overflow-y: auto;
 				}
 			}
 		</style>
