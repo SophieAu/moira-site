@@ -37,7 +37,7 @@ const { class: className, title, description, slug, showTitle } = Astro.props;
 			}
 
 			main {
-				padding-right: max(var(--padding), var(--padding) + 100vw - var(--max-body-width));
+				padding-right: max(var(--padding), calc((100vw - 1600px) / 2 + var(--padding)));
 
 				a {
 					color: var(--black);
@@ -88,13 +88,14 @@ const { class: className, title, description, slug, showTitle } = Astro.props;
 					grid-template-columns: calc(var(--sidebar-width) + var(--padding)) auto;
 					height: 100vh;
 					padding: 0;
+					padding-left: max(calc((100vw - 1600px) / 2), 0px);
 				}
 
-				body > header {
+				header {
 					padding: var(--padding) 0 var(--padding) var(--padding);
 				}
 
-				body > main {
+				main {
 					padding-top: var(--padding);
 					padding-bottom: var(--padding);
 					height: 100vh;
