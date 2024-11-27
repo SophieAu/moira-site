@@ -20,14 +20,14 @@
 		"astro-robots-txt": "^1.0.0",
 		"express": "^4.21.1",
 		"linkedom": "^0.18.5",
-		"next-tinacms-cloudinary": "^10.0.0",
+		"next-tinacms-cloudinary": "^11.0.0",
 		"serverless-http": "^3.2.0",
-		"tinacms": "^2.2.9",
+		"tinacms": "^2.5.0",
 		"typescript": "^5.6.3"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "1.9.4",
-		"@tinacms/cli": "^1.6.11",
+		"@tinacms/cli": "^1.6.12",
 		"@types/express": "^5.0.0",
 		"@types/node": "^20.17.6"
 	},
