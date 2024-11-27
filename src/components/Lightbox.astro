@@ -1,0 +1,89 @@
+---
+import type { InferEntrySchema } from 'astro:content';
+
+interface Props {
+	data: InferEntrySchema<'artwork'>;
+	popoverId: string;
+}
+
+const { popoverId, data } = Astro.props;
+---
+
+<script>
+
+</script>
+<div class="popover-container" popover="auto" id={popoverId}>
+	<div class="lightbox-container">
+		<div class="lightbox">
+			<img src={data.image} />
+			<div class="info">
+				{data.title}
+				{data.embed && <Fragment set:html={data.embed} />}
+			</div>
+		</div>
+	</div>
+</div>
+
+<style>
+	.popover-container {
+		display: none;
+
+		inset: 0 max(calc((100vw - 1600px) / 2), var(--padding));
+		margin: auto;
+		height: fit-content;
+
+		background-color: transparent;
+		border-width: 0;
+
+		max-width: unset;
+	}
+˝
+	@media (min-width: 48rem) {
+		.popover-container:popover-open {
+			display: block;
+		}
+	}
+
+	.popover-container::backdrop {
+		background-color: rgba(0, 0, 0, 0.8);
+	}
+
+	.lightbox-container {
+		max-width: var(--max-body-width);
+
+		display: grid;
+		height: inherit;
+
+		place-items: center;
+	}
+
+	.lightbox {
+		display: grid;
+		grid-template-columns: 1fr clamp(20rem, 100vw / 6, var(--max-body-width) / 6);
+		gap: 2rem;
+	}
+
+	img {
+		display: block;
+
+		place-self: center;
+		object-fit: contain;
+		object-position: left;
+		max-height: calc(100vh - 2 * var(--padding));
+		max-width: min(100%, calc(var(--max-body-width) * 5 / 6));
+	}
+
+	.info {
+		place-self: end start;
+		padding-bottom: 1rem;
+
+		font: var(--body-font);
+		font-size: 1.75rem;
+		letter-spacing: 0.02em;
+		color: var(--beige);
+
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+	}
+</style>

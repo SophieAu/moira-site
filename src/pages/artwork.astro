@@ -5,27 +5,39 @@ import { getCollection, getEntry } from 'astro:content';
 import CleanList from '../components/CleanList.astro';
 import CldImage from '../components/CldImage.astro';
 import type { CollectionEntry } from 'astro:content';
+import Lightbox from '../components/Lightbox.astro';
 
 const order = (await getCollection('artworkslist'))[0]!.data.list;
 const artworks = [];
 for (const artwork of order) {
 	const path = artwork.artwork.split('/');
 	const slug = path[path.length - 1]!.split(
-		'.',
+		'.'
 	)[0] as unknown as CollectionEntry<'artwork'>['slug'];
 
 	artworks.push(await getEntry('artwork', slug));
 }
+
+export type ArtworkEntry = (typeof artworks)[0];
 ---
 
 <Layout title={strings.title} description={strings.description} slug={strings.slug} showTitle>
 	<CleanList class="listStyle">
 		{
-			artworks.map(({ data }) => (
+			artworks.map(({ data, slug }) => (
 				<article class="itemStyle">
-					<CldImage url={data.image} alt={data.title} width={720} height={720} class="imageStyle" />
-					<p class="titleStyle">{data.title}</p>
+					<button class="popoverButtonStyle" popovertarget={`lightbox-${slug}`}>
+						<CldImage
+							url={data.image}
+							alt={data.title}
+							width={720}
+							height={720}
+							class="imageStyle"
+						/>
+						<p class="titleStyle">{data.title}</p>
+					</button>
 					{data.embed && <Fragment set:html={data.embed} />}
+					<Lightbox data={data} popoverId={`lightbox-${slug}`} />
 				</article>
 			))
 		}
@@ -48,5 +60,17 @@ for (const artwork of order) {
 
 	.titleStyle {
 		margin: 0.75rem 0;
+	}
+
+	.popoverButtonStyle {
+		background-color: unset;
+		border-width: 0;
+	}
+
+	@media (min-width: 48rem) {
+		.popoverButtonStyle:hover {
+			cursor: pointer;
+			opacity: 0.8;
+		}
 	}
 </style>
