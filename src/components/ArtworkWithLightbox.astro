@@ -1,0 +1,73 @@
+---
+import CldImage from '../components/CldImage.astro';
+import type { InferEntrySchema } from 'astro:content';
+import Lightbox from '../components/Lightbox.astro';
+
+interface Props {
+	data: InferEntrySchema<'artwork'>;
+	slug: string;
+}
+
+const { slug, data } = Astro.props;
+
+const lightboxId = `lightbox-${slug}`;
+---
+
+<artwork-with-lightbox data-target={lightboxId}>
+	<button class="lightboxButtonStyle" id={`${lightboxId}-button`}>
+		<CldImage url={data.image} alt={data.title} width={720} height={720} class="imageStyle" />
+		<p class="titleStyle">{data.title}</p>
+	</button>
+	{data.embed && <Fragment set:html={data.embed} />}
+	<Lightbox data={data} dialogId={lightboxId} />
+</artwork-with-lightbox>
+
+<style>
+	.imageStyle {
+		display: block;
+		max-width: min(var(--main-width), 100%);
+
+		max-height: var(--main-width);
+		object-fit: contain;
+		object-position: left;
+	}
+
+	.titleStyle {
+		margin: 0.75rem 0;
+	}
+
+	.lightboxButtonStyle {
+		background-color: unset;
+		border-width: 0;
+	}
+
+	@media (min-width: 48rem) {
+		.lightboxButtonStyle:hover {
+			cursor: pointer;
+			opacity: 0.8;
+		}
+	}
+</style>
+
+<script>
+	class ArtworkWithLightbox extends HTMLElement {
+		connectedCallback() {
+			const lightboxId = this.dataset.target;
+
+			const button = document.getElementById(`${lightboxId}-button`) as HTMLButtonElement;
+			const lightbox = document.getElementById(`${lightboxId}`) as HTMLDialogElement;
+
+			const rem = parseInt(getComputedStyle(document.documentElement).fontSize, 10);
+			const smallScreen = 48 * rem;
+
+			button.addEventListener('click', () => {
+				if (window.innerWidth > smallScreen) lightbox.showModal();
+			});
+
+			lightbox.addEventListener('click', () => {
+				lightbox.close();
+			});
+		}
+	}
+	customElements.define('artwork-with-lightbox', ArtworkWithLightbox);
+</script>

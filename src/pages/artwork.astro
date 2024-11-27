@@ -3,9 +3,8 @@ import { Artwork as strings } from '../strings';
 import Layout from '../components/base/Layout.astro';
 import { getCollection, getEntry } from 'astro:content';
 import CleanList from '../components/CleanList.astro';
-import CldImage from '../components/CldImage.astro';
 import type { CollectionEntry } from 'astro:content';
-import Lightbox from '../components/Lightbox.astro';
+import ArtworkWithLightbox from '../components/ArtworkWithLightbox.astro';
 
 const order = (await getCollection('artworkslist'))[0]!.data.list;
 const artworks = [];
@@ -26,18 +25,7 @@ export type ArtworkEntry = (typeof artworks)[0];
 		{
 			artworks.map(({ data, slug }) => (
 				<article class="itemStyle">
-					<button class="popoverButtonStyle" popovertarget={`lightbox-${slug}`}>
-						<CldImage
-							url={data.image}
-							alt={data.title}
-							width={720}
-							height={720}
-							class="imageStyle"
-						/>
-						<p class="titleStyle">{data.title}</p>
-					</button>
-					{data.embed && <Fragment set:html={data.embed} />}
-					<Lightbox data={data} popoverId={`lightbox-${slug}`} />
+					<ArtworkWithLightbox data={data} slug={slug} />
 				</article>
 			))
 		}
@@ -47,30 +35,5 @@ export type ArtworkEntry = (typeof artworks)[0];
 <style>
 	.listStyle {
 		gap: 4rem;
-	}
-
-	.imageStyle {
-		display: block;
-		max-width: min(var(--main-width), 100%);
-
-		max-height: var(--main-width);
-		object-fit: contain;
-		object-position: left;
-	}
-
-	.titleStyle {
-		margin: 0.75rem 0;
-	}
-
-	.popoverButtonStyle {
-		background-color: unset;
-		border-width: 0;
-	}
-
-	@media (min-width: 48rem) {
-		.popoverButtonStyle:hover {
-			cursor: pointer;
-			opacity: 0.8;
-		}
 	}
 </style>

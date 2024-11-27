@@ -3,16 +3,14 @@ import type { InferEntrySchema } from 'astro:content';
 
 interface Props {
 	data: InferEntrySchema<'artwork'>;
-	popoverId: string;
+	dialogId: string;
 }
 
-const { popoverId, data } = Astro.props;
+const { dialogId, data } = Astro.props;
 ---
 
-<script>
-
-</script>
-<div class="popover-container" popover="auto" id={popoverId}>
+<script></script>
+<dialog class="dialog-container" id={dialogId}>
 	<div class="lightbox-container">
 		<div class="lightbox">
 			<img src={data.image} />
@@ -22,12 +20,10 @@ const { popoverId, data } = Astro.props;
 			</div>
 		</div>
 	</div>
-</div>
+</dialog>
 
 <style>
-	.popover-container {
-		display: none;
-
+	.dialog-container {
 		inset: 0 max(calc((100vw - 1600px) / 2), var(--padding));
 		margin: auto;
 		height: fit-content;
@@ -37,14 +33,8 @@ const { popoverId, data } = Astro.props;
 
 		max-width: unset;
 	}
-˝
-	@media (min-width: 48rem) {
-		.popover-container:popover-open {
-			display: block;
-		}
-	}
 
-	.popover-container::backdrop {
+	.dialog-container::backdrop {
 		background-color: rgba(0, 0, 0, 0.8);
 	}
 
