@@ -37,7 +37,7 @@ const { class: className, title, description, slug, showTitle } = Astro.props;
 			}
 
 			main {
-				padding-right: max(var(--padding), var(--padding) + 100vw - 1600px);
+				padding-right: max(var(--padding), var(--padding) + 100vw - var(--max-body-width));
 
 				a {
 					color: var(--black);
