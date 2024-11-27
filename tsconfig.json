@@ -3,5 +3,5 @@
   "compilerOptions": {
     "strictNullChecks": true
   },
-  "exclude": ["public/admin/*"],
+  "exclude": ["public/admin/*", "dist/admin/*"],
 }
