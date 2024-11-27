@@ -15,6 +15,7 @@
 		"@astrojs/rss": "^4.0.9",
 		"@astrojs/sitemap": "^3.2.1",
 		"@cloudinary/url-gen": "^1.21.0",
+		"@tinacms/auth": "^1.0.9",
 		"astro": "^4.16.14",
 		"astro-robots-txt": "^1.0.0",
 		"express": "^4.21.1",
