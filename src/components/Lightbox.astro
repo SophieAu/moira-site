@@ -46,6 +46,10 @@ const { dialogId, data } = Astro.props;
 
 		place-items: center;
 	}
+	.lightbox-container:focus-visible,
+	.dialog-container:focus-visible {
+		outline: 0;
+	}
 
 	.lightbox {
 		display: grid;
