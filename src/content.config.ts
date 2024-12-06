@@ -1,7 +1,8 @@
+import { glob } from 'astro/loaders';
 import { defineCollection, z } from 'astro:content';
 
 const artwork = defineCollection({
-	type: 'content',
+	loader: glob({ pattern: '**/[^_]*.md', base: './content/artwork' }),
 	schema: z.object({
 		title: z.string(),
 		image: z.string(),
@@ -10,7 +11,7 @@ const artwork = defineCollection({
 });
 
 const artworkslist = defineCollection({
-	type: 'content',
+	loader: glob({ pattern: '**/[^_]*.md', base: './content/artworkslist' }),
 	schema: z.object({
 		list: z.array(
 			z.object({
@@ -21,7 +22,7 @@ const artworkslist = defineCollection({
 });
 
 const works = defineCollection({
-	type: 'content',
+	loader: glob({ pattern: '**/[^_]*.md', base: './content/works' }),
 	schema: z.object({
 		title: z.string(),
 		link: z.string().url(),
@@ -32,7 +33,7 @@ const works = defineCollection({
 });
 
 const contact = defineCollection({
-	type: 'content',
+	loader: glob({ pattern: '**/[^_]*.md', base: './content/contact' }),
 	schema: z.object({
 		email: z.string().email(),
 		socialMedia: z.array(
@@ -46,12 +47,12 @@ const contact = defineCollection({
 });
 
 const cv = defineCollection({
-	type: 'content',
+	loader: glob({ pattern: '**/[^_]*.md', base: './content/cv' }),
 	schema: z.object({}),
 });
 
 const news = defineCollection({
-	type: 'content',
+	loader: glob({ pattern: '**/[^_]*.md', base: './content/news' }),
 	schema: z.object({
 		news: z.array(
 			z.object({
@@ -63,7 +64,7 @@ const news = defineCollection({
 });
 
 const translation = defineCollection({
-	type: 'content',
+	loader: glob({ pattern: '**/[^_]*.md', base: './content/translation' }),
 	schema: z.object({
 		links: z
 			.array(

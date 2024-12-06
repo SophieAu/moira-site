@@ -4,13 +4,13 @@ import { Writing as strings } from '../strings';
 import Layout from '../components/base/Layout.astro';
 import Section from '../components/Section.astro';
 
-import { getCollection } from 'astro:content';
+import { getCollection, render } from 'astro:content';
 
 const posts = await getCollection('works');
 
 const mappedPosts = await Promise.all(
 	posts.map(async p => {
-		const work = { ...p.data, Content: (await p.render()).Content };
+		const work = { ...p.data, Content: (await render(p)).Content };
 		if (!work.isSubpage) return work;
 
 		const slug = work.title
@@ -19,7 +19,7 @@ const mappedPosts = await Promise.all(
 			.replace(/[^\w-]/g, '')
 			.replace(/(-+)/g, '-');
 		return { ...work, link: `${WORK_SUBPATH}/${slug}` };
-	}),
+	})
 );
 
 const groupedPosts = {
