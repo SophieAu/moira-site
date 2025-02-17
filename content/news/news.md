@@ -1,5 +1,7 @@
 ---
 news:
+  - title: 'February 2nd 2025: In This Thicket reading at Schmetterling Bar, Berlin'
+    link: 'https://www.instagram.com/p/DFFuoBgs4gI/'
   - title: 'July 11 2024: Poetry is Famous reading at Topos Too, Ridgewood NYC'
   - title: '15 May 2024: Salad Days Reading Series in Athens, Greece'
     link: >-
