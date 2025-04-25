@@ -8,8 +8,8 @@ import ArtworkWithLightbox from '../components/ArtworkWithLightbox.astro';
 
 const order = (await getCollection('artworkslist'))[0]!.data.list;
 const artworks = [];
-for (const artwork of order) {
-	const path = artwork.artwork.split('/');
+for (const { artwork } of order) {
+	const path = artwork.split('/');
 	const slug = path[path.length - 1]!.split('.')[0] as unknown as CollectionEntry<'artwork'>['id'];
 
 	const entry = await getEntry('artwork', slug);
@@ -20,19 +20,21 @@ export type ArtworkEntry = (typeof artworks)[0];
 ---
 
 <Layout title={strings.title} description={strings.description} slug={strings.slug} showTitle>
-	<CleanList class="listStyle">
+	<CleanList class="list">
 		{
 			artworks.map(({ data, id: slug }) => (
-				<article class="itemStyle">
-					<ArtworkWithLightbox data={data} slug={slug} />
-				</article>
+				<li>
+					<article class="itemStyle">
+						<ArtworkWithLightbox data={data} slug={slug} />
+					</article>
+				</li>
 			))
 		}
 	</CleanList>
 </Layout>
 
 <style>
-	.listStyle {
+	.list {
 		gap: 4rem;
 	}
 </style>

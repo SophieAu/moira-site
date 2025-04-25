@@ -24,19 +24,21 @@ const links = [preppedEmail, ...preppedSocials];
 	slug={strings.slug}
 	showTitle={false}
 >
-	<CleanList class="listStyle">
+	<CleanList class="list">
 		{
 			links.map(l => (
-				<span>
-					{`${l.label}: `}
-					<Link href={l.link}>{l.text}</Link>
-				</span>
+				<li>
+					<span>
+						{`${l.label}: `}
+						<Link href={l.link}>{l.text}</Link>
+					</span>
+				</li>
 			))
 		}
 	</CleanList>
 </Layout>
 <style>
-	.listStyle {
+	.list {
 		margin-top: 5vh;
 	}
 </style>

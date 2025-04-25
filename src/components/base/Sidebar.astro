@@ -10,9 +10,11 @@ import Link from '../Link.astro';
 		<CleanList class="list">
 			{
 				pages.map(page => (
-					<Link href={page.path} class="link navItem">
-						{page.title}
-					</Link>
+					<li>
+						<Link href={page.path} class="link navItem">
+							{page.title}
+						</Link>
+					</li>
 				))
 			}
 		</CleanList>

@@ -1,25 +1,13 @@
 ---
-import { parseHTML } from 'linkedom';
-
 interface Props {
 	class?: string;
 }
-
-const html = await Astro.slots.render('default');
-const { document } = parseHTML(html);
-const children = Array.from(document.children);
 
 const { class: className, ...rest } = Astro.props;
 ---
 
 <ul class={className} {...rest}>
-	{
-		children.map(e => (
-			<li>
-				<Fragment set:html={e} />
-			</li>
-		))
-	}
+	<slot />
 </ul>
 <style>
 	ul {
@@ -28,8 +16,7 @@ const { class: className, ...rest } = Astro.props;
 		display: grid;
 		gap: 2rem;
 	}
-
-	li {
+	ul > :global(li) {
 		font: var(--body-font);
 		letter-spacing: 0.02em;
 

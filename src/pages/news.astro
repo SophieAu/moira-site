@@ -9,19 +9,19 @@ const { news } = (await getCollection('news'))[0]!.data;
 ---
 
 <Layout title={strings.title} description={strings.description} slug={strings.slug} showTitle>
-	<CleanList class="listStyle">
+	<CleanList>
 		{
-			news.map(({ title, link }) =>
-				!!link ? (
-					<Link class="linkStyle" href={link}>
-						{title}
-					</Link>
-				) : (
-					<span>{title}</span>
-				)
-			)
+			news.map(({ title, link }) => (
+				<li>
+					{!!link ? (
+						<Link class="linkStyle" href={link}>
+							{title}
+						</Link>
+					) : (
+						<span>{title}</span>
+					)}
+				</li>
+			))
 		}
 	</CleanList>
 </Layout>
-
-<style></style>
