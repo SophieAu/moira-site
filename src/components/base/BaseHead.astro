@@ -1,4 +1,5 @@
 ---
+import { Font } from 'astro:assets';
 import { BASE_URL } from '../../consts';
 import { buildPageTitle } from '../../strings';
 
@@ -23,19 +24,9 @@ const { title, description, slug } = Astro.props;
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
 <meta http-equiv="Content-Security-Policy" content={CSP_POLICY} />
-<link href="https://fonts.googleapis.com/css?family=Italiana&display=swap" rel="stylesheet" />
-<style>
-	@font-face {
-		font-family: 'Fanwood Text';
-		src: url('/fonts/Fanwood Text.otf') format('otf');
-		font-style: normal;
-	}
-	@font-face {
-		font-family: 'Fanwood Text';
-		src: url('/fonts/Fanwood Text Italic.otf') format('otf');
-		font-style: italic;
-	}
-</style>
+
+<Font cssVariable="--font-italiana" preload />
+<Font cssVariable="--font-fanwood" preload />
 
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />

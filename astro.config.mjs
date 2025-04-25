@@ -25,14 +25,13 @@ export default defineConfig({
 					{
 						style: 'normal',
 						weight: 400,
-						src: ['./public/fonts/Fanwood Text.otf'],
+						src: ['./src/assets/fonts/Fanwood Text.otf'],
 					},
 					{
 						style: 'italic',
 						weight: 400,
-						src: ['./public/fonts/Fanwood Text Italic.otf'],
+						src: ['./src/assets/fonts/Fanwood Text Italic.otf'],
 					},
-					// ...
 				],
 			},
 		],
