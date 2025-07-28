@@ -1,6 +1,10 @@
 ---
 news:
   - title: >-
+      Reading for Poets' Corner Weißensee, Vorprogramm Poesiefestival Berlin
+      2025, 1 June 2025
+    link: 'https://www.haus-fuer-poesie.org/de/programm/die-andere-seite-des-gefuehls'
+  - title: >-
       Dragging A River - residency show opening at KOKTO in Athens, Greece, 10
       April 2025
     link: >-
