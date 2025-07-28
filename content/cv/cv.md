@@ -1,6 +1,13 @@
 
-## Publications, Exhibitions, Conferences
+## Readings, Exhibitions, Publications
 
+* DRAGGING A RIVER, residency and exhibition with Yasmin Nebenführ at KOKTO, Athens, Greece, April 2025
+   (funded by the Goethe-Institut’s Culture Moves grant)
+* Poets’ Corner reading series, 26th Poesiefestival Berlin, June 2025
+   [https://www.haus-fuer-poesie.org/de/programm/die-andere-seite-des-gefuehls](https://www.haus-fuer-poesie.org/de/programm/die-andere-seite-des-gefuehls) 
+* Oracle Under the Influence, poem published in \[kon] Literary Magazine, February 2025
+   [https://kon-paper.com/bibliothek/oracle-under-the-influence](https://kon-paper.com/bibliothek/oracle-under-the-influence) 
+* Salad Days reading series, Athens, Greece, May 2024
 * *DUETS*, Exhibition with Yasmin Nebenführ at DZIALDOV, Berlin, April 2024
 * *According to My Wishes*, Solo-Exhibition at Kulturkirche Hürth, December 2023
 * *to be loved by white noise*, poem published in Allium Journal of Poetry and Prose, Summer 2023
