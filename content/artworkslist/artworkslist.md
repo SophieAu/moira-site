@@ -1,7 +1,7 @@
 ---
 list:
   - artwork: content/artwork/unwon_undone_riso.md
-  - artwork: content/artwork/place on search.md
+  - artwork: content/artwork/place_on_search.md
   - artwork: src/content/artwork/the_chain.md
   - artwork: src/content/artwork/valentine.md
   - artwork: src/content/artwork/sign_shrine.md
@@ -24,4 +24,5 @@ list:
   - artwork: src/content/artwork/still_room_3.md
   - artwork: src/content/artwork/prayer.md
 ---
+
 
