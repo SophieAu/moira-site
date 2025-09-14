@@ -1,5 +1,6 @@
 ---
 list:
+  - artwork: content/artwork/unwon_undone_riso.md
   - artwork: src/content/artwork/the_chain.md
   - artwork: src/content/artwork/valentine.md
   - artwork: src/content/artwork/sign_shrine.md
