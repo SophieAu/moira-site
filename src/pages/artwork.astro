@@ -7,7 +7,7 @@ import type { CollectionEntry } from 'astro:content';
 import ArtworkWithLightbox from '../components/ArtworkWithLightbox.astro';
 
 const order = (await getCollection('artworkslist'))[0]!.data.list;
-const artworks = [];
+const artworks = [] as CollectionEntry<'artwork'>[];
 for (const { artwork } of order) {
 	const path = artwork.split('/');
 	const slug = path[path.length - 1]!.split('.')[0] as unknown as CollectionEntry<'artwork'>['id'];

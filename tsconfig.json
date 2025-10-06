@@ -3,5 +3,7 @@
   "compilerOptions": {
     "strictNullChecks": true
   },
-  "exclude": ["public/admin/*", "dist/admin/*"],
+
+  "include": [".astro/types.d.ts", "**/*"],
+  "exclude": ["public/admin/*", "dist"]
 }
