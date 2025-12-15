@@ -1,9 +1,9 @@
 ---
 list:
-  - artwork: content/artwork/dragging_river_fountain.md
   - artwork: content/artwork/unwon_done_cyanotype.md
   - artwork: content/artwork/unwon_undone_riso.md
   - artwork: content/artwork/place_on_search.md
+  - artwork: content/artwork/dragging_river_fountain.md
   - artwork: src/content/artwork/the_chain.md
   - artwork: src/content/artwork/valentine.md
   - artwork: src/content/artwork/sign_shrine.md
