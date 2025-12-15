@@ -7,8 +7,7 @@ news:
   - title: >-
       Dragging A River - residency show opening at KOKTO in Athens, Greece, 10
       April 2025
-    link: >-
-      https://www.instagram.com/p/DJCInLssdv7ZX6a0dSDSVZCyYM_Eg442RN0GgU0/?img_index=1
+    link: 'https://www.instagram.com/p/DJCInLssdv7/?img_index=1'
   - title: 'February 2nd 2025: In This Thicket reading at Schmetterling Bar, Berlin'
     link: 'https://www.instagram.com/p/DFFuoBgs4gI/'
   - title: 'July 11 2024: Poetry is Famous reading at Topos Too, Ridgewood NYC'
