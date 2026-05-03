@@ -1,34 +1,24 @@
 ---
 news:
-  - title: >-
-      Reading for Poets' Corner Weißensee, Vorprogramm Poesiefestival Berlin
-      2025, 1 June 2025
+  - title: '"To Have and To Have Not" on Cashmere Radio''s MIGA Vol. 2'
+    link: 'https://cashmereradio.bandcamp.com/album/miga-vol-2'
+  - title: 'Reading for Poets'' Corner Weißensee, Vorprogramm Poesiefestival Berlin 2025, 1 June 2025'
     link: 'https://www.haus-fuer-poesie.org/de/programm/die-andere-seite-des-gefuehls'
-  - title: >-
-      Dragging A River - residency show opening at KOKTO in Athens, Greece, 10
-      April 2025
+  - title: 'Dragging A River - residency show opening at KOKTO in Athens, Greece, 10 April 2025'
     link: 'https://www.instagram.com/p/DJCInLssdv7/?img_index=1'
   - title: 'February 2nd 2025: In This Thicket reading at Schmetterling Bar, Berlin'
     link: 'https://www.instagram.com/p/DFFuoBgs4gI/'
   - title: 'July 11 2024: Poetry is Famous reading at Topos Too, Ridgewood NYC'
   - title: '15 May 2024: Salad Days Reading Series in Athens, Greece'
-    link: >-
-      https://www.instagram.com/p/C6qeVGII_A-/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==
-  - title: >-
-      DUETS - Works on Paper by Yasmin Nebenführ and Moira Barrett, opening
-      April 5 at DZIALDOV, Berlin
+    link: 'https://www.instagram.com/p/C6qeVGII_A-/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=='
+  - title: 'DUETS - Works on Paper by Yasmin Nebenführ and Moira Barrett, opening April 5 at DZIALDOV, Berlin'
     link: 'https://dzialdov.de/'
-  - title: >-
-      According to My Wishes, solo exhibition at Kulturkirche Hürth, Opening
-      December 8
-    link: >-
-      https://www.evangelisch-in-huerth.de/kulturkirche-vernissage-according-to-my-wishes/
+  - title: 'According to My Wishes, solo exhibition at Kulturkirche Hürth, Opening December 8'
+    link: 'https://www.evangelisch-in-huerth.de/kulturkirche-vernissage-according-to-my-wishes/'
   - title: '25 June: Reading with the FU Review: A Good Long Scream'
-    link: >-
-      https://www.instagram.com/p/CtT3QByMEVK/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==
+    link: 'https://www.instagram.com/p/CtT3QByMEVK/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA=='
   - title: '21 April: Reading at ap: The Zodiac Club Revisited'
-    link: >-
-      https://www.a-p.berlin/blogs/events/alex-and-erin-draft-need-to-add-event-brite-and-set-visibility-date
+    link: 'https://www.a-p.berlin/blogs/events/alex-and-erin-draft-need-to-add-event-brite-and-set-visibility-date'
   - title: '25 March: Reading for the Weirding Module: Blessed (with Guests)'
     link: 'https://www.instagram.com/p/Cp3UFFAoCG2/?utm_source=ig_web_copy_link'
   - title: '"Visitations" in Stadtsprachen Magazin'
