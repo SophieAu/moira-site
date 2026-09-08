@@ -7,8 +7,9 @@ For inquiries and quotes please email [bmoirabarrett@gmail.com](mailto:bmoirabar
 
 * Bauhaus Archiv | Museum für Gestaltung
 * Neue Nationalgalerie
-* ifa-Galerie Berlin
-* Kunst im Stadtraum an der Karl-Marx-Allee
+* Kunsthalle Wien
+* Kunsthaus Hamburg
+* PORTIKUS Frankfurt
 * Deutsche Kinematek - Museum für Film und Fernsehen
+* ifa-Galerie Berlin
 * Kunstverein in Hamburg
-* E-Werk Luckenwalde
