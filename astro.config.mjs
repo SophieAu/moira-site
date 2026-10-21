@@ -9,17 +9,17 @@ import svelte from '@astrojs/svelte';
 export default defineConfig({
 	site: 'https://moira-barrett.com',
 	integrations: [sitemap(), robotsTxt(), svelte()],
-	experimental: {
-		fonts: [
-			{
-				provider: fontProviders.google(),
-				name: 'Italiana',
-				cssVariable: '--font-italiana',
-			},
-			{
-				provider: 'local',
-				name: 'Fanwood Text',
-				cssVariable: '--font-fanwood',
+	fonts: [
+		{
+			provider: fontProviders.google(),
+			name: 'Italiana',
+			cssVariable: '--font-italiana',
+		},
+		{
+			provider: fontProviders.local(),
+			name: 'Fanwood Text',
+			cssVariable: '--font-fanwood',
+			options: {
 				variants: [
 					{
 						style: 'normal',
@@ -33,6 +33,6 @@ export default defineConfig({
 					},
 				],
 			},
-		],
-	},
+		},
+	],
 });

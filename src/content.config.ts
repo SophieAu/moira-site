@@ -1,5 +1,6 @@
 import { glob } from 'astro/loaders';
-import { defineCollection, z } from 'astro:content';
+import { defineCollection } from 'astro:content';
+import { z } from "astro/zod"
 
 const artwork = defineCollection({
 	loader: glob({ pattern: '**.md', base: './content/artwork' }),
@@ -25,7 +26,7 @@ const works = defineCollection({
 	loader: glob({ pattern: '**.md', base: './content/works' }),
 	schema: z.object({
 		title: z.string(),
-		link: z.string().url(),
+		link: z.url(),
 		metainfo: z.string().optional(),
 		isSubpage: z.boolean().default(false),
 		category: z.enum(['Fiction', 'Poetry', 'Theory and Criticism', 'Other']),
@@ -35,11 +36,11 @@ const works = defineCollection({
 const contact = defineCollection({
 	loader: glob({ pattern: '**.md', base: './content/contact' }),
 	schema: z.object({
-		email: z.string().email(),
+		email: z.email(),
 		socialMedia: z.array(
 			z.object({
 				platformName: z.enum(['Instagram']),
-				link: z.string().url(),
+				link: z.url(),
 				profileName: z.string(),
 			}),
 		),
@@ -57,7 +58,7 @@ const news = defineCollection({
 		news: z.array(
 			z.object({
 				title: z.string(),
-				link: z.string().url().optional(),
+				link: z.url().optional(),
 			}),
 		),
 	}),
@@ -70,7 +71,7 @@ const translation = defineCollection({
 			.array(
 				z.object({
 					title: z.string(),
-					link: z.string().url(),
+					link: z.url(),
 				}),
 			)
 			.optional(),
