@@ -9,7 +9,6 @@ import svelte from '@astrojs/svelte';
 export default defineConfig({
 	site: 'https://moira-barrett.com',
 	integrations: [sitemap(), robotsTxt(), svelte()],
-	image: { domains: ['res.cloudinary.com'], service: passthroughImageService() },
 	experimental: {
 		fonts: [
 			{

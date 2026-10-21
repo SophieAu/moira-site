@@ -29,8 +29,7 @@ export default defineConfig({
   client: { skip: true },
   build: { outputFolder: 'admin', publicFolder: 'public' },
   media: {
-    loadCustomStore: async () =>
-      (await import('next-tinacms-cloudinary')).TinaCloudCloudinaryMediaStore,
+    tina: { publicFolder: 'src', mediaRoot: 'assets/images' },
   },
   schema: {
     collections: [

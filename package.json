@@ -15,7 +15,6 @@
 		"@astrojs/rss": "4.0.12",
 		"@astrojs/sitemap": "^3.6.0",
 		"@astrojs/svelte": "^7.2.0",
-		"@cloudinary/url-gen": "^1.21.0",
 		"@tinacms/auth": "^1.0.9",
 		"astro": "^5.14.1",
 		"astro-robots-txt": "^1.0.0",
