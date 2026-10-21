@@ -1,4 +1,4 @@
-import { defineConfig, passthroughImageService, fontProviders } from 'astro/config';
+import { defineConfig, fontProviders } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 
 import robotsTxt from 'astro-robots-txt';
