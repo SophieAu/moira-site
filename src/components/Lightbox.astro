@@ -1,5 +1,7 @@
 ---
+import { Image } from 'astro:assets';
 import type { InferEntrySchema } from 'astro:content';
+import { getRawImage } from '../image';
 
 interface Props {
 	data: InferEntrySchema<'artwork'>;
@@ -7,13 +9,14 @@ interface Props {
 }
 
 const { dialogId, data } = Astro.props;
+const rawImage = await getRawImage(data.image)
 ---
 
 <script></script>
 <dialog class="dialog-container" id={dialogId}>
 	<div class="lightbox-container">
 		<div class="lightbox">
-			<img src={data.image} />
+			<Image src={rawImage} alt={data.title} width={1600} loading="lazy" />
 			<div class="info">
 				{data.title}
 				{data.embed && <Fragment set:html={data.embed} />}

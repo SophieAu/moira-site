@@ -1,7 +1,8 @@
 ---
-import CldImage from '../components/CldImage.astro';
 import type { InferEntrySchema } from 'astro:content';
 import Lightbox from '../components/Lightbox.astro';
+import { Image } from 'astro:assets';
+import { getRawImage } from '../image';
 
 interface Props {
 	data: InferEntrySchema<'artwork'>;
@@ -10,12 +11,13 @@ interface Props {
 
 const { slug, data } = Astro.props;
 
+const rawImage = await getRawImage(data.image)
 const lightboxId = `lightbox-${slug}`;
 ---
 
 <artwork-with-lightbox data-target={lightboxId}>
 	<button class="lightboxButtonStyle" id={`${lightboxId}-button`}>
-		<CldImage url={data.image} alt={data.title} width={720} height={720} class="imageStyle" />
+		<Image src={rawImage} alt={data.title} width={720} height={720} class="imageStyle" />
 		<p class="titleStyle">{data.title}</p>
 	</button>
 	{data.embed && <Fragment set:html={data.embed} />}
